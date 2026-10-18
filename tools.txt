@@ -1,5 +1,5 @@
 A registration replacement key has been created for USB Flash GUID=已為 USB 快閃記憶體 GUID 建立了註冊替換金鑰
-About=關于
+About=關於
 alert=警告
 An email has been sent to=電子郵件已傳送至
 and=和
@@ -14,7 +14,7 @@ Array slots=陣列插槽
 Array=陣列
 Author=作者
 Beta=測試版
-Blacklisted USB Flash GUID=USB 快閃記憶體的 GUID 在黑名單内
+Blacklisted USB Flash GUID=USB 快閃記憶體的 GUID 已列入黑名單
 Branch=分支
 By using this software, you agree with our=使用此軟體，即表示您同意我們的
 Cache slots=快取插槽
