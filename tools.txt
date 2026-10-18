@@ -1,40 +1,40 @@
-A registration replacement key has been created for USB Flash GUID=已為 USB 闪存 GUID 建立了註冊替换金鑰
+A registration replacement key has been created for USB Flash GUID=已為 USB 快閃記憶體 GUID 建立了註冊替換金鑰
 About=關于
 alert=警告
 An email has been sent to=電子郵件已傳送至
 and=和
 Anonymize diagnostics=匿名診斷
-Anytime=随時
+Anytime=隨時
 Archived Notifications=封存的通知
-Are you sure=是否确定
-Array has been Reset=阵列已**重設**
-Array must be Started to change permissions=阵列必须**启动**才能更改權限
-Array must be Stopped to change=阵列必须**停止**才能更改
-Array slots=阵列插槽
-Array=阵列
+Are you sure=是否確定
+Array has been Reset=陣列已**重設**
+Array must be Started to change permissions=陣列必須**啟動**才能更改權限
+Array must be Stopped to change=陣列必須**停止**才能更改
+Array slots=陣列插槽
+Array=陣列
 Author=作者
-Beta=测试版
-Blacklisted USB Flash GUID=USB 闪存的 GUID 在黑名单内
+Beta=測試版
+Blacklisted USB Flash GUID=USB 快閃記憶體的 GUID 在黑名單内
 Branch=分支
-By using this software, you agree with our=使用此軟體，即表示您同意我们的
+By using this software, you agree with our=使用此軟體，即表示您同意我們的
 Cache slots=快取插槽
-Cannot connect to key-server=無法连接到金鑰伺服器
+Cannot connect to key-server=無法連線到金鑰伺服器
 Check for Updates=檢查更新
 click Install Key=點選<i>安裝金鑰</i>
-collecting diagnostic information this may take several minutes=正在收集診斷資訊（這可能需要几分钟）
-Component=组件
-Credits=致谢
+collecting diagnostic information this may take several minutes=正在收集診斷資訊（這可能需要幾分鐘）
+Component=元件
+Credits=致謝
 Data slots=資料插槽
 Delete all notifications=刪除所有通知
 Delete notification=刪除通知
-Developer=開发人员
+Developer=開發人員
 Diagnostics=診斷
 Disks=磁碟
 Display Settings=顯示設定
 Downloading=下載中
-End-User License Agreement=最终使用者许可协议
+End-User License Agreement=最終使用者许可协议
 Enter URL of language pack XML file=輸入語言包 XML 檔案的 URL 地址
-Error accessing your physical USB Flash boot device=存取物理 USB 闪存引導設备時出错
+Error accessing your physical USB Flash boot device=存取物理 USB 快閃記憶體引導設備時出錯
 EULA=EULA
 Event=事件
 Expiration=到期時间
@@ -66,23 +66,23 @@ No notifications present=没有通知
 No personal information such as user names, passwords, or any other file contents is included in the hardware profile=硬體設定檔案中不包括使用者名、密碼或任何其他檔案内容等個人資訊
 normal=正常
 Only ZIP files are allowed=僅允许 ZIP 檔案
-Page Map=頁面地图導航
-Parity slots=奇偶校验插槽
+Page Map=頁面地圖導航
+Parity slots=奇偶校驗插槽
 Please check your=請檢查您的
 please configure=請設定
-Please select a language before proceeding=請先選擇一种語言，然後再继续
+Please select a language before proceeding=請先選擇一种語言，然後再继續
 Please=請
 Pool slots=池插槽
 Preserve current assignments=保留目前分配
 previous=上一個
 Privacy Policy=隐私政策
 Processes=進程
-Purchase Key=购买金鑰
+Purchase Key=购買金鑰
 Registered GUID=GUID 已註冊
 Registered on=註冊于
 Registered to=註冊到
-registering USB Flash GUID=正在註冊 USB 闪存 GUID
-Release has been withdrawn=发布已撤回
+registering USB Flash GUID=正在註冊 USB 快閃記憶體 GUID
+Release has been withdrawn=發布已撤回
 Remove the installed language=移除安裝的語言
 Replaceable=可更换
 Request Extension=請求扩展
@@ -95,19 +95,19 @@ Show Details=顯示詳细資訊
 slots=插槽
 Stable=稳定版
 Subject=主题
-System Devices=系統設备
+System Devices=系統設備
 System Update Check=系統更新檢查
 Text=文本
 Thank you for choosing Unraid OS=感谢您選擇 Unraid OS
-Thank you for registering USB Flash GUID=感谢您註冊 USB 闪存的 GUID
+Thank you for registering USB Flash GUID=感谢您註冊 USB 快閃記憶體的 GUID
 Thank you for trying Unraid OS=感谢您試用 Unraid OS
-The registered GUID does not match the USB Flash boot device GUID=註冊的 GUID 與 USB 闪存引導設备 GUID 不匹配
-There is a physical problem accessing your USB Flash boot device=存取 USB 闪存引導設备時出现物理問题
-this may take several minutes=這可能需要几分钟的時间
+The registered GUID does not match the USB Flash boot device GUID=註冊的 GUID 與 USB 快閃記憶體引導設備 GUID 不匹配
+There is a physical problem accessing your USB Flash boot device=存取 USB 快閃記憶體引導設備時出現物理問题
+this may take several minutes=這可能需要幾分鐘的時间
 This release has been withdrawn for use with Trial keys=使用**試用**金鑰的目前版本已被撤回
-This server has %s attached storage device=此伺服器有 **%s** 個附加儲存設备
-This server has %s attached storage devices=此伺服器有 **%s** 個附加儲存設备
-This utility is used for troubleshooting purposes=此实用程式用于故障排除目的
+This server has %s attached storage device=此伺服器有 **%s** 個附加儲存設備
+This server has %s attached storage devices=此伺服器有 **%s** 個附加儲存設備
+This utility is used for troubleshooting purposes=此實用程式用于故障排除目的
 This will delete all notification files=這將刪除所有通知檔案
 This will update folder file permissions=這將更新資料夾/檔案權限
 Time=時间
@@ -120,7 +120,7 @@ Upgrade Key=升級金鑰
 Uploaded=已上傳
 uploading hardware information=正在上傳硬體資訊
 Uploading=正在上傳
-Use this to develop language packs=使用它來開发語言包
+Use this to develop language packs=使用它來開發語言包
 Use this to install official language packs=使用它來安裝官方語言包
 User Shares=使用者共享
 User=使用者
@@ -131,14 +131,14 @@ warning=警告
 webGUI=webGUI
 When received, please paste the URL into the Key file URL box and=收到邮件後，請將 URL 链接粘贴到<i>金鑰檔案</i> URL 框中，然後
 Wrong File Extension=檔案扩展名錯誤
-You havent sent Limetech your hardware profile yet=您尚未向 Limetech 发送您的硬體設定檔案
+You havent sent Limetech your hardware profile yet=您尚未向 Limetech 傳送您的硬體設定檔案
 Your hardware profile was last submitted on=您的硬體設定檔案最後一次提交于
 Your Trial key has expired=您的**試用**金鑰已過期
 Your Trial key requires an internet connection=您的**試用**金鑰要求联网
 
 ; Sysdevs text - added May 18, 2020
-A reboot is required to apply changes=需要重启才能應用更改
-ALERT=警报
+A reboot is required to apply changes=需要重啟才能應用更改
+ALERT=警報
 Bind selected to VFIO at Boot=在引導時对 VFIO 選擇了绑定
 CPU Thread Pairings=CPU 討論串配对
 Changes saved=更改已儲存
@@ -146,20 +146,20 @@ Function Level Reset FLR supported=支援功能級復位 (FLR)
 In use by Unraid=Unraid 正在使用
 Kernel driver in use vfio-pci=使用的内核驅動程式 vfio-pci
 No changes=無更改
-PCI Devices and IOMMU Groups=PCI 設备和 IOMMU 组
-PCI Devices No IOMMU Groups Available=PCI 設备 (没有可用的 IOMMU 组)
-Reboot to take effect=重启以生效
-SCSI Devices=SCSI 設备
-The below list doesnt not reflect the way IOMMU would naturally group devices=下面的列表没有反映 IOMMU 对設备進行自然分组的方式
-This controller is bound to vfio, connected USB devices are not visible=此控制器已绑定到 vfio，相连的 USB 設备不可见
-This controller is bound to vfio, connected drives are not visible=此控制器已绑定到 vfio，相连的驱动不可见
-To see natural IOMMU groups for your hardware, go to the VM Manager page and set the PCIe ACS override setting to Disabled=要查看硬體的自然 IOMMU 组，請执行以下操作, 转到[虛擬機器器管理器]頁面，並將 **PCIe ACS 覆盖**設定為**已停用**
-USB Devices=USB 設备
-Your system has booted with the PCIe ACS Override setting enabled=您的系統已启动且启用了 PCIe ACS 覆盖設定
+PCI Devices and IOMMU Groups=PCI 設備和 IOMMU 組
+PCI Devices No IOMMU Groups Available=PCI 設備 (没有可用的 IOMMU 組)
+Reboot to take effect=重啟以生效
+SCSI Devices=SCSI 設備
+The below list doesnt not reflect the way IOMMU would naturally group devices=下面的列表没有反映 IOMMU 对設備進行自然分組的方式
+This controller is bound to vfio, connected USB devices are not visible=此控制器已绑定到 vfio，相連的 USB 設備不可見
+This controller is bound to vfio, connected drives are not visible=此控制器已绑定到 vfio，相連的驱動不可見
+To see natural IOMMU groups for your hardware, go to the VM Manager page and set the PCIe ACS override setting to Disabled=要查看硬體的自然 IOMMU 組，請执行以下操作, 轉到[虛擬機器器管理器]頁面，並將 **PCIe ACS 覆盖**設定為**已停用**
+USB Devices=USB 設備
+Your system has booted with the PCIe ACS Override setting enabled=您的系統已啟動且啟用了 PCIe ACS 覆盖設定
 
 :diagnostics_1_plug:
-此实用程式用于故障排除。它將收集所有系統資訊和設定檔案，並將這些檔案打包到一個可以儲存在本地的 ZIP 檔案。
-随後，此檔案可以包含在您與 Limetech 或 UnRAID 论坛的通信中。
+此實用程式用于故障排除。它將收集所有系統資訊和設定檔案，並將這些檔案打包到一個可以儲存在本地的 ZIP 檔案。
+隨後，此檔案可以包含在您與 Limetech 或 UnRAID 论坛的通信中。
 
 這有助于其他人快速獲取您系統的内部資訊，並為您的問题提供更好的支援。將收集以下資訊
 和設定檔案:
@@ -175,17 +175,17 @@ Your system has booted with the PCIe ACS Override setting enabled=您的系統�
 + *System*
 <br>儲存以下命令的輸出：
 <br>lsscsi、lspci、lsusb、free、lsof、ps、ethtool 和 ifconfig。
-<br>顯示 IOMMU 组。
+<br>顯示 IOMMU 組。
 <br>顯示命令行参數（例如 PCIe ACS 覆盖、PCI 存根等）。
 <br>儲存系統變數。
 + *SMART reports*
-<br>儲存系統中存在的每個磁碟的 SMART 报告。
+<br>儲存系統中存在的每個磁碟的 SMART 報告。
 + *Docker*
 <br>儲存檔案 *docker.log*、*libvirtd.log*、*libvirt/qemu/\*.log* 和 *vfio-pci*。
 :end
 
 :diagnostics_3_plug:
-按一下**下載**將启动采集過程，然後指示您的浏覽器將 zip 檔案儲存到本地。
+按一下**下載**將啟動采集過程，然後指示您的浏覽器將 zip 檔案儲存到本地。
 
 *不包括任何個人資訊，如使用者名、密碼或上面未指定的任何其他檔案内容
 通過 UnRAID OS；但是，您的伺服器名称、IP 地址和使用者共享名称**將**包括在内。*
@@ -193,125 +193,125 @@ Your system has booted with the PCIe ACS Override setting enabled=您的系統�
 *請注意第三方插件**可能**也许不会將個人資訊儲存在插件特定的設定檔案和/或
 系統日志輸出中。*
 
-在公共论坛上发布診斷檔案時*使用* **匿名診斷**。*在與 Limetech 的私人通信中，建议取消选中此設定，並捕獲所有未更改的資訊。*
+在公共论坛上發布診斷檔案時*使用* **匿名診斷**。*在與 Limetech 的私人通信中，建议取消选中此設定，並捕獲所有未更改的資訊。*
 :end
 
 :newconfig_plug:
-該实用程式用于重設阵列磁碟設定，以使所有磁碟都顯示為“新”磁碟，
+該實用程式用于重設陣列磁碟設定，以使所有磁碟都顯示為“新”磁碟，
 就好像它是全新的伺服器一样。
 
-当您新增或刪除了多個驱动器並且希望基于新設定重建奇偶校验時，
+当您新增或刪除了多個驱動器並且希望基于新設定重建奇偶校驗時，
 此功能很有用。
 
-重設阵列***之後***，使用 *'保留目前分配'* 选項填充所需的磁碟插槽。預設情况下，**不**填充磁碟插槽。
+重設陣列***之後***，使用 *'保留目前分配'* 选項填充所需的磁碟插槽。預設情況下，**不**填充磁碟插槽。
 
-**請勿使用此实用程式，因為它会重建故障驱动器** —— 它將产生相反的效果，
-將***無法***重建现有的故障驱动器 —— 您已受到警告！
+**請勿使用此實用程式，因為它会重建故障驱動器** —— 它將产生相反的效果，
+將***無法***重建現有的故障驱動器 —— 您已受到警告！
 :end
 
 :newperms_1_plug:
-從 5.0 之前的 Unraid 伺服器版本升級到 Unraid v5 或更高版本之後，必须执行這項一次性操作。
+從 5.0 之前的 Unraid 伺服器版本升級到 Unraid v5 或更高版本之後，必須执行這項一次性操作。
 执行這項一次性操作時，選擇**所有磁碟**。
 
 從 Active Directory 過渡到非 Active Directory 集成時，
-該实用程式還可用于還原檔案和目录的預設所有权/權限。
+該實用程式還可用于還原檔案和目錄的預設所有權/權限。
 
-該实用程式將启动一個後台進程，該進程將存取每個資料磁碟和快取磁碟，
-選擇使用者共享並將檔案和目录所有权更改為*無人/使用者*（即 uid / gid 更改為 99/100），
+該實用程式將啟動一個後台進程，該進程將存取每個資料磁碟和快取磁碟，
+選擇使用者共享並將檔案和目錄所有權更改為*無人/使用者*（即 uid / gid 更改為 99/100），
 並按以下方式設定權限：
 :end
 
 :newperms_2_plug:
-对于目录：
+对于目錄：
 drwxrwxrwx
 
-对于读/写檔案：
+对于讀/寫檔案：
 -rw-rw-rw-
 
-对于只读檔案：
+对于只讀檔案：
 -r--r--r--
 :end
 
 :newperms_3_plug:
-按一下**開始**將打開另一個窗口並启动後台進程。
+按一下**開始**將打開另一個窗口並啟動後台進程。
 
-在完成之前關闭窗口將终止後台進程 - 因此請不要這样做。如果您有许多檔案，則此進程可能耗時较长。
+在完成之前關闭窗口將終止後台進程 - 因此請不要這样做。如果您有许多檔案，則此進程可能耗時較长。
 
 請注意，如果允许包含您的應用資料共享，則此工具可能会对 Docker 容器产生不利影响。
 :end
 
 :registration_1_plug:
-在您购买註冊金鑰或安裝免费的 30 天**試用**金鑰之前，您的伺服器將無法可用。
+在您购買註冊金鑰或安裝免費的 30 天**試用**金鑰之前，您的伺服器將無法可用。
 **試用**金鑰提供 **Pro** 註冊金鑰的所有功能。
 
-註冊金鑰绑定到您的 USB 闪存引導設备序列號 (GUID)。請使用容量至少
-為 1GB 的优质品牌設备。
+註冊金鑰绑定到您的 USB 快閃記憶體引導設備序列號 (GUID)。請使用容量至少
+為 1GB 的优质品牌設備。
 
-注意：通常**不**支援 USB 儲存卡读卡器，因為大多數读卡器不提供唯一的序列號。
+注意：通常**不**支援 USB 儲存卡讀卡器，因為大多數讀卡器不提供唯一的序列號。
 :end
 
 :registration_2_plug:
-+ 請确保您的 [伺服器時间](DateTime) 精确到5分钟以内。
-+ 請确保指定 [DNS 伺服器](NetworkSettings) 。
++ 請確保您的 [伺服器時间](DateTime) 精確到5分鐘以内。
++ 請確保指定 [DNS 伺服器](NetworkSettings) 。
 :end
 
 :registration_3_plug:
-您的**試用**金鑰包括 **Pro** 註冊金鑰的所有功能和設备支援。
+您的**試用**金鑰包括 **Pro** 註冊金鑰的所有功能和設備支援。
 
-在您的**試用**金鑰到期後，您的伺服器**仍能正常工作**，直到您下次**停止**阵列為止。
+在您的**試用**金鑰到期後，您的伺服器**仍能正常工作**，直到您下次**停止**陣列為止。
 
-此時，您可以购买註冊金鑰，也可以請求延长**試用**。
+此時，您可以购買註冊金鑰，也可以請求延长**試用**。
 :end
 
 :registration_4_plug:
-要继续使用 UnRAID OS，您可以购买註冊金鑰。也可以申請**試用**延期金鑰。
+要继續使用 UnRAID OS，您可以购買註冊金鑰。也可以申請**試用**延期金鑰。
 
-大多數**試用**延期請求都会立即处理，但請给我们最多一個工作日接收您的**試用**延期金鑰。
+大多數**試用**延期請求都会立即處理，但請给我們最多一個工作日接收您的**試用**延期金鑰。
 :end
 
 :registration_5_plug:
-無法在现有的 UnRAID OS 安裝中使用**試用**金鑰。
+無法在現有的 UnRAID OS 安裝中使用**試用**金鑰。
 
-您可以购买與此 USB 闪存設备对應的註冊金鑰以继续使用此安裝。
+您可以购買與此 USB 快閃記憶體設備对應的註冊金鑰以继續使用此安裝。
 
-要了解更多資訊，請[聯絡支援人员](https://lime-technology.com/contact)。
+要了解更多資訊，請[聯絡支援人員](https://lime-technology.com/contact)。
 :end
 
 :registration_6_plug:
-您的註冊金鑰檔案似乎已损坏或丢失。金鑰檔案應位于
-您的 USB 闪存启动設备上的 [config](/Registration/Browse?dir&#61;/boot/config) 目录。
+您的註冊金鑰檔案似乎已損坏或丢失。金鑰檔案應位于
+您的 USB 快閃記憶體啟動設備上的 [config](/Registration/Browse?dir&#61;/boot/config) 目錄。
 
-如果您没有註冊金鑰檔案的備份副本，請[聯絡支援人员](https://lime-technology.com/contact)。
+如果您没有註冊金鑰檔案的備份副本，請[聯絡支援人員](https://lime-technology.com/contact)。
 
-如果這是**試用**安裝，您可以购买註冊金鑰。
+如果這是**試用**安裝，您可以购買註冊金鑰。
 :end
 
 :registration_7_plug:
-**試用**安裝僅适用于最初註冊的 USB 闪存設备。
+**試用**安裝僅适用于最初註冊的 USB 快閃記憶體設備。
 
-若要在此 USB 闪存設备上继续使用此安裝，您可以购买註冊金鑰。
+若要在此 USB 快閃記憶體設備上继續使用此安裝，您可以购買註冊金鑰。
 :end
 
 :registration_8_plug:
-註冊金鑰檔案與 USB 闪存引導設备不相符。
-請將正确的金鑰檔案復制到 USB 闪存引導設备上的
-[config](/Registration/Browse?dir&#61;/boot/config) 目录。如果您没有金鑰檔案的備份副本，請[聯絡支援人员](https://lime-technology.com/contact)。
+註冊金鑰檔案與 USB 快閃記憶體引導設備不相符。
+請將正確的金鑰檔案復制到 USB 快閃記憶體引導設備上的
+[config](/Registration/Browse?dir&#61;/boot/config) 目錄。如果您没有金鑰檔案的備份副本，請[聯絡支援人員](https://lime-technology.com/contact)。
 
-如果要用绑定到此 USB 闪存設备的新金鑰替换您的註冊金鑰，請按一下下面的替换金鑰。原始金鑰可以
-随時更换。此後，可以在一年之後再次更换替换金鑰。如果您需要更快獲得
-替换金鑰，請[聯絡支援人员](https://lime-technology.com/contact)。
+如果要用绑定到此 USB 快閃記憶體設備的新金鑰替換您的註冊金鑰，請按一下下面的替換金鑰。原始金鑰可以
+隨時更换。此後，可以在一年之後再次更换替換金鑰。如果您需要更快獲得
+替換金鑰，請[聯絡支援人員](https://lime-technology.com/contact)。
 
-**注意：**替换註冊金鑰会導致以前的 USB 闪存 GUID 被永久**列入黑名单**。
+**注意：**替換註冊金鑰会導致以前的 USB 快閃記憶體 GUID 被永久**列入黑名單**。
 :end
 
 :registration_9_plug:
-此 USB 闪存引導設备已被**列入黑名单**。這可能是由于您的註冊金鑰传輸到
-替换的USB闪存設备，並且您目前是從旧的 USB 闪存設备启动的。
+此 USB 快閃記憶體引導設備已被**列入黑名單**。這可能是由于您的註冊金鑰傳輸到
+替換的USB快閃記憶體設備，並且您目前是從舊的 USB 快閃記憶體設備啟動的。
 
-如果没有序列號，或者如果我们发现序列號不唯一（這种情况在 USB 读卡器中很常见），
-USB 闪存設备也可能被**列入黑名单**。
+如果没有序列號，或者如果我們發現序列號不唯一（這种情況在 USB 讀卡器中很常見），
+USB 快閃記憶體設備也可能被**列入黑名單**。
 
-如需了解更多資訊，請[聯絡支援人员](https://lime-technology.com/contact)。
+如需了解更多資訊，請[聯絡支援人員](https://lime-technology.com/contact)。
 :end
 
 ; Note: May 31, 2025 - 40 missing translations
