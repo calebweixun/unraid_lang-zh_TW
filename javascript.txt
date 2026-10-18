@@ -47,7 +47,7 @@ Yes=是
 ; footer messages
 Array Starting=陣列正在啟動
 Array Stopping=陣列正在停止
-Mounting disks=正在安裝磁碟
+Mounting disks=正在掛載磁碟
 Spinning up all drives=正在喚醒所有磁碟
 Starting services=正在啟動服務
 Stopping services=正在停止服務
