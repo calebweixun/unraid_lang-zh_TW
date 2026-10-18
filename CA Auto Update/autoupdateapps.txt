@@ -1,12 +1,12 @@
-Docker Auto Update Settings=Docker 自動更新設置
-Plugin Auto Update Settings=插件自動更新設置
+Docker Auto Update Settings=Docker 自動更新設定
+Plugin Auto Update Settings=插件自動更新設定
 Autoupdate ON=打開自動更新
 Autoupdate OFF=關閉自動更新
 Send Notifications On Update=更新時發送通知
 Delay in days before updating applications=延遲更新的天數
 Auto Update All Plugins=自動更新所有插件
 Update Check Frequency=檢查更新頻率
-Support=支持
+Support=支援
 Day Of Week=星期
 Day Of Month=日期
 Hour=小時
