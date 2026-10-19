@@ -17,11 +17,11 @@ This unlocks some extra features within CA generally only used by developers Not
 Support Thread=支援論壇
 
 ; Note: April 21, 2025 - 8 missing translations
-Allow install of second instance=
-Automatically open the sidebar=
-Allows CA to automatically open the sidebar for more information when hovering over an application's icon=
-Disable Mouse Wheel Page Changes=
-This setting disables using left or right on a mouse wheel to change the page=
-Mouse wheel threshold=
-If you tilt the mouse wheel left or right, the browser returned value will change Set the threshold to the value returned Note that different browsers and operating systems may return different values=
-This is a global value for all devices If it causes issues, then disable Mouse Wheel Page Changes=
+Allow install of second instance=允許安裝第二個執行個體
+Automatically open the sidebar=自動開啟側邊欄
+Allows CA to automatically open the sidebar for more information when hovering over an application's icon=將滑鼠移至應用程式圖示上方時，自動開啟側邊欄顯示更多資訊
+Disable Mouse Wheel Page Changes=停用滑鼠滾輪切換頁面
+This setting disables using left or right on a mouse wheel to change the page=停用以滑鼠滾輪左右傾斜來切換頁面的功能
+Mouse wheel threshold=滑鼠滾輪切換門檻值
+If you tilt the mouse wheel left or right, the browser returned value will change Set the threshold to the value returned Note that different browsers and operating systems may return different values=左右傾斜滑鼠滾輪時，瀏覽器會回傳一個數值。請依回傳值設定門檻；不同瀏覽器及作業系統可能回傳不同數值。
+This is a global value for all devices If it causes issues, then disable Mouse Wheel Page Changes=此設定適用於所有裝置。如果造成操作問題，請停用滑鼠滾輪切換頁面功能。
