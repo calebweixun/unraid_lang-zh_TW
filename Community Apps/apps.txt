@@ -137,8 +137,8 @@ An error occurred Could not find any %s Apps=發生錯誤，找不到任何%s �
 Download of appfeed failed=appfeed下載失敗
 ; the %s here refers to a function being called
 Something really went wrong here=這裡真的出問題了
-Post the ENTIRE contents of this message in the Community Applications Support Thread=在Community Applications 支援對話中發布此消息的**全部**內容
-Unknown error happened Please post a screenshot in the support thread of the Statistics screen=發生未知錯誤請在統計屏幕的支援對話中發布屏幕截圖
+Post the ENTIRE contents of this message in the Community Applications Support Thread=請將這則訊息的**完整內容**貼到 Community Applications 支援討論串
+Unknown error happened Please post a screenshot in the support thread of the Statistics screen=發生未知錯誤，請擷取「統計」畫面的螢幕截圖，並貼至支援討論串
 This plugin has a duplicated name from another plugin %s This will impact your ability to install both plugins simultaneously=此插件的名稱與另一個插件%s 重複，這將影響您同時安裝這兩個插件的能力
 You have been logged out=您已登出
 Fatal Flash Drive Error=致命閃存驅動器錯誤
