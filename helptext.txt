@@ -2089,13 +2089,17 @@ WAN 連接埠是路由器對外提供的 TCP 連接埠，通常透過 NAT／連�
 :end
 
 :myservers_remote_t2fa_help:
-When Transparent 2FA for Remote Access is enabled, you will access your server by clicking the "Remote Access" link on the <a href="https://connect.myunraid.net/" target="_blank" rel="noopener noreferrer">Go to Connect</a>. The system will transparently request a 2FA token from your server and embed it in the server's login form. Your server will deny any Remote Access login attempt that does not include a valid token. Each token can be used only once, and is only valid for five minutes.
+啟用遠端存取的「透明雙重驗證（2FA）」後，請在 <a href="https://connect.myunraid.net/" target="_blank" rel="noopener noreferrer">Go to Connect</a> 點選「遠端存取」來登入伺服器。
+
+系統會向您的伺服器取得 2FA 權杖，並自動填入登入表單。**未附上有效權杖的遠端登入將被拒絕。**每個權杖只能使用一次，有效期限為 5 分鐘。
 :end
 
 :myservers_local_t2fa_help:
-When Transparent 2FA for Local Access is enabled, you will access your server by clicking the "Local Access" link on the <a href="https://connect.myunraid.net/" target="_blank" rel="noopener noreferrer">Go to Connect</a>. The system will transparently request a 2FA token from your server and embed it in the server's login form. Your server will deny any Local Access login attempt that does not include a valid token. Each token can be used only once, and is only valid for five minutes.
+啟用本機存取的「透明雙重驗證（2FA）」後，請在 <a href="https://connect.myunraid.net/" target="_blank" rel="noopener noreferrer">Go to Connect</a> 點選「本機存取」來登入伺服器。
 
-This is fairly extreme for Local Access, and in most cases is not needed. It requires a solid Internet connection. If you need to access the webgui while the Internet is down, SSH to the server and run 'use_ssl no', this will give you access via http://<?=['NGINX_LANIP']?><?=['NGINX_PORT'] !== '80' ? ':'.['NGINX_PORT'] : '' ?>
+系統會向您的伺服器取得 2FA 權杖，並自動填入登入表單。**未附上有效權杖的本機登入將被拒絕。**每個權杖只能使用一次，有效期限為 5 分鐘。
+
+本機存取通常不需要如此嚴格的設定，而且這項功能依賴穩定的網際網路連線。如果網際網路中斷，仍需要存取網頁管理介面，可透過 SSH 連線至伺服器並執行 `use_ssl no`，再使用 http://<?=['NGINX_LANIP']?><?=['NGINX_PORT'] !== '80' ? ':'.['NGINX_PORT'] : '' ?> 存取。請注意 HTTP 不會加密傳輸內容。
 :end
 
 :wg_local_name_help:
@@ -2166,91 +2170,89 @@ WireGuard 通道需要內部 IP 位址。可以使用預設 IPv4 網段 <?=['wgX
 :end
 
 :wg_peer_configuration_help:
-The <i class='fa fa-fw fa-eye'></i> icon is used to view a peer's configuration. A configuration can be downloaded or read directly for instant set up of the peer.<br>
-The icon is disabled when no peer configuration exists or the user has made changes to the existing settings which are not applied yet.
+<i class='fa fa-fw fa-eye'></i> 圖示可顯示對等節點的設定。您可以下載設定檔，或直接讀取設定內容以快速完成對等節點配置。<br>
+若尚未建立對等節點設定，或已修改設定但尚未套用，這個圖示將無法使用。
 
-The <i class='fa fa-fw fa-key'></i> icon is used to show or hide the private, public and preshared keys. Note that these fields are always shown when no keys are set.
+<i class='fa fa-fw fa-key'></i> 圖示可顯示或隱藏私密金鑰、公開金鑰與預先共用金鑰。若尚未設定金鑰，相關欄位將保持顯示。
 :end
 
 :wg_peer_name_help:
-Use this field to set a name for this peer connection and make it easily recognizable. The same name will appear in the configuration of the peer at the opposite side.
+為這個對等節點設定容易辨識的名稱，該名稱也會出現在另一端的對等節點設定中。
 :end
 
 :wg_peer_preshared_key_help:
-For added security a preshared key can be used. Use the **Generate Key** button to automatically create a unique preshared key.<br>
-This key is the same at both server and peer side and is added to the peer configuration as well.
+可使用預先共用金鑰增加安全性。按一下 **產生金鑰** 可自動產生獨一無二的預先共用金鑰。<br>
+伺服器與對等節點必須使用相同的預先共用金鑰，系統也會將金鑰加入對等節點設定。
 :end
 
 :wg_peer_tunnel_address_help:
-This field is auto filled-in when a local tunnel network pool is created. It is allowed to overwrite the assignment, but this is normally not necessary. Use with care when changing manually.<br>
-Each peer must have a unique tunnel IP address.
+建立本機通道網段時，系統會自動填入這個欄位。通常不需要手動修改；若要覆寫，請先確認位址配置。<br>
+每個對等節點都必須有**唯一的通道 IP 位址**。
 :end
 
 :wg_peer_endpoint_help:
-When this field is left empty, the server operates in *passive mode* to establish the tunnel. It must be the peer which starts the tunnel.
+留白時，伺服器會以*被動模式*等待對等節點主動建立通道。
 
-When an IP address is entered to connect to the peer, the server operates in *active mode* and establishes the tunnel to the peer as soon as there is data to send.
+若填入對等節點的 IP 位址，伺服器會以*主動模式*運作，在需要傳送資料時主動連線。
 
-*Note: this field is mandatory for "server-to-server" and "LAN-to-LAN" connections*
+*注意：伺服器對伺服器、區域網路對區域網路的連線，必須填寫此欄位。*
 :end
 
 :wg_peer_allowed_ips_help:
-This field is automatically filled in with the tunnel address of the peer. This allows the server to reach the peer over the tunnel.<br>
-When the peer is another server or router with additional networks, then their subnets can be added here to make these networks reachable over the tunnel.
+此欄位預設填入對等節點的通道位址，讓伺服器能透過通道與對等節點通訊。<br>
+若對等節點是另一台伺服器或路由器，並且連接其他網段，也可加入這些子網路，以便透過通道存取。
 :end
 
 :wg_peer_dns_server_help:
-Use this entry to overwrite the current DNS server assignment of the Peer
+使用此欄位覆寫對等節點目前的 DNS 伺服器設定。
 :end
 
 :wg_persistent_keepalive_help:
-By default a WireGuard tunnel stays silent when no traffic is present, which may cause the connection to drop.
-Normally this isn't a problem since a WireGuard tunnel is automatically re-established when it is needed.<br>
-A keepalive timer will hold the connection open, for most situations a timer value of 20 seconds is suitable.
+WireGuard 通道在沒有流量時，預設不會持續傳送封包，因此部分網路環境可能導致連線中斷。
 
-Note that for mobile devices this will use more data and drain your battery faster.
+一般情況下，WireGuard 會在需要時自動重新建立連線。<br>
+如果需要保持 NAT 映射，可以設定定期保活（Persistent Keepalive）；多數環境可從 20 秒開始評估。
+
+**注意：**行動裝置啟用後會增加資料用量，也可能加快耗電。
 :end
 
 ; New entries (4) - 2023-03-17
 
 :docker_readmore_help:
-Some systems with a lot of docker containers may experience lag using the main Docker page.
+如果系統有大量 Docker 容器，Docker 管理頁面可能出現延遲。
 
-Setting this to "No" may help speed up general page usage by disabling the use of readmore-js.
-Instead of chevrons indicating more data for Port and Volume mapping, all data is displayed.
+設為「否」可以停用 readmore-js，減少頁面展開／收合元件的處理負擔。
+
+此時會直接顯示所有連接埠與磁碟區映射資訊，不再透過箭頭展開。
 :end
 
 :docker_custom_network_type_help:
-The **ipvlan** type is best when connection to the physical network is not needed.
-Please read <u><a style="color:blue" href='https://docs.docker.com/network/ipvlan/', target='_blank'>this</a></u> on implementing an ipvlan network.<br>
+**ipvlan** 適合不需要讓容器在實體網路上使用獨立 MAC 位址的情境。請參閱 <u><a style="color:blue" href='https://docs.docker.com/network/ipvlan/', target='_blank'>ipvlan 官方文件</a></u>。<br>
 
-The **macvlan** type of network allows direct connection to the physical network.
-Please read <u><a style="color:blue" href='https://docs.docker.com/network/macvlan/', target='_blank'>this</a></u> on implementing a macvlan network.<br>
+**macvlan** 可讓容器直接連接實體網路，並通常使用獨立的 MAC 位址。請參閱 <u><a style="color:blue" href='https://docs.docker.com/network/macvlan/', target='_blank'>macvlan 官方文件</a></u>。<br>
 
-**Note:** Docker uses its own dhcp service, which is the **DHCP Pool** setting.
-When you use multiple Unraid servers, then each server must have a different Docker **DHCP Pool** range configured.
+**注意：**Docker 有自己的 DHCP 位址配置機制，由 **DHCP Pool** 設定控制。若您使用多台 Unraid 伺服器，應避免不同伺服器的 Docker **DHCP Pool** 範圍彼此重疊。
 :end
 
 :mgmt_local_access_urls_help:
-The Local Access URLs shown above are based on your current settings. 
-To adjust URLs or redirects, see the help text for "Use SSL/TLS".
+上方顯示的本機存取網址是依目前設定產生的。
+若要調整網址或重新導向方式，請參閱「使用 SSL/TLS」的說明。
 :end
 
 :vms_network_source_help:
-Select the name of the network you wish to use as default for your VMs.
-You can choose between **'bridges'** created under network settings or
-**'libvirt'** created with virsh command in the terminal.
-The bridge **'virbr0'** and the associated virtual network **'default'** are
-created by libvirt.  
-Both utilizes NAT (network address translation) and act as a DHCP server to hand out IP addresses to virtual machines directly.
-More optional selections are present for bridges under network settings or for libvirt networks with the virsh command in the terminal.
+選擇虛擬機器預設使用的網路來源。
 
-**If your are unsure, choose 'virbr0' as the recommended Unraid default.**
+您可以選擇在網路設定中建立的 **bridge（橋接介面）**，或透過終端機的 `virsh` 命令建立的 **libvirt 虛擬網路**。
 
-NOTE: You can also specify a network source on a per-VM basis.
+`virbr0` 橋接介面及其 `default` 虛擬網路由 libvirt 建立，通常使用 NAT（網路位址轉譯），並由虛擬網路的 DHCP 服務為虛擬機器分配 IP 位址。
 
-**IMPORTANT: Neither Libvirt nor Unraid automatically brings up an interface that is assigned to a Libvirt network.
-Before you use a Libvirt network, please go to Settings -> Network Settings and, if necessary, manually set the associated interface to up.**
+其他橋接介面可在「網路設定」中管理；libvirt 虛擬網路則可透過 `virsh` 命令建立或設定。
+
+**如果不確定要選哪一個，可以先使用 Unraid 預設的 `virbr0`。**
+
+您也可以針對每一台虛擬機器個別指定網路來源。
+
+**重要：libvirt 與 Unraid 不一定會自動啟用指派給 libvirt 網路的實體介面。使用前請先前往「設定 > 網路設定」檢查，必要時手動啟用對應介面。**
 :end
 
 ; New entries (5) - 2023-04-25
