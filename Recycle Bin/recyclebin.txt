@@ -132,8 +132,8 @@ Update Recycle Bin Size in Background=在後台更新回收站大小
 :end
 
 ; Note: December 8, 2024 - 5 missing translations
-Enable Empty All Trash Button=
-Enable Empty Share Trash Button=
-Enable Remove Aged Files Button=
-Recycle Bin is empty=
-These actions apply to all shares=
+Enable Empty All Trash Button=顯示「清空所有資源回收筒」按鈕
+Enable Empty Share Trash Button=顯示「清空共享資源回收筒」按鈕
+Enable Remove Aged Files Button=顯示「移除過期檔案」按鈕
+Recycle Bin is empty=資源回收筒是空的
+These actions apply to all shares=這些操作會套用至所有共享資料夾
