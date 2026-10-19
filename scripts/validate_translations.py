@@ -57,7 +57,7 @@ BLOCK_BEGIN = re.compile(r":[A-Za-z0-9_-]+_(?:help|plug):")
 # Flag Simplified-only characters and known misleading translation phrases.
 SIMPLIFIED_ONLY = re.compile(
     r"[这们吗为会过还从发经网软盘页图标简设选显断编务数归户开关识销结进读键诊络"
-    r"贴购题动权试级导写应员没间顶声创观黄议资录壳处协议长隐细预内许继于布扩稳谢]"
+    r"贴购题动权试级导写应员没间顶声创观黄议资录壳处协议长隐细预内许继于扩稳谢]"
 )
 BAD_TERMS = re.compile(
     r"同位元檢查磁碟|同位元檢查檢查|奇偶校驗|CPU\s*討論串|虛擬機器器"
@@ -82,7 +82,7 @@ def check_localization_text(relative: str, lineno: int, value: str,
     if is_block and (
         not candidate or candidate.startswith((";", "#", code_tick, "'tailscale"))
         or code_tick in candidate or candidate.startswith(("<?", "config/"))
-        or ".pem" in candidate
+        or re.match(r"^[+*]\s*\d", candidate) or ".pem" in candidate
     ):
         return issues
 
