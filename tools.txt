@@ -129,229 +129,212 @@ VFIO-PCI Log=VFIO-PCI 日志
 View VFIO-PCI Log=查看 VFIO-PCI 日志
 warning=警告
 webGUI=webGUI
-When received, please paste the URL into the Key file URL box and=收到邮件後，請將 URL 链接粘贴到<i>金鑰檔案</i> URL 框中，然後
-Wrong File Extension=檔案扩展名錯誤
+When received, please paste the URL into the Key file URL box and=收到郵件後，請將網址貼入「金鑰檔案網址」欄位，然後
+Wrong File Extension=副檔名錯誤
 You havent sent Limetech your hardware profile yet=您尚未向 Limetech 傳送您的硬體設定檔案
-Your hardware profile was last submitted on=您的硬體設定檔案最後一次提交于
+Your hardware profile was last submitted on=上次提交硬體設定檔的日期
 Your Trial key has expired=您的**試用**金鑰已過期
-Your Trial key requires an internet connection=您的**試用**金鑰要求联网
+Your Trial key requires an internet connection=試用金鑰需要網際網路連線
 
 ; Sysdevs text - added May 18, 2020
-A reboot is required to apply changes=需要重啟才能應用更改
+A reboot is required to apply changes=需要重新啟動才能套用變更
 ALERT=警報
-Bind selected to VFIO at Boot=在引導時对 VFIO 選擇了绑定
-CPU Thread Pairings=CPU 討論串配对
+Bind selected to VFIO at Boot=開機時將選取的裝置綁定至 VFIO
+CPU Thread Pairings=CPU 執行緒配對
 Changes saved=更改已儲存
 Function Level Reset FLR supported=支援功能級復位 (FLR)
 In use by Unraid=Unraid 正在使用
-Kernel driver in use vfio-pci=使用的内核驅動程式 vfio-pci
+Kernel driver in use vfio-pci=目前使用的核心驅動程式：vfio-pci
 No changes=無更改
 PCI Devices and IOMMU Groups=PCI 設備和 IOMMU 組
-PCI Devices No IOMMU Groups Available=PCI 設備 (没有可用的 IOMMU 組)
-Reboot to take effect=重啟以生效
+PCI Devices No IOMMU Groups Available=PCI 裝置（沒有可用的 IOMMU 群組）
+Reboot to take effect=重新啟動後生效
 SCSI Devices=SCSI 設備
-The below list doesnt not reflect the way IOMMU would naturally group devices=下面的列表没有反映 IOMMU 对設備進行自然分組的方式
-This controller is bound to vfio, connected USB devices are not visible=此控制器已绑定到 vfio，相連的 USB 設備不可見
-This controller is bound to vfio, connected drives are not visible=此控制器已绑定到 vfio，相連的驱動不可見
-To see natural IOMMU groups for your hardware, go to the VM Manager page and set the PCIe ACS override setting to Disabled=要查看硬體的自然 IOMMU 組，請执行以下操作, 轉到[虛擬機器器管理器]頁面，並將 **PCIe ACS 覆盖**設定為**已停用**
+The below list doesnt not reflect the way IOMMU would naturally group devices=以下清單不代表硬體原生的 IOMMU 分組方式
+This controller is bound to vfio, connected USB devices are not visible=此控制器已綁定至 vfio，無法顯示連接的 USB 裝置
+This controller is bound to vfio, connected drives are not visible=此控制器已綁定至 vfio，無法顯示連接的磁碟
+To see natural IOMMU groups for your hardware, go to the VM Manager page and set the PCIe ACS override setting to Disabled=若要檢視硬體原生的 IOMMU 分組，請前往「虛擬機器管理員」，將 **PCIe ACS Override** 設為 **停用**。
 USB Devices=USB 設備
-Your system has booted with the PCIe ACS Override setting enabled=您的系統已啟動且啟用了 PCIe ACS 覆盖設定
+Your system has booted with the PCIe ACS Override setting enabled=系統開機時已啟用 PCIe ACS Override 設定
 
 :diagnostics_1_plug:
-此實用程式用于故障排除。它將收集所有系統資訊和設定檔案，並將這些檔案打包到一個可以儲存在本地的 ZIP 檔案。
-隨後，此檔案可以包含在您與 Limetech 或 UnRAID 论坛的通信中。
+此工具用於疑難排解，會收集系統資訊及設定檔，並打包成可儲存在本機的 ZIP 檔案。
+您可以在聯絡 Unraid 技術支援或前往 Unraid 討論區尋求協助時，附上這個檔案。
 
-這有助于其他人快速獲取您系統的内部資訊，並為您的問题提供更好的支援。將收集以下資訊
-和設定檔案:
+診斷資料有助於支援人員瞭解系統狀況，找出問題原因。以下列出會收集的資訊與設定檔：
 :end
 
 :diagnostics_2_plug:
 + */config*
-<br>復制所有的 *\*.cfg* 檔案、*go* 檔案和 *super.dat* 檔案。這些都是是設定檔案。
+<br>複製所有 *\*.cfg* 檔案、*go* 檔案及 *super.dat* 檔案；這些是系統設定檔。
 + */config/shares*
-<br>復制所有的 *\*.cfg* 檔案。這些是使用者共享設定檔案。
+<br>複製所有 *\*.cfg* 檔案；這些是使用者共享資料夾的設定檔。
 + *Syslog file(s)*
-<br>復制目前的 *syslog* 檔案和以前存在的任何 *syslog* 檔案。
+<br>複製目前及先前保留的 *syslog* 系統日誌。
 + *System*
-<br>儲存以下命令的輸出：
-<br>lsscsi、lspci、lsusb、free、lsof、ps、ethtool 和 ifconfig。
-<br>顯示 IOMMU 組。
-<br>顯示命令行参數（例如 PCIe ACS 覆盖、PCI 存根等）。
-<br>儲存系統變數。
+<br>儲存下列命令的輸出：
+<br>lsscsi、lspci、lsusb、free、lsof、ps、ethtool、ifconfig。
+<br>列出 IOMMU 群組、核心命令列參數（例如 PCIe ACS Override 與 PCI Stub）及系統變數。
 + *SMART reports*
-<br>儲存系統中存在的每個磁碟的 SMART 報告。
+<br>儲存每顆磁碟的 S.M.A.R.T. 報告。
 + *Docker*
-<br>儲存檔案 *docker.log*、*libvirtd.log*、*libvirt/qemu/\*.log* 和 *vfio-pci*。
+<br>儲存 *docker.log*、*libvirtd.log*、*libvirt/qemu/\*.log* 及 *vfio-pci* 相關資料。
 :end
 
 :diagnostics_3_plug:
-按一下**下載**將啟動采集過程，然後指示您的浏覽器將 zip 檔案儲存到本地。
+按一下 **下載**，系統就會開始收集資料，完成後由瀏覽器下載 ZIP 檔案。
 
-*不包括任何個人資訊，如使用者名、密碼或上面未指定的任何其他檔案内容
-通過 UnRAID OS；但是，您的伺服器名称、IP 地址和使用者共享名称**將**包括在内。*
+*Unraid OS 不會刻意將使用者名稱、密碼或上述清單以外的檔案內容納入診斷資料；不過，伺服器名稱、IP 位址與使用者共享資料夾名稱可能包含在其中。*
 
-*請注意第三方插件**可能**也许不会將個人資訊儲存在插件特定的設定檔案和/或
-系統日志輸出中。*
+*第三方外掛**可能**會將個人資訊寫入外掛設定檔或系統日誌，因此分享診斷檔前，請留意是否含有敏感資訊。*
 
-在公共论坛上發布診斷檔案時*使用* **匿名診斷**。*在與 Limetech 的私人通信中，建议取消选中此設定，並捕獲所有未更改的資訊。*
+若要將診斷檔張貼至**公開討論區**，請啟用 **匿名診斷**。若透過私人支援管道與 Limetech 聯絡，則可依支援人員指示決定是否提供未匿名化的完整資料。
 :end
 
 :newconfig_plug:
-該實用程式用于重設陣列磁碟設定，以使所有磁碟都顯示為“新”磁碟，
-就好像它是全新的伺服器一样。
+此工具會重設陣列的磁碟設定，讓所有磁碟在設定上都被視為「新磁碟」，就像首次設定伺服器一樣。
 
-当您新增或刪除了多個驱動器並且希望基于新設定重建奇偶校驗時，
-此功能很有用。
+當您新增或移除多顆磁碟，並希望依照新的磁碟配置重新計算同位元資訊時，可以使用此功能。
 
-重設陣列***之後***，使用 *'保留目前分配'* 选項填充所需的磁碟插槽。預設情況下，**不**填充磁碟插槽。
+重設陣列***之後***，可使用 *「保留目前指派」* 選項重新填入所需的磁碟插槽。預設情況下，磁碟插槽不會自動填入。
 
-**請勿使用此實用程式，因為它会重建故障驱動器** —— 它將产生相反的效果，
-將***無法***重建現有的故障驱動器 —— 您已受到警告！
+**警告：如果您打算重建故障磁碟，請勿使用此工具！** 重設陣列設定會破壞原本用來重建故障磁碟的條件，可能使現有的故障磁碟***無法重建***。
 :end
 
 :newperms_1_plug:
-從 5.0 之前的 Unraid 伺服器版本升級到 Unraid v5 或更高版本之後，必須执行這項一次性操作。
-执行這項一次性操作時，選擇**所有磁碟**。
+從 Unraid 5.0 之前的版本升級至 Unraid 5 或更新版本後，可能需要執行一次此操作。若要進行這項版本升級後的權限調整，請選取 **所有磁碟**。
 
-從 Active Directory 過渡到非 Active Directory 集成時，
-該實用程式還可用于還原檔案和目錄的預設所有權/權限。
+從 Active Directory 改為非 Active Directory 環境時，也可以使用此工具還原檔案與目錄的預設擁有者及權限。
 
-該實用程式將啟動一個後台進程，該進程將存取每個資料磁碟和快取磁碟，
-選擇使用者共享並將檔案和目錄所有權更改為*無人/使用者*（即 uid / gid 更改為 99/100），
-並按以下方式設定權限：
+工具會啟動背景程序，逐一存取選取的資料磁碟及快取磁碟，將使用者共享資料夾內的檔案與目錄擁有者設為 *nobody/users*（UID/GID：99/100），並套用下列權限：
 :end
 
 :newperms_2_plug:
-对于目錄：
+目錄：
 drwxrwxrwx
 
-对于讀/寫檔案：
+可讀寫檔案：
 -rw-rw-rw-
 
-对于只讀檔案：
+唯讀檔案：
 -r--r--r--
 :end
 
 :newperms_3_plug:
-按一下**開始**將打開另一個窗口並啟動後台進程。
+按一下 **開始**，系統會開啟另一個視窗並執行背景程序。
 
-在完成之前關闭窗口將終止後台進程 - 因此請不要這样做。如果您有许多檔案，則此進程可能耗時較长。
+**在程序完成之前，請勿關閉該視窗**，否則可能中斷操作。若檔案數量較多，處理時間也會較長。
 
-請注意，如果允许包含您的應用資料共享，則此工具可能会对 Docker 容器产生不利影响。
+**注意：** 若處理範圍包含 `appdata` 等應用程式資料，變更檔案權限可能影響 Docker 容器的正常運作。
 :end
 
 :registration_1_plug:
-在您购買註冊金鑰或安裝免費的 30 天**試用**金鑰之前，您的伺服器將無法可用。
-**試用**金鑰提供 **Pro** 註冊金鑰的所有功能。
+在購買註冊金鑰或安裝免費的 30 天 **試用** 金鑰之前，伺服器將無法正常使用。
+**試用** 金鑰提供與 **Pro** 註冊金鑰相同的功能。
 
-註冊金鑰绑定到您的 USB 快閃記憶體引導設備序列號 (GUID)。請使用容量至少
-為 1GB 的优质品牌設備。
+註冊金鑰會綁定至 USB 開機裝置的唯一識別碼（GUID）。建議使用容量至少 1 GB、品質可靠的品牌 USB 隨身碟。
 
-注意：通常**不**支援 USB 儲存卡讀卡器，因為大多數讀卡器不提供唯一的序列號。
+**注意：** 一般不建議使用 USB 記憶卡讀卡機，因為多數讀卡機無法提供唯一的序號。
 :end
 
 :registration_2_plug:
-+ 請確保您的 [伺服器時间](DateTime) 精確到5分鐘以内。
-+ 請確保指定 [DNS 伺服器](NetworkSettings) 。
++ 請確認您的 [伺服器時間](DateTime) 誤差不超過 5 分鐘。
++ 請確認已正確設定 [DNS 伺服器](NetworkSettings)。
 :end
 
 :registration_3_plug:
-您的**試用**金鑰包括 **Pro** 註冊金鑰的所有功能和設備支援。
+**試用** 金鑰包含 **Pro** 註冊金鑰的所有功能及裝置支援。
 
-在您的**試用**金鑰到期後，您的伺服器**仍能正常工作**，直到您下次**停止**陣列為止。
+**試用** 金鑰到期後，伺服器仍可繼續運作，直到您下次 **停止陣列** 為止。
 
-此時，您可以购買註冊金鑰，也可以請求延长**試用**。
+屆時，您可以購買正式註冊金鑰，或提出延長 **試用期** 的申請。
 :end
 
 :registration_4_plug:
-要继續使用 UnRAID OS，您可以购買註冊金鑰。也可以申請**試用**延期金鑰。
+若要繼續使用 Unraid OS，您可以購買註冊金鑰，也可以申請延長 **試用期**。
 
-大多數**試用**延期請求都会立即處理，但請给我們最多一個工作日接收您的**試用**延期金鑰。
+多數試用延長申請會立即處理，但請預留最多一個工作天以收到新的試用金鑰。
 :end
 
 :registration_5_plug:
-無法在現有的 UnRAID OS 安裝中使用**試用**金鑰。
+此安裝環境無法使用試用金鑰。
 
-您可以购買與此 USB 快閃記憶體設備对應的註冊金鑰以继續使用此安裝。
+若要繼續使用，請購買與此 USB 開機裝置對應的註冊金鑰。
 
-要了解更多資訊，請[聯絡支援人員](https://lime-technology.com/contact)。
+詳情請參閱 [聯絡支援](https://lime-technology.com/contact)。
 :end
 
 :registration_6_plug:
-您的註冊金鑰檔案似乎已損坏或丢失。金鑰檔案應位于
-您的 USB 快閃記憶體啟動設備上的 [config](/Registration/Browse?dir&#61;/boot/config) 目錄。
+您的註冊金鑰檔案可能已損毀或遺失。金鑰檔案應位於 USB 開機裝置的
+[config](/Registration/Browse?dir&#61;/boot/config) 目錄中。
 
-如果您没有註冊金鑰檔案的備份副本，請[聯絡支援人員](https://lime-technology.com/contact)。
+如果您沒有金鑰檔案的備份，請 [聯絡支援](https://lime-technology.com/contact)。
 
-如果這是**試用**安裝，您可以购買註冊金鑰。
+若目前使用的是 **試用** 授權，也可以購買正式註冊金鑰。
 :end
 
 :registration_7_plug:
-**試用**安裝僅适用于最初註冊的 USB 快閃記憶體設備。
+**試用** 授權僅適用於最初註冊的 USB 開機裝置。
 
-若要在此 USB 快閃記憶體設備上继續使用此安裝，您可以购買註冊金鑰。
+若要繼續使用此 USB 開機裝置，您可以購買正式註冊金鑰。
 :end
 
 :registration_8_plug:
-註冊金鑰檔案與 USB 快閃記憶體引導設備不相符。
-請將正確的金鑰檔案復制到 USB 快閃記憶體引導設備上的
-[config](/Registration/Browse?dir&#61;/boot/config) 目錄。如果您没有金鑰檔案的備份副本，請[聯絡支援人員](https://lime-technology.com/contact)。
+註冊金鑰檔案與目前的 USB 開機裝置不相符。
+請將正確的金鑰檔案複製到 USB 開機裝置的
+[config](/Registration/Browse?dir&#61;/boot/config) 目錄。如果沒有備份，請 [聯絡支援](https://lime-technology.com/contact)。
 
-如果要用绑定到此 USB 快閃記憶體設備的新金鑰替換您的註冊金鑰，請按一下下面的替換金鑰。原始金鑰可以
-隨時更换。此後，可以在一年之後再次更换替換金鑰。如果您需要更快獲得
-替換金鑰，請[聯絡支援人員](https://lime-technology.com/contact)。
+若要將註冊金鑰改為綁定目前 USB 開機裝置的新金鑰，請使用下方的「替換金鑰」功能。原始金鑰可申請更換；更換後再次申請可能受到一年內的更換次數限制。若有緊急需求，請 [聯絡支援](https://lime-technology.com/contact)。
 
-**注意：**替換註冊金鑰会導致以前的 USB 快閃記憶體 GUID 被永久**列入黑名單**。
+**注意：** 更換註冊金鑰後，舊 USB 開機裝置的 GUID 將被永久 **列入黑名單**。
 :end
 
 :registration_9_plug:
-此 USB 快閃記憶體引導設備已被**列入黑名單**。這可能是由于您的註冊金鑰傳輸到
-替換的USB快閃記憶體設備，並且您目前是從舊的 USB 快閃記憶體設備啟動的。
+此 USB 開機裝置的 GUID 已被 **列入黑名單**。可能是因為您已將註冊金鑰移轉至其他 USB 裝置，目前卻仍使用原本的 USB 裝置開機。
 
-如果没有序列號，或者如果我們發現序列號不唯一（這种情況在 USB 讀卡器中很常見），
-USB 快閃記憶體設備也可能被**列入黑名單**。
+若 USB 裝置沒有序號，或其序號並非唯一（常見於部分 USB 讀卡機），也可能被列入黑名單。
 
-如需了解更多資訊，請[聯絡支援人員](https://lime-technology.com/contact)。
+如需協助，請 [聯絡支援](https://lime-technology.com/contact)。
 :end
 
 ; Note: May 31, 2025 - 40 missing translations
-Alert Message=
-Alerts=
-All Categories=
-Clear Log=
-Creating Flash backup=
-Creation error=
-Delete Modprobe config=
-Deprecated Only=
-Downgrade OS=
-Driver=
-Edit Modprobe config=
-Error reporting level=
-Errors Only=
-Flash backup=
-Insufficient free disk space available=
-Log file cleared=
-Log size=
-LOG size=
-Modprobed config file=Modprobe.d config file
-No filter=
-Notices Only=
-Notices=
-PHP Info=
-PHP Information=
-PHP Log File=
-PHP Settings=
-Please provide diagnostics when experiencing problems=
-Post these in the forums=
-Rebuild Modules=
-Remove custom modprobed configuration=Remove custom modprobe.d configuration?
-Save Modprobe config=
-Select View=
-Show errors on screen=
-State=
-Support page=
-System Drivers=
-This will delete the selected notification files=
-View Log=
-Warnings Only=
-Warnings=
+Alert Message=警示訊息
+Alerts=警示
+All Categories=所有類別
+Clear Log=清除日誌
+Creating Flash backup=正在備份 USB 開機裝置
+Creation error=建立失敗
+Delete Modprobe config=刪除 modprobe 設定
+Deprecated Only=僅顯示已棄用項目
+Downgrade OS=降級作業系統
+Driver=驅動程式
+Edit Modprobe config=編輯 modprobe 設定
+Error reporting level=錯誤回報等級
+Errors Only=僅錯誤
+Flash backup=USB 開機裝置備份
+Insufficient free disk space available=磁碟可用空間不足
+Log file cleared=已清除日誌檔案
+Log size=日誌大小
+LOG size=日誌大小
+Modprobed config file=modprobe.d 設定檔
+No filter=不篩選
+Notices Only=僅通知
+Notices=通知
+PHP Info=PHP 資訊
+PHP Information=PHP 資訊
+PHP Log File=PHP 日誌檔案
+PHP Settings=PHP 設定
+Please provide diagnostics when experiencing problems=遇到問題時，請提供系統診斷資料
+Post these in the forums=請將這些資料貼至討論區
+Rebuild Modules=重新建置模組
+Remove custom modprobed configuration=移除自訂的 modprobe.d 設定？
+Save Modprobe config=儲存 modprobe 設定
+Select View=選擇檢視方式
+Show errors on screen=在畫面上顯示錯誤
+State=狀態
+Support page=支援頁面
+System Drivers=系統驅動程式
+This will delete the selected notification files=這會刪除選取的通知檔案
+View Log=檢視日誌
+Warnings Only=僅警告
+Warnings=警告
