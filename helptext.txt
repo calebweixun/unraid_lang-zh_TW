@@ -1959,21 +1959,21 @@ Docker Registry 上應用程式的儲存庫。格式為作者名稱/應用名稱
 
 ; sysdevs help - added May 18, 2020
 :sysdevs_iommu_groups_help:
-此項設定將顯示系統中可用的IOMMU 組的列表，以及每個IOMMU 組的lspci 命令的輸出。數字標識符用於設定PCI 直通。
+這裡列出系統可用的 IOMMU 群組，以及各群組的 lspci 資訊。您可以用這些裝置識別碼設定 PCI 裝置直通。
 
-您選擇的設備將在引導時綁定到vfio-pci 驅動程式，這樣它們就可以用於分配給虛擬機器，並且還可以防止Linux 內核自動將它們綁定到任何現有的主機驅動程式。
+選取的裝置將於開機時綁定至 vfio-pci 驅動程式，以供虛擬機器使用，並防止 Linux 核心將它們指派給其他主機驅動程式。
 
-**請注意，選擇設備不僅會綁定指定的設備，而且還會綁定同一IOMMU 組中其他*所有*設備。**
+**注意：將裝置綁定至 VFIO 時，同一 IOMMU 群組中的*所有*裝置可能一併受到影響。**
 
-<i class="fa fa-circle orb green-orb middle"></i> 此符號表示設備目前已綁定到vfio-pci 驅動程式。
+<i class="fa fa-circle orb green-orb middle"></i> 裝置目前已綁定至 vfio-pci 驅動程式。
 
-<i class="fa fa-retweet grey-orb middle"></i>    此符號表示設備支援FLR （功能級復位）。
+<i class="fa fa-retweet grey-orb middle"></i> 裝置支援 FLR（功能層級重設）。
 
-<input type="checkbox" value="" disabled>   如果復選框為灰色，則表示該設備已被Unraid 使用，無法直通。
+<input type="checkbox" value="" disabled> 核取方塊為灰色，表示裝置正在由 Unraid 使用，無法直通。
 :end
 
 :sysdevs_thread_pairings_help:
-此項設定顯示CPU討論串配對的列表。
+這裡顯示 CPU 執行緒的配對關係。
 :end
 
 :sysdevs_usb_devices_help:
@@ -1989,104 +1989,103 @@ Docker Registry 上應用程式的儲存庫。格式為作者名稱/應用名稱
 ; New entries (41) - 2022-05-20
 
 :info_share_assignment_help:
-The selected pool is available for user shares.
+選取的儲存池可以用於使用者共享資料夾。
 :end
 
 :docker_timeout_help:
-The time in seconds to allow a container to gracefully stop before forcing it to stop
+容器正常停止前允許的等待秒數；逾時後將強制停止。
 :end
 
 :docker_vdisk_type_help:
-Select where to keep the Docker persistent state.
+選擇 Docker 持續性資料的儲存方式。
 
-This can be an image file with a specific size or a dedicated folder.
+您可以使用指定大小的映像檔，或使用專用資料夾。
 :end
 
 :docker_vdisk_directory_help:
-You must specify a folder for Docker. The system will automatically create this folder when the Docker service is first started.
+必須為 Docker 指定儲存資料夾。Docker 服務首次啟動時，系統會自動建立這個資料夾。
 
-It is recommended to create this folder under a share which resides on the Cache pool (setting: cache=Only). For best performance SSD devices are preferred.
+建議將資料夾放在具備足夠空間與效能的儲存池，例如 SSD 儲存池上的共享資料夾。請確認共享的主要及次要儲存位置設定，以避免 Docker 正在使用的檔案被 Mover 搬移。
 :end
 
 :smb_multi_channel_help:
-When set to 'Yes' enables SMB Multi Channel support in the server. From
-[microsoft](https://docs.microsoft.com/en-us/azure-stack/hci/manage/manage-smb-multichannel):
-"SMB Multichannel enables file servers to use multiple network connections simultaneously." 
+設為「是」即可啟用 SMB 多通道功能。
+
+依據 [Microsoft 文件](https://docs.microsoft.com/en-us/azure-stack/hci/manage/manage-smb-multichannel)，SMB 多通道可讓檔案伺服器同時使用多條網路連線。
 :end
 
 :display_tty_size_help:
-Changes the font size of terminal windows.
+調整本機終端機視窗使用的字型大小。
 :end
 
 :display_page_view_help:
-Changes how certain pages are displayed. In **Tabbed** mode different sections will be displayed in different tabs,
-while in **Non-tabbed** mode sections are displayed under each other.
+調整部分管理頁面的呈現方式。**分頁模式**會將不同設定區塊分別顯示在各分頁；**不分頁模式**則依序顯示在同一頁面。
 :end
 
 :display_users_menu_help:
-The Users Menu can be part of the header or part of the Settings menu.
-You can move the Users Menu if insufficient space in the header is available to display all menus.
+可選擇將「使用者」選單放在頁首或「設定」選單中。
+
+如果頁首空間不足，建議移動「使用者」選單以避免項目擁擠。
 :end
 
 :display_listing_height_help:
-**Automatic** : long listings are displayed as is, and the user needs to scroll the whole page to see the bottom
+**自動**：完整顯示清單，捲動整頁即可查看下方項目。
 
-**Fixed** : long listings are displayed in a window with a fixed size, user can scroll this window to see the bottom
+**固定**：在固定高度的視窗中顯示清單，於視窗內捲動即可查看更多項目。
 :end
 
 :parity_cumulative_check_help:
-Change this setting to **Yes** to divide long duration parity checks over multiple periods. This is useful when the system needs to be available and a parity check runs only during off hours.
+設為 **是** 可將耗時較長的同位元校驗檢查分成多個時段執行，適合只希望在離峰時段檢查、其他時間維持系統效能的情況。
 :end
 
 :parity_accumulation_frequency_help:
-Specifies how accumulation periods are executed.
+指定分段校驗檢查的續跑頻率。
 
-**Daily** means every subsequent day the parity check continues until finished
+**每日**：每天接續執行尚未完成的校驗檢查。
 
-**Weekly** means every subsequent week the parity check continues until finished
+**每週**：每週接續執行尚未完成的校驗檢查。
 :end
 
 :parity_accumulation_duration_help:
-Specifies how long each accumulated period runs, expressed in hours. The **Time of the day** speficies the start time of the period.
+每個校驗檢查時段的執行時間，以小時為單位。**當日時間**設定每個時段的開始時間。
 :end
 
 :docker_client_additional_requirements_help:
-Any additional requirements the container has.  Supports basic HTML mark-up.
+列出容器的其他安裝需求，支援基本 HTML 標記。
 :end
 
 :docker_client_readme_help:
-Link to a readme file or page
+相關 README 說明檔或文件頁面的連結。
 :end
 
 :unraidnet_wanpanel_help:
-WAN Port is the external TCP port number setup on your router to NAT/Port Forward traffic from the internet to this
-Unraid server SSL port for secure web traffic.
+WAN 連接埠是路由器對外提供的 TCP 連接埠，通常透過 NAT／連接埠轉送，將網際網路連線導向 Unraid 伺服器的 SSL 安全管理連接埠。
 :end
 
 :unraidnet_inactivespanel_help:
-Click Activate to set up a local git repo for your local USB Flash boot device and connect to a dedicated remote on unraid.net tied to this server.
+按一下「啟用」，即可在 USB 開機裝置上建立本機 Git 儲存庫，並連接至 unraid.net 上專屬於此伺服器的遠端儲存庫。
 :end
 
 :unraidnet_changespanel_help:
-The Not Up-to-date status indicates there are local files which are changed vs. the remote on unraid.net.
+顯示「非最新」代表本機設定檔與 unraid.net 遠端備份有差異。
 
-Click Update to push changes to the remote.
+按一下「更新」將本機變更推送至遠端。
 
-Click Changes to see what has changed.
+按一下「變更」檢視修改內容。
 :end
 
 :unraidnet_uptodatepanel_help:
-The Up-to-date status indicates your local configuration matches that stored on the unraid.net remote.
+顯示「已是最新版本」表示本機設定與 unraid.net 遠端儲存的內容一致。
 :end
 
 :unraidnet_activepanel_help:
-Click Deactivate to pause communication with your remote on unraid.net.
+按一下「停用」可暫停與 unraid.net 遠端儲存庫的通訊。
 
-Click Reinitialize to erase all change history in both local and unraid.net remote.
+按一下「重新初始化」將清除本機及 unraid.net 遠端的所有變更記錄。**此操作具有破壞性，請先確認已有備份。**
 :end
 
 :unraidnet_extraorigins_help:
-Provide a comma separated list of urls that are allowed to access the unraid-api (https://abc.myreverseproxy.com,https://xyz.rvrsprx.com,…)
+輸入允許存取 unraid-api 的網址清單，網址之間以逗號分隔，例如：https://abc.myreverseproxy.com,https://xyz.rvrsprx.com
 :end
 
 :myservers_remote_t2fa_help:
@@ -2100,76 +2099,70 @@ This is fairly extreme for Local Access, and in most cases is not needed. It req
 :end
 
 :wg_local_name_help:
-Use this field to set a name for this connection and make it easily recognizable. The same name will appear in the configuration of any peers.
+為這個 WireGuard 連線設定容易辨識的名稱。名稱也會顯示在對等節點的設定中。
 :end
 
 :wg_generate_keypair_help:
-Use the **Generate Keypair** button to automatically create a uniqe private and public key combination.<br>
-Or paste in an existing private key, generated by WireGuard. Do **NOT** share this private key with others!
+按一下 **產生金鑰配對**，即可產生獨一無二的私密金鑰與公開金鑰。<br>
+您也可以貼上先前由 WireGuard 產生的私密金鑰。**切勿向其他人分享私密金鑰！**
 :end
 
 :wg_local_tunnel_network_pool_help:
-WireGuard tunnels need an internal IP address. Assign a network pool using the default IPv4 network <?=['wg0']?>/24
-or the default IPv6 network <?=['wg0']?>/64 or assign your own network pool from which automatic assignment can be done for both this server and any peers.
+WireGuard 通道需要內部 IP 位址。可以使用預設 IPv4 網段 <?=['wg0']?>/24、IPv6 網段 <?=['wg0']?>/64，也可以自訂網段，讓伺服器及其對等節點自動取得位址。
 
-The *tunnel network pool* must be a unique network not already existing on the server or any of the peers.
+**通道網段**必須是伺服器與所有對等節點上尚未使用的獨立網段。
 :end
 
 :wg_local_tunnel_network_pool_X_help:
-WireGuard tunnels need an internal IP address. Assign a network pool using the default IPv4 network <?=['wgX']?>/24 or
-the default IPv6 network <?=['wgX']?>/64 or assign your own network pool from which automatic assignment can be done for both this server and any peers.
+WireGuard 通道需要內部 IP 位址。可以使用預設 IPv4 網段 <?=['wgX']?>/24、IPv6 網段 <?=['wgX']?>/64，也可以自訂網段，讓伺服器及其對等節點自動取得位址。
 
-The *tunnel network pool* must be a unique network not already existing on the server or any of the peers.
+**通道網段**必須是伺服器與所有對等節點上尚未使用的獨立網段。
 :end
 
 :wg_local_tunnel_address_help:
-This field is auto filled-in when a local tunnel network pool is created. It is allowed to overwrite the assignment, but this is normally not necessary. Use with care when changing manually.
+建立本機通道網段時，此欄位會自動填入位址。通常不需要手動修改；如需覆寫，請先確認不會與其他裝置衝突。
 :end
 
 :wg_local_endpoint_help:
-This field is automatically filled in with the public management domain name *www.&lt;hash&gt;.unraid.net* or the public address of the server.<br>
-This allows VPN tunnels to be established from external peers to the server.<br>
-Configure the correct port forwarding on your router (default port is <?=['wg0']?> but this may be changed) to allow any incoming connections to reach the server.
+此欄位會自動填入公開管理網域名稱 *www.&lt;hash&gt;.unraid.net* 或伺服器的公用 IP 位址。<br>
+遠端對等節點可使用此位址建立 VPN 通道。<br>
+請在路由器上正確設定連接埠轉送（預設連接埠為 <?=['wg0']?>，也可以自行變更），讓外部連線能到達伺服器。
 
-Users with a registered domain name can use this field to specify how their server is known on the Internet. E.g. www.myserver.mydomain.<br>
-Again make sure your router is properly set up.
+如果您擁有自己的網域名稱，也可以填入例如 www.myserver.mydomain 的位址，但仍須確認路由器設定正確。
 
-Note to Cloudflare users: the Cloudflare proxy is designed for http traffic, it is not able to proxy VPN traffic. You must disable the Cloudflare proxy in order to use VPN with your domain.
+**Cloudflare 使用者注意：**一般 Cloudflare HTTP 代理無法直接代理 WireGuard VPN 流量。使用該網域建立 VPN 時，必須停用 HTTP 代理功能。
 :end
 
 :wg_local_endpoint_X_help:
-This field is automatically filled in with the public management domain name *www.&lt;hash&gt;.unraid.net* or the public address of the server.<br>
-This allows VPN tunnels to be established from external peers to the server.<br>
-Configure the correct port forwarding on your router (default port is <?=['wgX']?> but this may be changed) to allow any incoming connections to reach the server.
+此欄位會自動填入公開管理網域名稱 *www.&lt;hash&gt;.unraid.net* 或伺服器的公用 IP 位址。<br>
+遠端對等節點可使用此位址建立 VPN 通道。<br>
+請在路由器上正確設定連接埠轉送（預設連接埠為 <?=['wgX']?>，也可以自行變更），讓外部連線能到達伺服器。
 
-Users with a registered domain name can use this field to specify how their server is known on the Internet. E.g. www.myserver.mydomain.<br>
-Again make sure your router is properly set up.
+如果您擁有自己的網域名稱，也可以填入例如 www.myserver.mydomain 的位址，但仍須確認路由器設定正確。
 
-Note to Cloudflare users: the Cloudflare proxy is designed for http traffic, it is not able to proxy VPN traffic. You must disable the Cloudflare proxy in order to use VPN with your domain.
+**Cloudflare 使用者注意：**一般 Cloudflare HTTP 代理無法直接代理 WireGuard VPN 流量。使用該網域建立 VPN 時，必須停用 HTTP 代理功能。
 :end
 
 :wg_local_server_uses_nat_help:
-When NAT is enabled, the server uses its own LAN address when forwarding traffic from the tunnel to other devices in the LAN network.
-Use this setting when no router modifications are desired, but this approach doesn't work with Docker containers using custom IP addressess.
+啟用 NAT 時，從 WireGuard 通道轉送到區域網路的流量，會使用伺服器本身的區域網路 IP 位址。這種方式通常不需要修改路由器，但可能無法搭配使用自訂 IP 的 Docker 容器。
 
-When NAT is disabled, the server uses the WireGuard tunnel address when forwarding traffic.
-In this case it is required that the default gateway (router) has a static route configured to refer tunnel address back to the server.
+停用 NAT 時，轉送流量會保留 WireGuard 通道位址；此時必須在預設閘道（路由器）設定指向伺服器的靜態路由。
 :end
 
 :wg_local_gateway_uses_upnp_help:
-Defaults to YES if the local gateway has UPnP enabled and is responding to requests.<br>
-When UPnP is enabled, it is not necessary to configure port forwarding on the router to allow incoming tunnel connections. This is done automatically.
+若本機閘道啟用了 UPnP 並能回應要求，預設值為「是」。<br>
+啟用 UPnP 時，可由系統自動設定路由器的連接埠轉送，無須手動建立轉送規則。
 :end
 
 :wg_local_tunnel_firewall_help:
-The firewall function controls remote access over the WireGuard tunnel to specific hosts and/or subnets.<br>
-The default rule is "deny" and blocks addresses specified in this field, while allowing all others.<br>
-Changing the rule to "allow" inverts the selection, meaning only the specified addresses are allowed and all others are blocked.<br>
-Use a comma as separator when more than one IP address is entered.
+防火牆可限制哪些主機或子網路能透過 WireGuard 通道遠端存取。<br>
+選擇「拒絕」時，清單中的位址會遭到封鎖，其餘位址允許連線。<br>
+改為「允許」時，僅允許清單中的位址，其餘全部封鎖。<br>
+輸入多個 IP 位址時，請以逗號分隔。
 :end
 
 :wg_mtu_size_help:
-Leave this to the default automatic mode to select the MTU size. This MTU size is common for all peer connections.
+建議維持「自動」，由系統選擇 MTU。這個 MTU 值會套用至所有對等節點連線。
 :end
 
 :wg_peer_configuration_help:
