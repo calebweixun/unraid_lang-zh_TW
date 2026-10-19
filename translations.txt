@@ -1254,7 +1254,7 @@ A reboot will be required=需要重新啟動
 Confirm Downgrade=確認降級
 Create Bug Report=建立錯誤回報
 Create a bug report on our forums with a description of the issue along with your diagsnotics=請在討論區提交錯誤回報，附上問題描述與系統診斷資料
-Downloading=
+Downloading=下載中
 Open a bug report=提交錯誤回報
 
 %s day=%s 天
