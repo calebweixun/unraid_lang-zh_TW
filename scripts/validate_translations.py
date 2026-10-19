@@ -91,6 +91,22 @@ def check_localization_text(relative: str, lineno: int, value: str,
         issues.append(f"{relative}:{lineno}: likely untranslated English sentence")
     return issues
 
+
+# Guard the most visible Parity terms from accidental global replacements.
+PARITY_EXPECTATIONS = {
+    "translations.txt": {
+        "Parity": "同位元校驗",
+        "Parity-Check": "同位元校驗檢查",
+        "Parity-Sync": "同位元校驗同步",
+    },
+    "dashboard.txt": {
+        "Parity disk not present": "未偵測到校驗磁碟",
+    },
+    "settings.txt": {
+        "Parity Check": "同位元校驗檢查",
+    },
+}
+
 def formats(text: str) -> Counter[str]:
     return Counter(m.group(1) for m in PRINTF.finditer(text))
 
@@ -140,6 +156,8 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
             errors.append(f"{relative}:{lineno}: empty lookup key")
             continue
         keys += 1
+        if key in labels and labels[key] != translated:
+            errors.append(f"{relative}:{lineno}: conflicting translation for {key!r}")
         labels[key] = translated
 
         if not translated.strip():
@@ -168,6 +186,10 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
         }.items():
             if labels.get(key) != expected:
                 errors.append(f"{relative}: unexpected {key} unit prefixes")
+
+    for key, expected in PARITY_EXPECTATIONS.get(relative, {}).items():
+        if labels.get(key) != expected:
+            errors.append(f"{relative}: expected {key!r} to be {expected!r}")
 
     return errors, keys, empty
 
