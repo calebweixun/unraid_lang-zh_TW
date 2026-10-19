@@ -34,12 +34,12 @@ Upgrade=升級
 View Release Notes=查看發行說明
 
 ; Note: April 21, 2025 - 9 missing translations
-Alert Message=
-cannot check=
-Checking connectivity=
-checking=
-I have read the release notes=
-Plugin File Install Errors=
-Plugin History=
-Remove Selected Plugins=
-Update Incompatible=
+Alert Message=警示訊息
+cannot check=無法檢查
+Checking connectivity=正在檢查連線
+checking=檢查中
+I have read the release notes=我已閱讀版本說明
+Plugin File Install Errors=外掛檔案安裝錯誤
+Plugin History=外掛安裝記錄
+Remove Selected Plugins=移除選取的外掛
+Update Incompatible=更新不相容
