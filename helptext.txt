@@ -2256,222 +2256,210 @@ Before you use a Libvirt network, please go to Settings -> Network Settings and,
 ; New entries (5) - 2023-04-25
 
 :share_edit_exclusive_access_help:
-When set to "yes" indicates a bind-mount directly to a pool has been set up for the share in the /mnt/user tree, provided the following
-conditions are met:
+設為「是」表示共享資料夾在 `/mnt/user` 路徑下可直接繫結掛載至儲存池，但必須符合以下條件：
 
-- Primary storage is a pool.
-- Secondary storage is set to **none**.
-- The share does not exist on any other volumes.
+- 主要儲存位置為儲存池。
+- 次要儲存位置設為 **無**。
+- 其他磁碟區上不存在相同的共享資料夾。
 :end
 
 :share_edit_primary_storage_help:
-**Primary storage** is where *new files and folders* are created.  If
-Primary storage is below the minimum free space setting then new files
-and folders will be created in **Secondary storage**, if configured.
+**主要儲存位置**是*建立新檔案與資料夾*的位置。當主要儲存位置的可用空間低於設定的最小可用空間時，如果有設定次要儲存位置，新檔案與資料夾會改寫入**次要儲存位置**。
 
-**Important:** For *Exclusive access* shares, the Min free space
-settings are ignored.
+**重要：**對於啟用*專用存取（Exclusive Access）*的共享資料夾，將忽略最小可用空間設定。
 :end
 
 :share_edit_secondary_storage_help:
-**Secondary storage** is where new files and directories are created if no
-room on Primary storage.  When both Primary and Secondary storage are
-configured the 'mover' will transfer files between them.
+當主要儲存位置空間不足時，可在**次要儲存位置**建立新檔案與目錄。若同時設定主要與次要儲存位置，Mover 可依搬移政策在兩者之間移動檔案。
 :end
 
 :share_edit_mover_action_help:
-This defines the direction of file transfer between Primary and
-Secondary storage when both are configured.
+定義同時設定主要與次要儲存位置時，Mover 要將檔案從哪一個位置搬移至另一個位置。
 :end
 
 :vms_console_help:
-For setting the console options to show on context menus. Web will show only inbuild web clients(VNC and SPICE), 
-Virtual Manager Remote Viewer will only show the Remote Viewer option. Both will show both Web and Remote Viewer.
+設定虛擬機器右鍵選單中的主控台選項。「網頁」只顯示內建的 VNC／SPICE 網頁主控台；「Virt-Manager Remote Viewer」只提供遠端檢視器；「兩者皆顯示」則同時提供這兩種方式。
 :end
 
 ; New entries (3) - 2023-06-02
 
 :shares_exclusive_shares_help:
-If set to Yes, share directories under /mnt/user are actually symlinks to the share directory on a storage volume
-provided the following conditions are met:
+設為「是」後，位於 /mnt/user 的共享資料夾路徑會成為指向儲存磁碟區內實際共享資料夾的符號連結，前提是符合以下條件：
 
-* The Primary storage for a share is set to a pool.
-* The Secondary storage for a share is set to **none**.
-* The share exists on a single volume.
-* The share is **not** exported over NFS.
+- 主要儲存位置設為儲存池。
+- 次要儲存位置設為 **無**。
+- 該共享資料夾只存在於單一磁碟區。
+- 該共享資料夾**未透過 NFS 匯出**。
 
-The advantage of *exclusive* shares is that transfers bypass the FUSE layer which may significantly
-increase I/O performance.
+啟用*專用存取*的好處，是檔案 I/O 可略過 FUSE 層，可能明顯提升傳輸效能。
 :end
 
 :eth_network_extra_include_help:
-Enter one or more interface names or IP addresses which will be included in the list of listening interfaces for local system services.
+輸入一個或多個網路介面名稱或 IP 位址，讓本機系統服務監聽這些介面。
 
-This is particularly useful when you have created custom interfaces (e.g. tailscale VPN tunnel) which are used to access local system services.
+適合您建立了自訂介面（例如 Tailscale VPN 通道），並希望透過它存取本機服務的情況。
 :end
 
 :eth_network_extra_exclude_help:
-Enter one or more interface names or IP addresses which will be excluded from the list of listening interfaces for local system services.
+輸入一個或多個網路介面名稱或 IP 位址，讓本機系統服務**不監聽**這些介面。
 
-This can be used to exclude dedicated local interfaces (e.g. p-t-p connections) or exclude dynamic interfaces (WireGuard tunnels) from using local system services.
+可用來排除專用點對點介面，或不希望提供本機服務的動態網路介面（例如 WireGuard 通道）。
 :end
 
 ; New entries (1) - 2023-11-17
 
 :sysdrivers_intro_help:
-This page displays all the drivers available on this system. Filter the list according to whether the driver is Inuse or not, or search for a specific driver if desired.
+這裡列出系統可用的所有驅動程式。您可以依照是否正在使用篩選，或搜尋特定驅動程式。
 
-Any 3rd party driver installed by a plugin will have a support symbol next to it, click this to get support for the plugin.
+透過外掛安裝的第三方驅動程式旁會顯示支援圖示，點選即可前往相關支援資訊。
 
-Click the edit button to add/modify/delete any modprobe.d config file in the config/modprobe.d directory on the flash drive.
+點選編輯按鈕，可新增、修改或刪除 USB 開機裝置 `config/modprobe.d` 目錄下的設定檔。
 :end
 
 ; New entries (6) - 2023-11-17
 
 :display_width_help:
-**Boxed** is the legacy setting which constrains the content width to maximum 1920 pixels
+**方框模式**：使用舊版版面配置，內容最大寬度為 1920 像素。
 
-**Unlimited** allows content to use all available width, which maybe useful on wide screens
+**無限制**：使用所有可用的畫面寬度，適合寬螢幕。
 :end
 
 :vms_disable_help:
-Stop VMs from Autostarting\Starting when VM Manager starts or open is run from the gui to start, error message will be seen.
+停用此選項後，虛擬機器將無法在虛擬機器管理員啟動時自動啟動，也無法透過網頁管理介面的「啟動」操作執行；嘗試啟動時會顯示錯誤訊息。
 :end
 
 :notifications_auto_close_help:
-Number of seconds before notifications are automatically closed in *Detailed* view.<br>
-A value of 0 disables automatic closure.
+在「詳細」檢視模式中，通知顯示幾秒後自動關閉。<br>
+設為 0 表示不自動關閉。
 :end
 
 :console_keyboard_help:
-Select your default keymap for the local console (not the web Terminal).
+選擇本機主控台的預設鍵盤配置（不影響網頁終端機）。
 :end
 
 :console_screen_help:
-**Default:** 'Default' will set the blank timeout to 15 minutes and powersave to 60 minutes.
+**預設**：螢幕閒置 15 分鐘後清空畫面，60 分鐘後進入省電模式。
 
-**Disabled:** 'Disabled' will disable the blank and powersave timeout.
+**停用**：停用清空畫面與省電逾時。
 
-**All other values:** Will set the blank timout to the selected value and disable the powersave timeout.
+**其他數值**：使用選取的清空畫面逾時時間，並停用省電逾時。
 :end
 
 :console_bash_help:
-If set to 'Yes' the bash history will persist reboots, set to 'No' to disable.
+設為「是」時，Bash 命令歷史記錄會跨重新開機保留；設為「否」則不保留。
 
-**ATTENTION:** The bash history will be written to the USB Boot device so this will introduce higher wear and tear!
+**注意：**歷史記錄會寫入 USB 開機裝置，可能增加裝置的寫入磨損。
 
-**Note:** Disabling and Enabling will remove the entire bash history.
+**提醒：**停用或重新啟用此功能時，現有的 Bash 命令歷史記錄將被清除。
 :end
 
 ; New entries (2) - 2023-12-17
 
 :ssd_default_warning_temperature_help:
-*Warning SSD temperature* sets the default warning threshold for all SSD devices temperature. Exceeding this threshold will result in a warning notification.
+*SSD 溫度警告*設定所有 SSD 的預設溫度警告臨界值。超過此數值時會發出警告通知。
 
-A value of zero will disable the warning threshold (including notifications).
+設為 0 可停用警告臨界值及相關通知。
 :end
 
 :ssd_default_critical_temperature_help:
-*Critical disk temperature* sets the default critical threshold for all SSD devices temperature. Exceeding this threshold will result in an alert notification.
+*SSD 危險溫度*設定所有 SSD 的預設危險溫度臨界值。超過此數值時會發出嚴重警示。
 
-A value of zero will disable the critical threshold (including notifications).
+設為 0 可停用危險溫度臨界值及相關通知。
 :end
 
 ; New entries (8) - 2023-12-28
 
 :syslog_shutdown_flash_help:
-This setting is YES by default and enables the system to copy the syslog file to the USB device on shutdown or reboot.
+此設定預設為「是」，可在關機或重新啟動時將系統日誌（syslog）複製至 USB 開機裝置。
 
-After rebooting, the syslog from this run will be visible on Tools > Syslog > syslog-previous;
-it will also be included in diagnostics as logs/syslog-previous.txt
+重新開機後，可在「工具 > 系統日誌 > syslog-previous」查看前一次的日誌；診斷資料中也會包含 `logs/syslog-previous.txt`。
 :end
 
 :WOL_enable_help:
-If set to yes Unraidwold daemon is set to run.
+設為「是」將啟動 Unraidwold 背景服務。
 :end
 
 
 :WOL_run_VM_help:
-If set to yes when wake on lan packets are received checks are carrried out for virtual machines otherwise virtual machines will be ignored.
+設為「是」時，收到 Wake-on-LAN（WOL）魔術封包後會檢查虛擬機器，並依設定執行動作；設為「否」則忽略虛擬機器。
 :end
 
 :WOL_run_LXC_help:
-If set to yes when wake on lan packets are received checks are carrried out for LXC otherwise LXC will be ignored. The LXC plugin needs to be installed for LXC to be processed.
+設為「是」時，收到 WOL 魔術封包後會檢查 LXC 容器；設為「否」則忽略 LXC。需要先安裝 LXC 外掛才能使用。
 :end
 
 :WOL_interface_help:
-Specify the interface to the daemon to bind to. Some interfaces may not be able to recieve etherframe packets. Recommend to bind to a physical interface.
+指定背景服務要綁定的網路介面。部分介面可能無法接收乙太網路訊框，建議選擇實體網路介面。
 :end
 
 :WOL_promiscuous_mode_help:
-Enable to set the NIC not to filer packets.
+啟用後將網路介面設為混雜模式（Promiscuous Mode），不再僅接收符合介面過濾條件的封包。
 :end
 
 :WOL_log_file_help:
-Default is to log to syslog but if you want a different log location set the file name.
+預設記錄至系統日誌（syslog）；如需使用其他位置，請指定日誌檔案路徑。
 :end
 
 ; New entries (2) - 2024-02-10
 
 :WOL_intro_help:
-This page allows the setup to start/resume and stop VMs, Containters(Docker and LXC) using WOL magic packets
+這個頁面可設定透過 Wake-on-LAN（WOL）魔術封包，啟動、繼續或停止虛擬機器及容器（Docker、LXC）。
 
-It does setup wake up of the Unraid server.
+**這不是讓 Unraid 伺服器本身從關機狀態喚醒的功能。**
 
-The process will look for the defined mac address defined within the service(VM or container) with the exception of dockers. Dockers do not have a mac address until they are running so you will need to define a user mac address to allow you to start them
+系統會依各服務設定的 MAC 位址辨識目標。Docker 容器在尚未啟動時通常沒有可用的 MAC 位址，因此需額外指定使用者自訂 MAC 位址，才能透過 WOL 啟動。
 
-If the service is paused a WOL Packet will resume. 
+如果服務處於暫停狀態，收到 WOL 封包後可恢復執行。
 
-For each service you can set: enable, disable or enable and shutdown
+每項服務可設定為：停用、啟用，或「啟用並允許關閉」。
 
-When the enable and shutdown is set if the service is running when the next WOL packet is recieved a shutdown will be performed.
+選擇「啟用並允許關閉」後，如果服務已在執行，收到下一個 WOL 封包時便會執行關閉動作。
 :end
 
 :WOL_run_shutdown_help:
-If set to yes when wake on lan packets are received checks are carrried out and if enabled for service and that service is running the entity will be shutdown. System has to be set to Enabled and Shutdwon for it to be action.
+設為「是」時，收到 WOL 封包後，若目標服務正在執行且已設定「啟用並允許關閉」，系統將關閉該服務。
 :end
 
 ; New entries (35) - 2024-12-08
 
 :info_zfs_scrub_help:
-**Scrub** runs the *zfs scrub* program which will read all data and metadata blocks from all
-devices and verify checksums.
+**資料校驗（Scrub）**會執行 `zfs scrub`，讀取儲存池所有裝置的資料與中繼資料區塊，並驗證檢查碼。
 
-Click the **Upgrade Pool** button to upgrade the ZFS pool to enable the latest ZFS features.
+按一下 **升級儲存池** 可升級 ZFS 儲存池，以啟用較新的 ZFS 功能。
 :end
 
 :docker_pid_limit_help:
-Set a PID Limit to limit the number of PIDs that a docker can use. The default is 2048.  Set to zero for unlimited PIDs (not recommended).
+設定 Docker 容器可使用的 PID 數量上限。預設為 2048；設為 0 則不限制（不建議）。
 :end
 
 :docker_storage_driver_help:
-overlay2 (default): Will use overlay2 as the storage driver for Docker, regardless of the underlying filesystem.
+**overlay2（預設）：**無論底層檔案系統為何，Docker 都使用 overlay2 儲存驅動程式。
 
-native: The native storage driver for your underlying filesystem will be used (XFS: overlay2 | ZFS: zfs | BTRFS: btrfs).
+**native（原生）：**依底層檔案系統選用儲存驅動程式（XFS：overlay2；ZFS：zfs；Btrfs：btrfs）。
 
-ATTENTION: Changing the storage type from an existing Docker installation is not possible, you have to delete your Docker directory first, change the storage type and then reinstall your containers.
-It is recommended to take a screenshot from your Docker containers before changing the storage type. After deleting and changing the storage type, reinstall the containers by clicking Add Container on the Docker page and select one by one from the drop down to reinstall them with your previous settings).
+**注意：**現有的 Docker 安裝無法直接切換儲存類型。必須先刪除 Docker 資料目錄，變更儲存類型後重新安裝容器。
+
+進行前請備份 Docker 設定與持續性資料，並記錄目前的容器清單。變更完成後，可在 Docker 頁面點選「新增容器」，從先前的範本逐一重新安裝。
 :end
 
 :docker_storage_driver_active_help:
-This is the storage driver for Docker.
+顯示 Docker 目前使用的儲存驅動程式。
 :end
 
 :mgmt_wg_access_urls_help:
-These URLs will only work when connected via the appropriate WireGuard tunnel as configured on ***Settings > VPN Manager***
+只有在連線至「**設定 > VPN 管理員**」中所設定的對應 WireGuard 通道時，才能使用這些網址。
 :end
 
 :mgmt_tailscale_access_urls_help:
-These URLs will only work when connected to the appropriate Tailscale Tailnet.
+只有在連線至對應的 Tailscale Tailnet 網路時，才能使用這些網址。
 :end
 
 :syslog_remote_system_identifier_help:
-Select the identifier for the remote system (used in the logfile name). 
+選擇遠端系統的識別方式，該識別資訊將用於日誌檔名。
 
-* "IP Address" uses the IP address (IPv4 or IPv6) of the sending system.
-* "Hostname (from syslog message)" uses the hostname included in each syslog message.
-* "Hostname (from DNS reverse lookup)" performs a DNS reverse lookup for the sending IP and uses the result.
-
+- **IP 位址**：使用傳送端的 IPv4 或 IPv6 位址。
+- **主機名稱（來自 syslog 訊息）**：使用 syslog 訊息內包含的主機名稱。
+- **主機名稱（來自 DNS 反向查詢）**：對來源 IP 執行 DNS 反向查詢，並使用查詢結果。
 :end
 
 :display_favorites_enabled_help:
