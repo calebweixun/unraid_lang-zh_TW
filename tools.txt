@@ -67,7 +67,7 @@ No personal information such as user names, passwords, or any other file content
 normal=正常
 Only ZIP files are allowed=僅允许 ZIP 檔案
 Page Map=頁面地圖導航
-Parity slots=奇偶校驗插槽
+Parity slots=校驗磁碟插槽
 Please check your=請檢查您的
 please configure=請設定
 Please select a language before proceeding=請先選擇一种語言，然後再继續
@@ -84,7 +84,7 @@ Registered to=註冊到
 registering USB Flash GUID=正在註冊 USB 快閃記憶體 GUID
 Release has been withdrawn=發布已撤回
 Remove the installed language=移除安裝的語言
-Replaceable=可更换
+Replaceable=可替換
 Request Extension=請求扩展
 Request Trial Extension=請求試用扩展
 Restore=還原
