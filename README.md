@@ -11,6 +11,17 @@
 - 新版 Unraid 可能有尚未收錄的英文介面字串；第三方外掛若未提供語言鍵，語言包無法直接覆蓋其硬編碼英文內容。
 - **涉及格式化、加密、Btrfs 修復、權限變更或磁碟指派的翻譯，務必在實際 Unraid WebGUI 確認。**
 
+## Unraid 7.3.3：完整翻譯檔覆蓋與測試
+
+目前依照上游 [`unraid/lang-en_US`](https://github.com/unraid/lang-en_US) 的參照版本 `98e4e91e870663720f749c27035d69c31a680ce9`，補齊 **51 個翻譯文字檔**（另有 `LICENSE.txt`，總共 52 個文字檔），包含已支援多語系的第三方外掛。
+
+- 執行 `python3 scripts/validate_translations.py` 檢查容量前綴、特殊變數、繁體用詞與安全說明。
+- 執行 `python3 scripts/check_upstream_coverage.py /path/to/lang-en_US` 比對每個檔案的**原始英文鍵名**及所有說明區塊。
+- 執行 `python3 scripts/build_language_zip.py` 產生 `dist/zh_TW.zip`，不包含 GitHub 或測試相關檔案。
+- 可直接從 [GitHub Actions](https://github.com/calebweixun/unraid_lang-zh_TW/actions) 下載近期成功驗證的 `zh_TW-language-pack` 測試成品。
+
+**重要限制：**上游英文語言庫的參照提交時間早於 Unraid 7.3.3 發布日期。這代表「翻譯檔與上游完全對齊」，**不等於保證 Unraid 7.3.3 所有介面都會顯示繁體中文**；新版 UI 可能有未提供翻譯鍵的新增元件，部分外掛也可能未支援多語系。請以實際 7.3.3 WebGUI 的顯示結果進行驗收。
+
 ## 本機測試
 
 將本專案的語言文字檔及原本的外掛目錄依其相對路徑打包，並使用 Unraid 網頁管理介面的語言開發者模式匯入。確認 Main、Dashboard、Shares、Settings、Docker、VMs 和 Tools 的按鈕、說明與警告正常顯示，再提交修改。
