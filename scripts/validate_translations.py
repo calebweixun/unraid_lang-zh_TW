@@ -31,7 +31,7 @@ ALLOWED_EMPTY = {
     "main.txt": {
         "raid0", "raid1", "raid10", "raid1c3", "raid1c4",
         "raid5", "raid6", "raidz", "raidz2", "raidz3",
-        "Rx", "Tx", "W", "zfs",
+        "Rx", "Tx", "W", "zfs", "ZFS",
     },
     "dashboard.txt": {"RX", "TX", "W", "ZFS"},
     "docker.txt": {"Tailscale"},
