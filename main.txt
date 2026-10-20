@@ -418,3 +418,9 @@ This will put the system in sleep mode=這會讓系統進入睡眠模式
 wiki entry=Wiki 說明頁面
 
 ; Note: April 21, 2025 - 119 missing translations
+BTRFS balance status=Btrfs 平衡作業狀態
+BTRFS check status=Btrfs 檔案系統檢查狀態
+BTRFS filesystem usage=Btrfs 檔案系統使用量
+BTRFS scrub status=Btrfs 資料校驗狀態
+ZFS pool status=ZFS 儲存池狀態
+ZFS=ZFS
