@@ -1272,8 +1272,8 @@ Open a bug report=提交錯誤回報
 
 ; Note: May 31, 2025 - 473 missing translations
 
-Acknowledge that you have made a Flash Backup to enable this action=
-Closing this pop-up window while actions are being performed may lead to unintended errors=
-Create a bug report on our forums with a description of the issue along with your diagnostics=
-Error creating a trial key=
-We have sent a verification email to %s=
+Acknowledge that you have made a Flash Backup to enable this action=請確認您已備份 USB 開機裝置，才能執行此操作
+Closing this pop-up window while actions are being performed may lead to unintended errors=操作進行中關閉此彈出式視窗，可能造成非預期的錯誤
+Create a bug report on our forums with a description of the issue along with your diagnostics=請在官方論壇建立錯誤回報，附上問題描述與系統診斷資料
+Error creating a trial key=建立試用金鑰時發生錯誤
+We have sent a verification email to %s=我們已寄送驗證電子郵件至 %s
