@@ -1271,3 +1271,10 @@ Open a bug report=提交錯誤回報
 %s years=%s 年
 
 ; Note: May 31, 2025 - 473 missing translations
+Acknowledge that you have made a Flash Backup to enable this action=請確認已備份 USB 開機裝置，才能執行此操作。
+Alternately you may request a Trial extension=您也可以申請延長試用期。
+Closing this pop-up window while actions are being performed may lead to unintended errors=操作尚未完成時關閉此視窗，可能造成非預期錯誤。
+Create a bug report on our forums with a description of the issue along with your diagnostics=請至 Unraid 討論區提交錯誤回報，附上問題描述與系統診斷資料。
+Error creating a trial key=建立試用金鑰時發生錯誤。
+Trial Expired see options below=試用期已到期，請查看下方選項。
+We have sent a verification email to %s=我們已寄送驗證郵件至 %s。
