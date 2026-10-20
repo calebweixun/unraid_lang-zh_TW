@@ -666,7 +666,7 @@ After your Trial has reached expiration your server still functions normally unt
 All you need is an active internet connection, an Unraidnet account, and the Connect plugin=您只需要有效的網際網路連線、Unraid.net 帳號及 Connect 外掛。
 Already have an account=已經有帳戶
 Alternately you may purchase a license key for this USB flash device=或者，您可以為此USB 閃存設備購買許可證金鑰
-Alternately, you may request a Trial extension=您也可以申請延長試用期
+Alternately you may request a Trial extension=您也可以申請延長試用期
 And not just for one server but all the servers in your Unraid fleet=不僅適用於一台伺服器，還適用於您Unraid 機隊中的所有伺服器
 At that point you may either purchase a license key or request a Trial extension=屆時您可以購買許可證金鑰或申請延長試用期
 Auto closing in %s=在%s 之後自動關閉
@@ -987,7 +987,7 @@ A Trial key provides all the functionality of a Pro Registration key=**試用** 
 A USB Flash device may also be blacklisted if we discover the serial number is not unique – this is common with USB card readers=如果我們發現序列號不是唯一的，則USB 閃存設備也可能被列入黑名單- 這在USB 讀卡器中很常見
 After your Trial has reached expiration, your server still functions normally until the next time you Stop the array or reboot your server=**試用** 到期後，伺服器仍可正常運作，直到您下次停止陣列或重新啟動伺服器為止。
 All you need is an active internet connection, an Unraidnet account, and the Connect plugin=您只需要有效的網際網路連線、Unraid.net 帳號及 Connect 外掛。
-Alternately, you may request a Trial extension=您也可以申請延長試用期
+Alternately you may request a Trial extension=您也可以申請延長試用期
 At that point you may either purchase a license key or request a Trial extension=屆時您可以購買許可證金鑰或申請延長試用期
 Automatically turn on UPnP and open a random WAN port on your router at the click of a button and close off access in seconds=按一下按鈕即可透過 UPnP 在路由器上開啟隨機 WAN 連接埠，並可迅速關閉遠端存取。
 Beta=測試版
@@ -1119,7 +1119,7 @@ To continue using Unraid OS you may purchase a license key=要繼續使用Unraid
 To support more storage devices as your server grows, click Upgrade Key=若需要支援更多儲存裝置，請按一下「升級金鑰」。
 Toggle onoff server accessibility with dynamic remote access=透過動態遠端存取功能切換伺服器的遠端連線狀態
 Too Many Devices=裝置數量超過授權上限
-Trial Expired, see options below=試用期已結束，請參閱下方選項
+Trial Expired see options below=試用期已結束，請參閱下方選項
 Trial Key Created=已建立試用金鑰
 Trial Key Creation Failed=無法建立試用金鑰
 Trial Key Expired %s=試用金鑰已於 %s 到期
@@ -1271,3 +1271,9 @@ Open a bug report=提交錯誤回報
 %s years=%s 年
 
 ; Note: May 31, 2025 - 473 missing translations
+
+Acknowledge that you have made a Flash Backup to enable this action=
+Closing this pop-up window while actions are being performed may lead to unintended errors=
+Create a bug report on our forums with a description of the issue along with your diagnostics=
+Error creating a trial key=
+We have sent a verification email to %s=
