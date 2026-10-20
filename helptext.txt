@@ -2534,6 +2534,14 @@ Tailscale SSH 類似 Unraid Docker 頁面的「主控台」功能，但會透過
 進階選項可能影響 Tailscale 連線與安全性，請確認瞭解參數用途後再修改。
 :end
 
+:docker_tailscale_serve_target_help:
+未指定時，預設為 http://localhost。此值會傳給啟動 Tailscale Serve／Funnel 命令的 <serve_target> 參數：<br>
+`tailscale [serve|funnel] --bg --<protocol><protocol_port><path> <serve_target>:<serve_port><local_path>`<br>
+詳情請參閱 <a href="https://tailscale.com/kb/1242/tailscale-serve" target="_blank">Tailscale Serve 命令列說明</a>。
+
+**注意：**目前僅支援 `localhost` 或 `127.0.0.1` 作為目標位址。
+:end
+
 :docker_tailscale_serve_local_path_help:
 未指定時預設為空字串，此值會作為 Serve／Funnel 命令中的 <local_path> 參數：<br>
 'tailscale [serve|funnel] --bg --<protocol><protocol_port><path> http://localhost:<serve_port>'**'<local_path>'**<br>
