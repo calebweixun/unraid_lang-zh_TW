@@ -10,8 +10,12 @@
 | Device | 裝置 | 依上下文可用「儲存裝置」 |
 | Array | 陣列 | 指 Unraid 主陣列 |
 | Pool | 儲存池 | **不可**一律譯成「快取池」；只有 Cache Pool 才稱快取池 |
-| Parity disk | 同位元磁碟 | Unraid 陣列的資料保護磁碟 |
-| Parity Check / Sync | 同位元檢查／同位元同步 | 區分「檢查」與「同步」 |
+| Parity disk / Drive | **校驗磁碟** | 專用來存放 Parity 資料的陣列磁碟 |
+| Parity | 同位元校驗 | 泛指保護機制或校驗資料，視語境也可用「校驗」 |
+| Parity Check | **同位元校驗檢查** | 重新計算並比對校驗資料，不等於同步重建 |
+| Parity Sync | **校驗同步** | 重新計算並寫入校驗磁碟 |
+| Parity-Swap | 校驗磁碟交換（Parity-Swap） | 特殊的校驗磁碟升級／故障資料磁碟替換流程 |
+| Dual Parity | 雙校驗磁碟 | 指派兩顆校驗磁碟 |
 | Data-Rebuild | 資料重建 | 與格式化或清除磁碟不同 |
 | Disk-Clear | 磁碟清除 | 相關警告必須精確 |
 | Cache | 快取 | 不等同一般儲存池 |
@@ -24,10 +28,19 @@
 | Memory / Cache | 記憶體／快取 | 記憶體和快取不可混譯 |
 | Flash boot device | USB 開機裝置 | 指 Unraid 開機媒體 |
 | VM / Container | 虛擬機器／容器 | 保留 Docker、QEMU、KVM 專有名詞 |
-| Snapshot / Scrub | 快照／資料校驗（Scrub） | Scrub 不是資料清除 |
+| Snapshot / Scrub | 快照／資料校驗（Scrub） | Scrub 驗證 ZFS／Btrfs 資料與檢查碼，不是主陣列的 Parity Check |
 | Log / Syslog | 日誌／系統日誌 | 必要時保留命令名稱 |
 | Sign in / Sign out | 登入／登出 | 不用「登錄、註銷」 |
 | Apply / Save | 套用／儲存 | 操作行為不同，不應混譯 |
+
+
+## Parity（校驗）命名原則
+
+- 在 **Main** 或 **Dashboard** 看到實體裝置時，使用「**校驗磁碟**」，避免稱作「同位元檢查磁碟」。
+- 描述 **Parity Check** 的檢查操作，使用「**同位元校驗檢查**」，不是「資料重建」。
+- 描述 **Parity Sync** 的重算與寫入操作，使用「**校驗同步**」。
+- 在技術說明首次提到 Parity 時可寫「**同位元校驗（Parity）**」，其後採用短稱「校驗資料」或「校驗保護」。
+- Parity 保護與檔案系統 **Scrub（資料校驗）** 是不同機制；兩者都不等同備份。
 
 ## 翻譯格式與保留項目
 

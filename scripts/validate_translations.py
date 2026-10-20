@@ -53,6 +53,60 @@ ALLOWED_DYNAMIC_FORMAT = {
 PRINTF = re.compile(r"%(?:[1-9]\d*\$)?[-+ #0]*\d*(?:\.\d+)?([sdfu])")
 BLOCK_BEGIN = re.compile(r":[A-Za-z0-9_-]+_(?:help|plug):")
 
+
+# Flag Simplified-only characters and known misleading translation phrases.
+SIMPLIFIED_ONLY = re.compile(
+    r"[这们吗为会过还从发经网软盘页图标简设选显断编务数归户开关识销结进读键诊络"
+    r"贴购题动权试级导写应员没间顶声创观黄议资录壳处协议长隐细预内许继于扩稳谢]"
+)
+BAD_TERMS = re.compile(
+    r"同位元檢查磁碟|同位元檢查檢查|奇偶校驗|CPU\s*討論串|虛擬機器器"
+)
+HAN = re.compile(r"[\u3400-\u9fff]")
+ASCII_PROSE = re.compile(r"^[A-Za-z0-9 _.,!?;:()'/\-+&*]+$")
+ALLOW_ENGLISH_VALUES = {"Numbers_array", "prefix_SI", "prefix_IEC",
+                        "Active Directory", "httpIPport or httphostport"}
+
+def check_localization_text(relative: str, lineno: int, value: str,
+                            is_block: bool = False, key: str = "") -> list[str]:
+    issues: list[str] = []
+    if SIMPLIFIED_ONLY.search(value):
+        issues.append(f"{relative}:{lineno}: likely Simplified Chinese in translation")
+    if BAD_TERMS.search(value):
+        issues.append(f"{relative}:{lineno}: deprecated or inaccurate terminology")
+    if key in ALLOW_ENGLISH_VALUES:
+        return issues
+
+    candidate = value.strip()
+    code_tick = chr(96)
+    if is_block and (
+        not candidate or candidate.startswith((";", "#", code_tick, "'tailscale"))
+        or code_tick in candidate or candidate.startswith(("<?", "config/"))
+        or re.match(r"^[+*]\s*\d", candidate) or ".pem" in candidate
+    ):
+        return issues
+
+    if (len(candidate) >= 40 and not HAN.search(candidate)
+            and ASCII_PROSE.fullmatch(candidate)):
+        issues.append(f"{relative}:{lineno}: likely untranslated English sentence")
+    return issues
+
+
+# Guard the most visible Parity terms from accidental global replacements.
+PARITY_EXPECTATIONS = {
+    "translations.txt": {
+        "Parity": "同位元校驗",
+        "Parity-Check": "同位元校驗檢查",
+        "Parity-Sync": "同位元校驗同步",
+    },
+    "dashboard.txt": {
+        "Parity disk not present": "未偵測到校驗磁碟",
+    },
+    "settings.txt": {
+        "Parity Check": "同位元校驗檢查",
+    },
+}
+
 def formats(text: str) -> Counter[str]:
     return Counter(m.group(1) for m in PRINTF.finditer(text))
 
@@ -87,7 +141,11 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
                 errors.append(f"{relative}:{lineno}: unexpected :end")
             active_block = None
             continue
-        if active_block or not line.strip() or line.startswith((";", "#")):
+        if active_block:
+            if not line.startswith((";", "#")):
+                errors.extend(check_localization_text(relative, lineno, line, is_block=True))
+            continue
+        if not line.strip() or line.startswith((";", "#")):
             continue
         if "=" not in line:
             errors.append(f"{relative}:{lineno}: expected KEY=translation")
@@ -98,6 +156,8 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
             errors.append(f"{relative}:{lineno}: empty lookup key")
             continue
         keys += 1
+        if key in labels and labels[key] != translated:
+            errors.append(f"{relative}:{lineno}: conflicting translation for {key!r}")
         labels[key] = translated
 
         if not translated.strip():
@@ -106,6 +166,8 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
             if key not in ALLOWED_EMPTY.get(relative, set()):
                 errors.append(f"{relative}:{lineno}: untranslated UI label: {key!r}")
             continue
+
+        errors.extend(check_localization_text(relative, lineno, translated, key=key))
 
         if formats(key) != formats(translated):
             if (relative, key) not in ALLOWED_DYNAMIC_FORMAT:
@@ -124,6 +186,10 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
         }.items():
             if labels.get(key) != expected:
                 errors.append(f"{relative}: unexpected {key} unit prefixes")
+
+    for key, expected in PARITY_EXPECTATIONS.get(relative, {}).items():
+        if labels.get(key) != expected:
+            errors.append(f"{relative}: expected {key!r} to be {expected!r}")
 
     return errors, keys, empty
 

@@ -93,7 +93,7 @@ Update Plugin=更新外掛
 
 Requirements not met=不符合系統需求
 The requirements for this upgrade have not been met on your system=您的系統不符合此升級的必要條件
-The sidebar for the app click info will list the details=The sidebar for the app (click info) will list the details
+The sidebar for the app click info will list the details=按一下應用程式的「資訊」，即可在側邊欄查看詳細資訊
 
 BACK=返回
 
@@ -137,10 +137,10 @@ An error occurred Could not find any %s Apps=發生錯誤，找不到任何%s �
 Download of appfeed failed=appfeed下載失敗
 ; the %s here refers to a function being called
 Something really went wrong here=這裡真的出問題了
-Post the ENTIRE contents of this message in the Community Applications Support Thread=在Community Applications 支援對話中發布此消息的**全部**內容
-Unknown error happened Please post a screenshot in the support thread of the Statistics screen=發生未知錯誤請在統計屏幕的支援對話中發布屏幕截圖
+Post the ENTIRE contents of this message in the Community Applications Support Thread=請將這則訊息的**完整內容**貼到 Community Applications 支援討論串
+Unknown error happened Please post a screenshot in the support thread of the Statistics screen=發生未知錯誤，請擷取「統計」畫面的螢幕截圖，並貼至支援討論串
 This plugin has a duplicated name from another plugin %s This will impact your ability to install both plugins simultaneously=此插件的名稱與另一個插件%s 重複，這將影響您同時安裝這兩個插件的能力
-You have been logged out=你已註銷
+You have been logged out=您已登出
 Fatal Flash Drive Error=致命閃存驅動器錯誤
 This usually means your flash drive is corrupted or has dropped offline The rest of the Unraid GUI will also be affected Post a new thread in the Unraid forums if this error continues=這通常意味著您的閃存驅動器已損壞或已脫機。如果此錯誤繼續存在，Unraid GUI的其餘部分也將受到影響，請在Unraid論壇中反饋
 Fatal Docker Image Error=致命Docker 鏡像錯誤
@@ -453,10 +453,10 @@ Checking %s=正在檢查 %s
 
 ; dockerHub conversions
 Determine configuration=偵測設定
-Would you like CA to attempt to determine any applicable paths, ports, and variables for the template This will entail performing a test installation of the container It will be automatically deleted after processing The container will not be started=Would you like CA to attempt to determine any applicable paths, ports, and variables for the template?  This will entail performing a test installation of the container.  It will be automatically deleted after processing.  The container will not be started.
+Would you like CA to attempt to determine any applicable paths, ports, and variables for the template This will entail performing a test installation of the container It will be automatically deleted after processing The container will not be started=要讓 Community Applications 嘗試偵測此範本所需的路徑、連接埠及變數嗎？系統將測試安裝容器，偵測完成後自動刪除；測試容器不會啟動。
 An error occurred - Could not determine configuration=發生錯誤，無法判斷目前設定
 ; WebGui
-Click Install to download and install the Community Applications plugin=Click **Install** to download and install the **Community Applications** plugin
+Click Install to download and install the Community Applications plugin=按一下 **安裝**，即可下載並安裝 **Community Applications** 外掛
 
 
 ; Note: April 21, 2025 - 74 missing translations
