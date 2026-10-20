@@ -163,7 +163,7 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
                 errors.append(f"{relative}:{lineno}: nested translation block")
             active_block = line
             if relative == "helptext.txt":
-                block_text[line.strip(":").removesuffix("_help").removesuffix("_plug")] = []
+                block_text[line.strip(":")] = []
             continue
         if line == ":end":
             if not active_block:
@@ -172,7 +172,7 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
             continue
         if active_block:
             if relative == "helptext.txt":
-                block_text[active_block.strip(":").removesuffix("_help").removesuffix("_plug")].append(line)
+                block_text[active_block.strip(":")].append(line)
             if not line.startswith((";", "#")):
                 errors.extend(check_localization_text(relative, lineno, line, is_block=True))
             continue
