@@ -868,7 +868,7 @@ UPS Status=UPS 狀態
 UPS type=UPS 類型
 URL=網址
 USB=USB
-Use ASCII characters from space to tilde=Use **ASCII** characters from space ' ' to tilde '~'
+Use ASCII characters from space to tilde =Use **ASCII** characters from space ' ' to tilde '~'
 Use DEFAULT setting when public NTP servers are defined=使用公用 NTP 伺服器時，請選擇「預設」設定
 Use image name dockerimg or docker-xfsimg or select a folder=請使用 docker.img、docker-xfs.img 作為映像檔名稱，或選擇資料夾
 Use NTP=使用NTP
@@ -994,3 +994,4 @@ Unraid API extra origins=Unraid API 額外允許的來源
 View Flash Backup Error Log=檢視 USB 開機裝置備份錯誤日誌
 
 ; Note: May 31, 2025 - 479 missing translations
+
