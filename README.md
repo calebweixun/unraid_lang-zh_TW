@@ -1,8 +1,31 @@
-# lang-zh_TW
+# Unraid 繁體中文（台灣）語言包
+
+本專案提供 Unraid WebGUI 的 **台灣繁體中文在地化**。翻譯原則除了繁體字之外，也重視實際操作語境、儲存與網路術語的一致性，以及資料清除或重建等操作警告的準確性。
+
+## 維護與貢獻
+
+- 以 **磁碟／裝置、校驗磁碟、同位元校驗檢查、儲存池、共享資料夾、連接埠、使用者名稱、USB 開機裝置** 等台灣慣用詞為主。詳見 [台灣術語表](docs/GLOSSARY.zh-TW.md)。
+- 翻譯檔採 `英文查找鍵=繁體中文譯文` 格式，**只修改等號右邊**。請保留 `%s`、`%d`、Markdown／HTML 標記、網址、命令及路徑。
+- 多行說明以 `:名稱_help:` 或 `:名稱_plug:` 開始，以 `:end` 結束，**不可更改標記名稱**。
+- 每次提交前請執行 `python3 scripts/validate_translations.py`，GitHub Actions 也會在 Pull Request 中自動檢查格式與常見翻譯錯誤。
+- 新版 Unraid 可能有尚未收錄的英文介面字串；第三方外掛若未提供語言鍵，語言包無法直接覆蓋其硬編碼英文內容。
+- **涉及格式化、加密、Btrfs 修復、權限變更或磁碟指派的翻譯，務必在實際 Unraid WebGUI 確認。**
+
+## 本機測試
+
+將本專案的語言文字檔及原本的外掛目錄依其相對路徑打包，並使用 Unraid 網頁管理介面的語言開發者模式匯入。確認 Main、Dashboard、Shares、Settings、Docker、VMs 和 Tools 的按鈕、說明與警告正常顯示，再提交修改。
+
+下方保留原始英文翻譯格式參考；部分介面路徑可能因 Unraid 版本不同而有所差異。
+
+---
+
+## Original translation-format reference (English)
+
+# lang-zh_TW (original reference)
 
 ### READ THIS WHEN YOU WANT TO MAKE TRANSLATIONS TO ANOTHER LANGUAGE
 
-There are sixteen text files included in this repository, each with their own section of translations:
+This repository contains core translation files and additional translation files for supported plugins. The sections below document the original core file layout:
 
 - translations.txt -- these are general translations and loaded each time
 - helptext.txt     -- these are all help text sections and loaded each time
