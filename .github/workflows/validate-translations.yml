@@ -26,3 +26,11 @@ jobs:
           persist-credentials: false
       - name: Compare exact source keys and help blocks
         run: python3 scripts/check_upstream_coverage.py .upstream-lang-en_US
+      - name: Build installable zh_TW.zip
+        run: python3 scripts/build_language_zip.py
+      - name: Upload test language pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: zh_TW-language-pack
+          path: dist/zh_TW.zip
+          if-no-files-found: error
