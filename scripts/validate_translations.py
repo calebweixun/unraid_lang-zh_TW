@@ -11,19 +11,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 
-TRANSLATION_FILES = [
-    "translations.txt", "main.txt", "dashboard.txt", "shares.txt",
-    "settings.txt", "docker.txt", "vms.txt", "tools.txt",
-    "users.txt", "plugins.txt", "javascript.txt", "scripts.txt",
-    "outgoingproxy.txt", "helptext.txt",
-    "Community Apps/apps.txt", "Community Apps/ca_settings.txt",
-    "Community Apps/javascript.ca.txt",
-    "Dynamix System Stats/statsettings.txt",
-    "Dynamix System Temp/tempsettings.txt",
-    "CA Auto Update/autoupdateapps.txt",
-    "CA Config File Edit/configedit.txt",
-    "Recycle Bin/recyclebin.txt",
-]
+# Discover every plugin translation automatically; exclude the license (not a lookup file).
+TRANSLATION_FILES = sorted(
+    str(path.relative_to(ROOT))
+    for path in ROOT.rglob("*.txt")
+    if path.name != "LICENSE.txt" and ".git" not in path.parts
+)
 
 # Keep these technical names/symbols in English via the normal fallback.
 ALLOWED_EMPTY = {
