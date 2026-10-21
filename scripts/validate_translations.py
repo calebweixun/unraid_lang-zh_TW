@@ -105,6 +105,8 @@ PARITY_EXPECTATIONS = {
 CRITICAL_UI_TRANSLATIONS = {
     "translations.txt": {
         "No errors reported": "沒有回報任何錯誤",
+        "Downgrades are only recommended if youre unable to solve a critical issue": "只有在重大問題無法解決時，才建議降級至舊版。",
+        "If you fill this field out then your email will not be sent": "如果填寫此欄位，系統將不會寄出電子郵件。",
         "Device": "裝置",
         "FAVORITES": "我的最愛",
         "UNASSIGNED DISKS": "未指派磁碟",
@@ -117,6 +119,12 @@ CRITICAL_UI_TRANSLATIONS = {
     "main.txt": {
         "Array Devices": "陣列裝置",
         "Unassigned Devices": "未指派裝置",
+    },
+    "dashboard.txt": {
+        "Share count %s with %s public SMB and %s public NFS": "共有 %s 個共享資料夾，其中 %s 個公開使用 SMB、%s 個公開使用 NFS。",
+    },
+    "Community Apps/apps.txt": {
+        "Are you sure you want to install %s docker and %s plugin applications": "確定要安裝 %s 個 Docker 應用程式及 %s 個外掛程式嗎？",
     },
     "settings.txt": {
         "Output voltage": "輸出電壓",
