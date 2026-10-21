@@ -154,3 +154,10 @@ Your efforts are much welcomed and to show our appreciation, your name and langu
 Please let us know which credentials to use.
 
 Thank you very much!
+
+## Unraid 7.3.3 英文選單／單位顯示排查
+
+- 語言鍵名採精確比對（包含**大小寫、空白和句尾標點**）。例如 `Output Voltage` 與 `Output voltage`、`Sleep` 與 `SLEEP` 可能需要各自的翻譯鍵。這份語言包包含使用者回報的 7.3.3 介面變體。
+- 部分外掛可能有自己的內建字串，未經 Unraid 語言載入機制的英文介面無法單靠新增 `.txt` 鍵名覆蓋。請確認外掛版本、語言包是否為最新安裝版本，必要時檢查外掛原始碼。
+- 容量單位 `prefix_SI` 與 `prefix_IEC` 必須與 [官方英文來源](https://github.com/unraid/lang-en_US/blob/master/translations.txt) 相同。目前值分別是 `K M G T P E Z Y` 與 `Ki Mi Gi Ti Pi Ei Zi Yi`。如果畫面顯示 `•KMGTPEZYB`，**無法由目前字串直接判定原因**；請提供出現該字串的頁面、欄位、瀏覽器與語言包安裝來源，以確認是不是特定介面把前綴當成一般字串、載入舊版語言包或外掛版本不相容。
+- 實際測試請使用 GitHub Actions 產出的 `zh_TW.zip`，匯入並重新選用語言，再重新整理（必要時清除瀏覽器快取）；僅更新 GitHub 儲存庫不會自動更新 Unraid 已安裝的語言包。

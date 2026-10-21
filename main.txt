@@ -424,3 +424,13 @@ BTRFS filesystem usage=Btrfs 檔案系統使用量
 BTRFS scrub status=Btrfs 資料校驗狀態
 ZFS pool status=ZFS 儲存池狀態
 ZFS=ZFS
+
+; Unraid 7.3.3 visible UI lookup variants (case and punctuation-sensitive)
+SLEEP=睡眠
+Sleep will immediately put the server in sleep mode.=睡眠會立即讓伺服器進入睡眠模式。
+Make sure your server supports S3 sleep.=請確認伺服器支援 S3 睡眠模式。
+Check this wiki entry for more information.=詳細資訊請參閱此 Wiki 說明頁面。
+Data Partition=資料分割區
+Historical Unassigned Devices=歷史未指派裝置
+Unassigned Disks=未指派磁碟
+Remote Shares=遠端共享

@@ -106,12 +106,17 @@ CRITICAL_UI_TRANSLATIONS = {
     "translations.txt": {
         "No errors reported": "沒有回報任何錯誤",
         "Device": "裝置",
+        "FAVORITES": "我的最愛",
+        "SLEEP": "睡眠",
+        "Output voltage": "輸出電壓",
+        "Data Partition": "資料分割區",
     },
     "main.txt": {
         "Array Devices": "陣列裝置",
         "Unassigned Devices": "未指派裝置",
     },
     "settings.txt": {
+        "Output voltage": "輸出電壓",
         "Display world-wide-name in device ID":
             "在裝置識別碼中顯示全球唯一名稱（WWN）",
     },
