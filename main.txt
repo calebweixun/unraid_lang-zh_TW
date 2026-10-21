@@ -445,3 +445,10 @@ ONLINE=線上
 Internal Boot=內部開機
 No internal boot setup detected Launch %s to configure one=尚未偵測到內部開機設定。請開啟 %s 進行設定。
 Boot Partition=開機分割區
+
+; Additional lookups verified against current runtime sources
+will record all disk information and bring the array online=將記錄所有磁碟資訊並使陣列上線
+will record all disk information, bring the array online, and start Parity-Sync=將記錄所有磁碟資訊、使陣列上線，並開始同位元校驗同步
+will disable the missing disk and then bring the array online Install a replacement disk as soon as possible=將停用遺失的磁碟後使陣列上線。請儘快安裝替換磁碟
+Transfering To Array=傳送至陣列中
+Transfering From Array=從陣列傳送中
