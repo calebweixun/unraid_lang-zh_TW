@@ -995,3 +995,6 @@ View Flash Backup Error Log=檢視 USB 開機裝置備份錯誤日誌
 
 ; Note: May 31, 2025 - 479 missing translations
 Use ASCII characters from space to tilde =只能使用 ASCII 空白字元至波浪號（~）之間的字元
+
+; UPS runtime label variant
+Output voltage=輸出電壓
