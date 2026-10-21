@@ -452,3 +452,7 @@ will record all disk information, bring the array online, and start Parity-Sync=
 will disable the missing disk and then bring the array online Install a replacement disk as soon as possible=將停用遺失的磁碟後使陣列上線。請儘快安裝替換磁碟
 Transfering To Array=傳送至陣列中
 Transfering From Array=從陣列傳送中
+
+; Newer 7.3.3 array operation wording
+will bring the array online and start Disk-Clear of new data disks=將使陣列上線，並開始清除新資料磁碟（Disk-Clear）
+will expand the file system of the data disk if possible; then bring the array online and start Data-Rebuild=將在可行情況下擴充資料磁碟的檔案系統，再使陣列上線並開始資料重建（Data-Rebuild）
