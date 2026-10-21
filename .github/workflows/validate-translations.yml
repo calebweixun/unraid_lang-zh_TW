@@ -38,6 +38,10 @@ jobs:
             emhttp/plugins/dynamix/nchan/device_list
             emhttp/plugins/dynamix/InternalBootWizard.page
             emhttp/plugins/dynamix/DisplaySettings.page
+            emhttp/plugins/dynamix/DiskSettings.page
+            emhttp/plugins/dynamix/Notifications.page
+            emhttp/plugins/dynamix/MoverSettings.page
+            emhttp/plugins/dynamix/SyslogSettings.page
           sparse-checkout-cone-mode: false
       - name: Checkout pinned Unassigned Devices runtime sources
         uses: actions/checkout@v4
