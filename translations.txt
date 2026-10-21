@@ -1671,3 +1671,7 @@ All Unassigned Devices configurations will be updated from flash drive=將從 US
 Udev=udev
 Click to spin down device=點選使裝置進入待機
 Click to spin up device=點選喚醒裝置
+
+; Newer 7.3.3 array operation wording
+will bring the array online and start Disk-Clear of new data disks=將使陣列上線，並開始清除新資料磁碟（Disk-Clear）
+will expand the file system of the data disk if possible; then bring the array online and start Data-Rebuild=將在可行情況下擴充資料磁碟的檔案系統，再使陣列上線並開始資料重建（Data-Rebuild）
