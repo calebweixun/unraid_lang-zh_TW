@@ -338,3 +338,9 @@ This will delete the selected notification files=這會刪除選取的通知檔�
 View Log=檢視日誌
 Warnings Only=僅警告
 Warnings=警告
+
+; Runtime labels from InternalBootWizard and DisplaySettings pages
+Configure an internal boot device without opening the full onboarding wizard=不需開啟完整的初始設定精靈，即可設定內部開機裝置
+Array must be stopped to configure internal boot=必須先停止陣列才能設定內部開機裝置
+Available while the array is stopped=陣列停止時才可使用
+Open Wizard=開啟設定精靈
