@@ -998,3 +998,9 @@ Use ASCII characters from space to tilde =只能使用 ASCII 空白字元至波�
 
 ; UPS runtime label variant
 Output voltage=輸出電壓
+
+; Runtime labels from InternalBootWizard and DisplaySettings pages
+Show Terminal Button in header=在頂端列顯示終端機按鈕
+Header logo style=頂端列標誌樣式
+Gradient=漸層
+Theme adaptive=依主題自動調整
