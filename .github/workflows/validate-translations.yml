@@ -26,6 +26,30 @@ jobs:
           persist-credentials: false
       - name: Compare exact source keys and help blocks
         run: python3 scripts/check_upstream_coverage.py .upstream-lang-en_US
+      - name: Checkout pinned WebGUI runtime sources
+        uses: actions/checkout@v4
+        with:
+          repository: unraid/webgui
+          ref: 26eb1b5c1d547ddbf44a38e63956ba24f659098b
+          path: .runtime-webgui
+          persist-credentials: false
+          sparse-checkout: |
+            emhttp/plugins/dynamix/ArrayOperation.page
+            emhttp/plugins/dynamix/nchan/device_list
+          sparse-checkout-cone-mode: false
+      - name: Checkout pinned Unassigned Devices runtime sources
+        uses: actions/checkout@v4
+        with:
+          repository: unraid/unassigned.devices
+          ref: 7bdcd03cccb67320598e95a1cab38821182f633b
+          path: .runtime-unassigned
+          persist-credentials: false
+          sparse-checkout: |
+            source/unassigned.devices/usr/local/emhttp/plugins/unassigned.devices/UnassignedDevices.page
+            source/unassigned.devices/usr/local/emhttp/plugins/unassigned.devices/include/UnassignedDevices.php
+          sparse-checkout-cone-mode: false
+      - name: Verify loaded Main and Unassigned Devices runtime keys
+        run: python3 scripts/check_runtime_translation_scope.py .runtime-webgui .runtime-unassigned
       - name: Build installable zh_TW.zip
         run: python3 scripts/build_language_zip.py
       - name: Upload test language pack
