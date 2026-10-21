@@ -1703,3 +1703,9 @@ Mover Progress=Mover 執行進度
 Local syslog protocol and port=本機系統日誌通訊協定與連接埠
 Mirror syslog to boot drive=將系統日誌鏡像到 USB 開機裝置
 Copy syslog to boot drive on shutdown=關機時將系統日誌複製到 USB 開機裝置
+
+; Runtime ZFS ARC controls and protocol labels
+Tunable zfs_arc_max=可調整的 ZFS ARC 最大容量（zfs_arc_max）
+zfs=ZFS
+TCP=TCP
+UDP=UDP
