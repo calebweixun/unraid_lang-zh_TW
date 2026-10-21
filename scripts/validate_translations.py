@@ -11,19 +11,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 
-TRANSLATION_FILES = [
-    "translations.txt", "main.txt", "dashboard.txt", "shares.txt",
-    "settings.txt", "docker.txt", "vms.txt", "tools.txt",
-    "users.txt", "plugins.txt", "javascript.txt", "scripts.txt",
-    "outgoingproxy.txt", "helptext.txt",
-    "Community Apps/apps.txt", "Community Apps/ca_settings.txt",
-    "Community Apps/javascript.ca.txt",
-    "Dynamix System Stats/statsettings.txt",
-    "Dynamix System Temp/tempsettings.txt",
-    "CA Auto Update/autoupdateapps.txt",
-    "CA Config File Edit/configedit.txt",
-    "Recycle Bin/recyclebin.txt",
-]
+# Discover every plugin translation automatically; exclude the license (not a lookup file).
+TRANSLATION_FILES = sorted(
+    str(path.relative_to(ROOT))
+    for path in ROOT.rglob("*.txt")
+    if path.name != "LICENSE.txt" and ".git" not in path.parts
+)
 
 # Keep these technical names/symbols in English via the normal fallback.
 ALLOWED_EMPTY = {
@@ -107,6 +100,32 @@ PARITY_EXPECTATIONS = {
     },
 }
 
+
+# Fail on regressions in particularly misleading or unsafe UI labels.
+CRITICAL_UI_TRANSLATIONS = {
+    "translations.txt": {
+        "No errors reported": "沒有回報任何錯誤",
+        "Device": "裝置",
+    },
+    "main.txt": {
+        "Array Devices": "陣列裝置",
+        "Unassigned Devices": "未指派裝置",
+    },
+    "settings.txt": {
+        "Display world-wide-name in device ID":
+            "在裝置識別碼中顯示全球唯一名稱（WWN）",
+    },
+}
+
+# Safety-related help sections must retain their core warning or direction.
+REQUIRED_HELP_MARKERS = {
+    "info_file_system_help": ("格式化", "清除", "備份"),
+    "info_btrfs_check_help": ("--readonly", "--repair", "危險"),
+    "info_btrfs_scrub_help": ("資料校驗", "備援", "備份"),
+    "docker_appdata_location_help": ("正斜線", "/config"),
+    "mgmt_certificate_expiration_help": ("DNS", "保護"),
+}
+
 def formats(text: str) -> Counter[str]:
     return Counter(m.group(1) for m in PRINTF.finditer(text))
 
@@ -125,6 +144,7 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
         errors.append(f"{relative}: expected Unix LF line endings")
 
     active_block = None
+    block_text: dict[str, list[str]] = {}
     keys = 0
     empty = 0
     seen_empty: set[str] = set()
@@ -135,6 +155,8 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
             if active_block:
                 errors.append(f"{relative}:{lineno}: nested translation block")
             active_block = line
+            if relative == "helptext.txt":
+                block_text[line.strip(":")] = []
             continue
         if line == ":end":
             if not active_block:
@@ -142,6 +164,8 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
             active_block = None
             continue
         if active_block:
+            if relative == "helptext.txt":
+                block_text[active_block.strip(":")].append(line)
             if not line.startswith((";", "#")):
                 errors.extend(check_localization_text(relative, lineno, line, is_block=True))
             continue
@@ -190,6 +214,22 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
     for key, expected in PARITY_EXPECTATIONS.get(relative, {}).items():
         if labels.get(key) != expected:
             errors.append(f"{relative}: expected {key!r} to be {expected!r}")
+
+    for key, expected in CRITICAL_UI_TRANSLATIONS.get(relative, {}).items():
+        if labels.get(key) != expected:
+            errors.append(f"{relative}: critical label {key!r} must remain {expected!r}")
+
+    if relative == "helptext.txt":
+        for name, required_terms in REQUIRED_HELP_MARKERS.items():
+            body = "\n".join(block_text.get(name, []))
+            if not body:
+                errors.append(f"{relative}: missing required help block {name!r}")
+                continue
+            for term in required_terms:
+                if term not in body:
+                    errors.append(
+                        f"{relative}: required text {term!r} missing in {name!r}"
+                    )
 
     return errors, keys, empty
 
