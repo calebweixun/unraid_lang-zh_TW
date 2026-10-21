@@ -22,21 +22,6 @@
 
 **重要限制：**上游英文語言庫的參照提交時間早於 Unraid 7.3.3 發布日期。這代表「翻譯檔與上游完全對齊」，**不等於保證 Unraid 7.3.3 所有介面都會顯示繁體中文**；新版 UI 可能有未提供翻譯鍵的新增元件，部分外掛也可能未支援多語系。請以實際 7.3.3 WebGUI 的顯示結果進行驗收。
 
-## Unraid 7.3.3：仍顯示英文或單位異常的排查
-
-若 `Favorites`、`Sleep`、`Unassigned Disks`、`Output voltage` 等仍顯示英文，**先確認目前 WebGUI 實際載入的是這個專案最新建置的 `zh_TW.zip`**。GitHub 原始碼更新，不會自動更新已安裝的 Unraid 語言包。請使用 GitHub Actions 的語言包成品重新匯入，重新選取繁體中文語言，重新整理頁面後比對。
-
-如果此時仍顯示英文，請確認文字屬於 Unraid 核心還是第三方外掛；特別是 Unassigned Devices 與 S3 Sleep 等外掛，可能有自己的語言載入流程。檔案中有 `英文=中文` **只代表字串已備妥，不代表執行中的外掛一定會使用它**。本專案已針對 7.3.3 觀察到的部分大小寫及標點變體補上精確鍵名，但不應憑空推定所有執行階段查找鍵。
-
-若容量單位出現 `•KMGTPEZYB` 等異常：先確認安裝的語言包內 `translations.txt` 含有以下**與官方 en_US 相同**的資料，並確認瀏覽器已更新載入的語言資源：
-
-```text
-prefix_SI=K M G T P E Z Y
-prefix_IEC=Ki Mi Gi Ti Pi Ei Zi Yi
-```
-
-這兩個值是**單位前綴清單**，不是可以任意改成完整中文單位的按鈕文字。不能只憑畫面顯示推斷應刪除空格或加入 `B`。若匯入最新 ZIP 之後異常依舊，應記錄具體頁面、顯示欄位及版本，追查 7.3.3 的數值格式化程式或快取，而不是反覆更改前綴字串。
-
 ## 本機測試
 
 將本專案的語言文字檔及原本的外掛目錄依其相對路徑打包，並使用 Unraid 網頁管理介面的語言開發者模式匯入。確認 Main、Dashboard、Shares、Settings、Docker、VMs 和 Tools 的按鈕、說明與警告正常顯示，再提交修改。
@@ -169,3 +154,10 @@ Your efforts are much welcomed and to show our appreciation, your name and langu
 Please let us know which credentials to use.
 
 Thank you very much!
+
+## Unraid 7.3.3 英文選單／單位顯示排查
+
+- 語言鍵名採精確比對（包含**大小寫、空白和句尾標點**）。例如 `Output Voltage` 與 `Output voltage`、`Sleep` 與 `SLEEP` 可能需要各自的翻譯鍵。這份語言包包含使用者回報的 7.3.3 介面變體。
+- 部分外掛可能有自己的內建字串，未經 Unraid 語言載入機制的英文介面無法單靠新增 `.txt` 鍵名覆蓋。請確認外掛版本、語言包是否為最新安裝版本，必要時檢查外掛原始碼。
+- 容量單位 `prefix_SI` 與 `prefix_IEC` 必須與 [官方英文來源](https://github.com/unraid/lang-en_US/blob/master/translations.txt) 相同。目前值分別是 `K M G T P E Z Y` 與 `Ki Mi Gi Ti Pi Ei Zi Yi`。如果畫面顯示 `•KMGTPEZYB`，**無法由目前字串直接判定原因**；請提供出現該字串的頁面、欄位、瀏覽器與語言包安裝來源，以確認是不是特定介面把前綴當成一般字串、載入舊版語言包或外掛版本不相容。
+- 實際測試請使用 GitHub Actions 產出的 `zh_TW.zip`，匯入並重新選用語言，再重新整理（必要時清除瀏覽器快取）；僅更新 GitHub 儲存庫不會自動更新 Unraid 已安裝的語言包。
