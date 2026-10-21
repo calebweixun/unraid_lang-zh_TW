@@ -1279,15 +1279,24 @@ Error creating a trial key=建立試用金鑰時發生錯誤。
 Trial Expired see options below=試用期已到期，請查看下方選項。
 We have sent a verification email to %s=我們已寄送驗證郵件至 %s。
 
-; Unraid 7.3.3 observed UI compatibility aliases (exact case/punctuation)
+; Unraid 7.3.3 visible UI lookup variants (case and punctuation-sensitive)
 FAVORITES=我的最愛
 Favorites=我的最愛
 SLEEP=睡眠
+OUTPUT VOLTAGE=輸出電壓
+Output voltage=輸出電壓
+Sleep will immediately put the server in sleep mode=睡眠會立即讓伺服器進入睡眠模式。
+Make sure your server supports S3 sleep=請確認伺服器支援 S3 睡眠模式。
+Check this wiki entry for more information=詳細資訊請參閱此 Wiki 說明頁面。
+Data Partition=資料分割區
+Historical Unassigned Devices=歷史未指派裝置
+Unassigned Disks=未指派磁碟
+Remote Shares=遠端共享
+
+; Additional exact-match aliases retained from PR #6
 UNASSIGNED DISKS=未指派磁碟
 REMOTE SHARES=遠端共享
 HISTORICAL UNASSIGNED DEVICES=歷史未指派裝置
-Data Partition=資料分割區
-OUTPUT VOLTAGE=輸出電壓
 Output Voltage=輸出電壓
 Sleep will immediately put the server in sleep mode.=執行「睡眠」將立即使伺服器進入睡眠模式。
 Make sure your server supports S3 sleep.=請確認伺服器支援 S3 睡眠模式。
