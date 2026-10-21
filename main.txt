@@ -438,3 +438,10 @@ Remote Shares=遠端共享
 ; Additional exact-match aliases retained from PR #6
 FAVORITES=我的最愛
 Sleep will immediately put the server in sleep mode. Make sure your server supports S3 sleep. Check this wiki entry for more information.=執行「睡眠」將立即使伺服器進入睡眠模式。請確認伺服器支援 S3 睡眠模式，詳情請參閱 Wiki 說明。
+
+; Verified runtime labels from Unraid WebGUI / Unassigned Devices source (2026-10)
+will take the array offline=將使陣列離線
+ONLINE=線上
+Internal Boot=內部開機
+No internal boot setup detected Launch %s to configure one=尚未偵測到內部開機設定。請開啟 %s 進行設定。
+Boot Partition=開機分割區
