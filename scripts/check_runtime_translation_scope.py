@@ -31,6 +31,10 @@ SOURCES = (
      "emhttp/plugins/dynamix/ArrayOperation.page", ("translations.txt", "main.txt")),
     ("core device stream", "webgui",
      "emhttp/plugins/dynamix/nchan/device_list", ("translations.txt",)),
+    ("Internal Boot setup wizard", "webgui",
+     "emhttp/plugins/dynamix/InternalBootWizard.page", ("translations.txt", "tools.txt")),
+    ("Display Settings page", "webgui",
+     "emhttp/plugins/dynamix/DisplaySettings.page", ("translations.txt", "settings.txt")),
     ("Unassigned Devices Main panel", "ud",
      "source/unassigned.devices/usr/local/emhttp/plugins/unassigned.devices/UnassignedDevices.page",
      ("translations.txt",)),
@@ -113,7 +117,8 @@ def main() -> int:
              ("translations.txt", "main.txt",
               "Unassigned Devices/unassigneddevices.txt",
               "Unassigned Devices/unassigneddevicessettings.txt",
-              "Dynamix S3 Sleep/sleepsettings.txt")}
+              "Dynamix S3 Sleep/sleepsettings.txt",
+              "tools.txt", "settings.txt")}
     errors: list[str] = []
     global_keys = dicts["translations.txt"]
 
