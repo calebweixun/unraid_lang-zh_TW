@@ -255,11 +255,14 @@ ZFS Volume=ZFS 卷
 > 使用 /dev/sdX 或 devX 代號時請注意，它們可在重啟後改變。在 UD 指令碼中訪問 sdX（DEVICE）和 devX（UD_DEVICE）時最好使用傳入的引數。
 :end
 
-; Unraid 7.3.3 observed UI compatibility aliases (exact case/punctuation)
+; Unraid 7.3.3 visible UI lookup variants (case and punctuation-sensitive)
 Data Partition=資料分割區
+Data Partitions=資料分割區
+Unassigned Disks/Remote Shares/Historical Unassigned Devices=未指派磁碟／遠端共享／歷史未指派裝置
+
+; Additional exact-match aliases retained from PR #6
 Data partition=資料分割區
 FAVORITES=我的最愛
-Unassigned Disks/Remote Shares/Historical Unassigned Devices=未指派磁碟／遠端共享／歷史未指派裝置
 UNASSIGNED DISKS=未指派磁碟
 REMOTE SHARES=遠端共享
 HISTORICAL UNASSIGNED DEVICES=歷史未指派裝置
