@@ -109,8 +109,3 @@ Yes, exclude Cache=是，但排除快取
 :s3sleep_debug_plug:
 > 預設停用。只在問題排除時啟用除錯模式，系統將記錄 s3_sleep 各階段的詳細訊息。
 :end
-
-; Unraid 7.3.3 visible UI lookup variants (case and punctuation-sensitive)
-SLEEP=睡眠
-Sleep will immediately put the server in sleep mode.=睡眠會立即讓伺服器進入睡眠模式。
-Make sure your server supports S3 sleep.=請確認伺服器支援 S3 睡眠模式。

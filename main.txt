@@ -434,3 +434,7 @@ Data Partition=資料分割區
 Historical Unassigned Devices=歷史未指派裝置
 Unassigned Disks=未指派磁碟
 Remote Shares=遠端共享
+
+; Additional exact-match aliases retained from PR #6
+FAVORITES=我的最愛
+Sleep will immediately put the server in sleep mode. Make sure your server supports S3 sleep. Check this wiki entry for more information.=執行「睡眠」將立即使伺服器進入睡眠模式。請確認伺服器支援 S3 睡眠模式，詳情請參閱 Wiki 說明。

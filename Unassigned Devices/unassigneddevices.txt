@@ -259,3 +259,10 @@ ZFS Volume=ZFS 卷
 Data Partition=資料分割區
 Data Partitions=資料分割區
 Unassigned Disks/Remote Shares/Historical Unassigned Devices=未指派磁碟／遠端共享／歷史未指派裝置
+
+; Additional exact-match aliases retained from PR #6
+Data partition=資料分割區
+FAVORITES=我的最愛
+UNASSIGNED DISKS=未指派磁碟
+REMOTE SHARES=遠端共享
+HISTORICAL UNASSIGNED DEVICES=歷史未指派裝置
