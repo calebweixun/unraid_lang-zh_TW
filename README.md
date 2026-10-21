@@ -155,6 +155,23 @@ Please let us know which credentials to use.
 
 Thank you very much!
 
+
+### 容量單位顯示成 `•KMGTPEZYB` 的處理方式
+
+Unraid WebGUI 的 `my_scale()`（`emhttp/plugins/dynamix/include/Helpers.php`）會對語言設定中的 `prefix_SI` 與 `prefix_IEC` 執行以空白分隔的解析，必須分別保留：
+
+```text
+prefix_SI=K M G T P E Z Y
+prefix_IEC=Ki Mi Gi Ti Pi Ei Zi Yi
+```
+
+本專案已在翻譯原始檔、CI 驗證以及**實際封裝的 ZIP** 三個位置檢查這兩個值。若在 Unraid 7.3.3 仍出現 `•KMGTPEZYB`：
+
+1. 到最新 `main` 分支的 GitHub Actions 成功執行紀錄下載 **zh_TW-language-pack** 成品（不是 Source code ZIP），解壓其中的 `zh_TW.zip`。
+2. 在 Unraid WebGUI 以開發者模式重新安裝此 `zh_TW.zip`，重新選擇繁體中文，並強制重新整理瀏覽器頁面。
+3. 若仍異常，請檢查 Unraid 伺服器上實際安裝的語言檔 `translations.txt` 是否仍保留上述空白；**不要直接把單位前綴改回 `KMGTPEZY`**。
+4. 若實際載入的檔案已正確，但 UI 仍串接成 `KMGTPEZYB`，就必須進一步追查 WebGUI／外掛版本與正在呼叫的單位格式化程式；不能只靠改翻譯文字解決。
+
 ## Unraid 7.3.3 英文選單／單位顯示排查
 
 - 語言鍵名採精確比對（包含**大小寫、空白和句尾標點**）。例如 `Output Voltage` 與 `Output voltage`、`Sleep` 與 `SLEEP` 可能需要各自的翻譯鍵。這份語言包包含使用者回報的 7.3.3 介面變體。
