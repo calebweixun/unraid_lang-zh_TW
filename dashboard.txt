@@ -200,3 +200,7 @@ Warnings=警告
 ZFS=
 
 ; Note: April 21, 2025 - 87 missing translations
+
+; Unraid 7.3.3 observed UI compatibility aliases (exact case/punctuation)
+Output Voltage=輸出電壓
+OUTPUT VOLTAGE=輸出電壓
