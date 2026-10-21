@@ -1,134 +1,133 @@
-Apple metadata=
-Array must be Started to use this feature=
-Automatically protect new and modified files=
-BLAKE2=
-Build=
-Continue=
-Corz=
-Custom files=
-Custom folders=
-Day of the month=
-Day of the week=
-Disk selection=
-Disk verification schedule=
-Dont start=
-Download Now=
-Dynamix File Integrity=
-Error logging=
-Excluded files=
-Excluded folders and files=
-Excluded folders=
-File Duplicates Check=
-Find=
-Generate Corz Files=
-hash files=
-Hashing method=
-Header menu=
-HHMM=
-Import=
-Include duplicate file hashes in Find command=
-log files=
-Low=
-MD5=
-Output file=
-Placement of file integrity control=
-Process priority=
-Save new hashing results to flash=
-saved files=
-Send notifications=
-SHA2=
-Syslog only=
-Syslog Output file=
-Task=
-Time of the day=
-Toggle all=
-Tools menu=
-Verification tasks=
-view hash files=
-view log files=
-view saved files=
-When parity operation is running=
+Apple metadata=Apple 中繼資料
+Array must be Started to use this feature=陣列必須**啟動**才能使用此功能
+Automatically protect new and modified files=自動保護新建和修改的檔案
+BLAKE2=BLAKE2
+Build=建立
+Continue=繼續
+Corz=Corz
+Custom files=自訂檔案
+Custom folders=自訂資料夾
+Day of the month=每月日期
+Day of the week=星期幾
+Disk selection=選擇磁碟
+Disk verification schedule=磁碟驗證排程
+Dont start=不要開始
+Download Now=立即下載
+Dynamix File Integrity=Dynamix 檔案完整性
+Error logging=錯誤日誌
+Excluded files=排除的檔案
+Excluded folders and files=排除的資料夾和檔案
+Excluded folders=排除的資料夾
+File Duplicates Check=重複檔案檢查
+Find=尋找
+Generate Corz Files=產生 Corz 檔案
+hash files=雜湊值
+Hashing method=雜湊演算法
+Header menu=標題選單
+HHMM=HH:MM
+Import=匯入
+Include duplicate file hashes in Find command=在**查詢**命令中包含重複檔案的雜湊值
+log files=日誌檔案
+Low=低
+MD5=MD5
+Output file=輸出檔案
+Placement of file integrity control=檔案完整性設定頁面的位置
+Process priority=程序優先順序
+Save new hashing results to flash=將新的雜湊值儲存至 USB 開機裝置
+saved files=已儲存檔案
+Send notifications=傳送通知
+SHA2=SHA2
+Syslog only=僅系統日誌
+Syslog Output file=系統日誌與輸出檔案
+Task=工作
+Time of the day=當日時間
+Toggle all=切換全部
+Tools menu=工具選單
+Verification tasks=驗證工作
+view hash files=檢視雜湊值
+view log files=檢視日誌檔案
+view saved files=檢視儲存檔案
+When parity operation is running=執行同位元校驗作業時
 
 :integrity_control_plug:
-> Select the placement of the file integrity control page. By default it is placed under the *Tools* menu, but it may be moved under the *header* menu.
+> 選擇 檔案完整性控制的配置‌ 頁面的放置位置。預設放在**工具選單**下，也可移至標題選單。
 >
-> Keep in mind that the *header* menu has limited space.
+> 注意，**標題選單**空間有限。
 :end
 
 :integrity_service_plug:
-> When enabled a checksum value is automatically calculated and added to the extended attributes of the newly created or modified file.
-> When it is detected that a file change has occurred, but its modification time hasn’t changed, then an automatic checksum verification is performed to check for any silent file corruption.
+> 當啟用時，會自動計算校驗值並新增到新建立或修改的檔案擴充套件屬性中‌。
+> 當檢測到檔案變化，但修改時間並未更新時，自動執行校驗和驗證，以檢查檔案是否損壞。
 >
-> The area selection can be filtered by excluding folders (shares) and/or excluding disks all together (see table below).
+> 保護範圍可通過排除資料夾（共享）和磁碟來選擇，（參見下表）。
 >
-> When the automatic hashing is disabled then manual control is required to keep information up-to-date.
+> 自動雜湊功能停用時，需手動更新雜湊值來確保資訊及時更新。
 :end
 
 :integrity_hashing_plug:
-> Select the preferred hashing method. SHA2 generates a 256 bits checksum value, MD5 generates a 128 bits checksum value, while BLAKE2 generates a 512 bits checksum value per file.
+> 選擇預設雜湊演算法。對於每個檔案，SHA2 生成 256 位校驗和值，MD5 生成 128 位校驗和值，BLAKE2 生成 512 位校驗和值。
 >
-> MD5 is the most commonly used method and should be selected when compatibility with external programs is required, BLAKE2 is the fastest method and has the highest detection grade, this is a proprietary solution though.
-> SHA2 is the official standard and is selected by default. It is the slowest of all three methods though. The BLAKE2 option is disabled if it is not supported by your processor.
-> All methods require substantial computing power from the processor and a too weak processor may not be able to perform up to expectations.
+> MD5是最常用的方法，當需要與外部程式相容時，應選擇MD5。BLAKE2則是最快的方法，且具有最高的檢測等級，不過這是一個專有解決方案。
+> SHA2是官方標準且預設被選中，儘管它是三種方法中最慢的。如果處理器不支持BLAKE2，則該選項會被停用‌。
+> 所有雜湊方法（如MD5、SHA2、BLAKE2等）都需要處理器提供強大的計算能力，如果處理器效能過弱，可能無法達到預期的效能表現‌。
 :end
 
 :integrity_flash_plug:
-> When enabled a daily file on the flash device will be created, holding the checksum results for all newly or modified files of that particular day.
-> The format of this file is the same as the standard export file. The daily file is saved as */config/plugins/dynamix.file.integrity/saved/disks.export.&lt;date&gt;.new.hash*
+> 當在快閃記憶體裝置上啟用此功能時，每天都會建立一個檔案，用於儲存當天所有新檔案或修改過的檔案的校驗和值結果‌。
+> 此檔案與標準匯出檔案格式相同。每日檔案儲存為 */config/plugins/dynamix.file.integrity/saved/disks.export.&lt;date&gt;.new.hash*。
 :end
 
 :integrity_exluded_plug:
-> Select here any folders (shares) you want to exclude from the automatic hashing and verification functionality. A share existing on multiple disks will be skipped on any disk where it is present.
+> 在此選擇任何從自動雜湊計算和驗證功能中排除的資料夾（共享）。排除後，建立在多塊磁碟上的共享在對應磁碟執行計算時會跳過。
 >
-> Use **Custom folders / Custom files** to manually enter exclusions. Multiple exclusions are separated by a comma.<br>
-> Examples are folder names, e.g. **`.Recycle.Bin`**, file names, e.g. **`my_workfile.tmp`** or file extensions, e.g. **`*.tmp`**.
+> 使用**自訂資料夾/自訂檔案**手動輸入排除項。多個排除項以逗號分隔。<br>
+> 例如資料夾名 **`.Recycle.Bin`**，檔名 **`my_workfile.tmp`** 和副檔名 **`*.tmp`**。
 >
-> Select **Apple metadata** to exclude metadata files created by Apple’s netatalk (.AppleDB and .DS_Store).
+> 選擇 **Apple 後設資料**以排除 Apple 的 Netatalk 建立的後設資料檔案（.AppleDB 和 .DS_Store）。
 :end
 
 :integrity_verification_plug:
-> When enabled a cron schedule is created to do file verification in the background. You need to select which disks participate in the automatic hashing and verification process (see table below).
-> The cron schedule can run on a selectable daily, weekly or monthly basis.
+> 啟用後，將建立 cron 計劃以在後臺執行檔案驗證。 需要決定哪些磁碟參與自動雜湊計算和驗證，見下方表單。
+> cron 計劃可按日、周或月執行。
 >
-> One or more tasks can be created, each containing one or more disks. All disks under the same task are verified in parallel. This decreases the total run-time, but increases the
-> processor load. Make sure your processor can handle this load, and change grouping accordingly. At one end all disks can be put in a single task, resulting in the highest concurrency.
-> At the other end every disk can be put in its own task, resulting in the lowest processor load.
+> 可建立多個任務，每個任務可包含多塊磁碟。同一任務中的所有磁碟並行驗證。如此可減少總執行時間，但增加了處理器負載。
+> 依據處理器算力調整磁碟的任務分組，確保你的處理器能承受如此的負載。一方面，所有磁碟都可放入同一任務以到達最高併發。
+> 另一方面，可為每塊磁碟建立它自己的任務，實現最低處理器負載。
 >
-> A disk with a disabled checksum box and a red background, indicates a background verification process is currently in progress for this disk. It can not be stopped.
+> 核取方塊不可用且帶有紅色背景的磁碟，正在後臺執行驗證任務。後臺驗證任務無法停止。
 >
-> When multiple tasks exist then each task is executed in the next schedule in a rotating fashion. E.g. when you have set up a weekly schedule with 3 tasks then every week
-> another task is executed and after 3 weeks the verification function has done all selected disks.
+> 存在多個任務時，每個任務按計劃輪流執行。例如，建立包含 3 個任務的每週計劃，每週都依次執行 1 個任務，3 周後所選磁碟上的驗證全部完成。
 >
-> When the verification schedule is disabled then manual control is required to verify the correctness of the files.
+> 驗證計劃關閉時，需手動操控以驗證檔案完整性。
 :end
 
 :integrity_priority_plug:
-> Background processes can be run in either normal or low priority mode.
+> 後臺任務可以正常或低優先順序執行。
 :end
 
 :integrity_parity_plug:
-> Before a verification task starts, it can either continue as usual when a parity operation is running, or the verification task doesn’t start at all.
-> In the latter case you need to wait for the next scheduled time to execute the task.
+> 若系統校驗操作正在執行，驗證任務可跳過或正常執行。
+> 如果跳過，到下一輪計劃時才會執行驗證任務。
 :end
 
 :integrity_day_of_the_week_plug:
-> When a weekly schedule is chosen, then select here the day of execution.
+> 若制定周計劃，在此選擇執行日。
 :end
 
 :integrity_day_of_the_month_plug:
-> When a monthly schedule is chosen, then select here the date of execution.
+> 若制定月計劃，在此選擇執行日期。
 :end
 
 :integrity_time_of_the_day_plug:
-> Select the hour and minute at which time the scheduled task will be executed. Granularity is 5 minutes.
+> 選擇計劃任務執行時分，以 5 分鐘為粒度。
 :end
 
 :integrity_notifications_plug:
-> Set to YES if you want to receive notifications when file corruption is detected.
-> See the notification settings on how to set up and receive "alert" notifications.
+> 選擇是，檢測到檔案損壞時接收通知。
+> 如何設定並接收“警告”通知，請參閱系統通知設定頁面。
 :end
 
 :integrity_logging_plug:
-> Error logging, including file corruption detection information can be given in the system log, or saved as a file on flash.
-> Disabling error logging will suppress log creation, but it is still possible to receive notifications.
+> 錯誤日誌記錄，包含檔案損壞檢測資訊，可記入系統日誌或作為檔案存入快閃記憶體。
+> 關閉錯誤日誌記錄將停止日誌建立，但仍可接收通知。
 :end

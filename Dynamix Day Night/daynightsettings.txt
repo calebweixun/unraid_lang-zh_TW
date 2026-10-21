@@ -1,31 +1,30 @@
-Automatic theming=
-Bing API key=
-Bing=
-City name=
-Country name=
-Day theme=
-Geocoding service=
-Google API key=
-Google=
-MapQuest API key=
-MapQuest=
-Night theme=
-No geographical coordinates found for the given address=
-Please adjust=
-Postal code=
-See=
-Street address=
-this site=
-to obtain a Bing API key=
-to obtain a Google API key=
-to obtain a MapQuest API key=
+Automatic theming=自動切換佈景主題
+Bing API key=Bing API 金鑰
+Bing=Bing
+City name=城市名稱
+Country name=國家／地區名稱
+Day theme=日間主題
+Geocoding service=地理編碼服務
+Google API key=Google API 金鑰
+Google=Google
+MapQuest API key=MapQuest API 金鑰
+MapQuest=MapQuest
+Night theme=夜間主題
+No geographical coordinates found for the given address=找不到此地址對應的地理座標
+Please adjust=請調整設定
+Postal code=郵遞區號
+See=請參閱
+Street address=街道地址
+this site=此網站
+to obtain a Bing API key=以取得 Bing API 金鑰
+to obtain a Google API key=以取得 Google API 金鑰
+to obtain a MapQuest API key=以取得 MapQuest API 金鑰
 
 :day_night_plug:
-> Enter your address information (street, city, country) which is used to calculate the sunrise and sunset times of your location.
+> 輸入所在街道、城市及國家／地區，以計算日出與日落時間。
 >
-> A geocoding service is used to convert your address to geographical (latitude and longitude) coordinates.<br>
-> You need to register with one of the available services and get a unique API key to make use of their service.
+> 系統透過地理編碼服務將地址轉換為緯度與經度；您需要註冊其中一項服務並取得 API 金鑰。
 >
-> The **day** theme is selected between sunrise and sunset<br>
-> The **night** theme is selected between sunset and sunrise
+> **日間主題**：日出至日落期間使用。<br>
+> **夜間主題**：日落至次日日出期間使用。
 :end

@@ -130,7 +130,7 @@ mount tag inside vm=虛擬機器掛載標籤
 Multifunction=多功能
 My Workstation=我的工作站
 Name contains invalid characters or does not start with an alphanumberic for a ZFS storage location=名稱包含無效字元，或未以英文字母或數字開頭，無法用於 ZFS 儲存位置
-Name contains invalid characters or does not start with an alphanumberic for a ZFS storage locationOnly these special characters are valid Underscore _ Hyphen - Colon Period =名稱包含無效字元，或未以英文字母或數字開頭，無法用於 ZFS 儲存位置。<br>僅允許底線 (_)、連字號 (-)、冒號 (:)、句點 (.)
+Name contains invalid characters or does not start with an alphanumberic for a ZFS storage locationOnly these special characters are valid Underscore _ Hyphen - Colon Period=名稱包含無效字元，或未以英文字母或數字開頭，無法用於 ZFS 儲存位置。<br>僅允許底線 (_)、連字號 (-)、冒號 (:)、句點 (.)
 name of mount tag inside vm=虛擬機器掛載標籤名稱
 Name of virtual machine=虛擬機器名稱
 Network Bridge=網路橋接
@@ -303,4 +303,4 @@ wsport for virtual console=虛擬主控台的 WebSocket 連接埠
 XML View=XML 視圖
 
 ; Note: May 31, 2025 - 164 missing translations
-
+Name contains invalid characters or does not start with an alphanumberic for a ZFS storage locationOnly these special characters are valid Underscore _ Hyphen - Colon Period =名稱包含無效字元，或未以英文字母或數字開頭，無法用於 ZFS 儲存位置。僅允許底線（_）、連字號（-）、冒號（:）及句點（.）。

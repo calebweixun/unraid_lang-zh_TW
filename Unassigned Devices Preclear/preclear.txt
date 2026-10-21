@@ -1,78 +1,58 @@
-A disk must be cleared of all partitions before it can be precleared=
-Cannot Preclear=
-Clear Disk=
-Clear Signature=
-Clear Stats=
-Click to show reports=
-Concurrent Sessions=
-Cycles=
-Device Model=
-Disk Log Information=
-Disk Size=
-Download Logs=
-Enable Testing for debugging=
-Fast Post-read=
-Firmware=
-Fix Preclear=
-Identification=
-If you set a queue limit, all running preclear sessions above that limit will be paused and remain in the queue until a session finishes=
-Notifications=
-On every cycle and step end=
-On every 25% of progress=
-On every cycle end=
-On preclear end=
-Operation=
-Post-read Verify=
-Preclear Disks=
-Preclear Disk Log=
-Preclear Log=
-Preclear Status=
-Preview Progress=
-Read size=
-Remove Report=
-Resume all Sessions=
-Resume Preclear=
-Preview Progress Report=
-Select Disks=
-Serial Number=
-Set Preclear Queue=
-Show Preclear Report=
-Skip Pre-read=
-Skip Post-Read=
-Start Multiple Sessions=
-Start New=
-Start Preclear=
-Stop all Sessions=
-Stop Preclear=
-Temp=
-Testing=
-There are no disks that can be precleared=
-Verify Signature=
-Write size=
-You can use Unassigned Devices to clear the disk=
+A disk must be cleared of all partitions before it can be precleared=預清除磁碟前，必須先移除所有分割區。
+Cannot Preclear=無法進行磁碟預清除
+Clear Disk=清除磁碟（將刪除資料）
+Clear Signature=清除預清除標記
+Clear Stats=清除統計資料
+Click to show reports=點選以查看報告
+Concurrent Sessions=同時執行工作數
+Cycles=循環次數
+Device Model=裝置型號
+Disk Log Information=磁碟日誌資訊
+Disk Size=磁碟容量
+Download Logs=下載日誌
+Enable Testing for debugging=啟用測試除錯功能
+Fast Post-read=快速後讀取測試
+Firmware=韌體
+Fix Preclear=修正預清除
+Identification=識別資訊
+If you set a queue limit, all running preclear sessions above that limit will be paused and remain in the queue until a session finishes=設定佇列上限後，超出上限的預清除工作會暫停並等候，直到其他工作完成。
+Notifications=通知
+On every cycle and step end=每次循環及步驟結束
+On every 25% of progress=每完成 25% 進度
+On every cycle end=每次循環結束
+On preclear end=預清除完成時
+Operation=操作
+Post-read Verify=後讀取驗證
+Preclear Disks=預清除磁碟
+Preclear Disk Log=預清除磁碟日誌
+Preclear Log=預清除日誌
+Preclear Status=預清除狀態
+Preview Progress=預覽進度
+Read size=讀取大小
+Remove Report=移除報告
+Resume all Sessions=繼續所有工作
+Resume Preclear=繼續預清除
+Preview Progress Report=預覽進度報告
+Select Disks=選擇磁碟
+Serial Number=序號
+Set Preclear Queue=設定預清除佇列
+Show Preclear Report=顯示預清除報告
+Skip Pre-read=略過預先讀取
+Skip Post-Read=略過後讀取
+Start Multiple Sessions=開始多個工作
+Start New=開始新工作
+Start Preclear=開始預清除
+Stop all Sessions=停止所有工作
+Stop Preclear=停止預清除
+Temp=溫度
+Testing=測試中
+There are no disks that can be precleared=目前沒有可預清除的磁碟
+Verify Signature=驗證預清除標記
+Write size=寫入大小
+You can use Unassigned Devices to clear the disk=您可以使用 Unassigned Devices 清除磁碟。
 
 :preclear_general_help_plug:
-> The Unassigned Devices Pre-clear can be used to prepare disks for inclusion in the array, clear disks for disposal, and perform stress tests before disks are used in the array.
+> 磁碟序號旁的綠色 **Pre-cleared（已預清除）** 標記，表示磁碟具有預清除簽章。只有完成預清除且清除預清除統計後才會顯示。
 >
-> Only disks that are not being used in the array and have no partitions with file systems will be listed as candidates for pre-clearing.
->
-> When a disk is being pre-cleared, you can follow the status on this page, on the Unassigned Devices page, or the pre-clear status icon in the footer of the Unraid web page.
-> 
-> There are multiple choices for pre-clearing:
->
-> The **Enhanced** script authored by user **gfjardim** has the advantage that it supports the enhanced features like pause and resume pre-clearing. It also has extensive logging.
->
-> The **Docker** option refers to the binhex Docker container that performs pre-clear. The advantage is that pre-clearing is isolated within the container.
->
-> Pre-clear operations:
->
-> + Clear Disk - The disk is cleared and the Unraid signature is written to the disk. This will create an empty partition on the disk.
-> + Erase Disk - Erase the entire disk by writing all zeros. The pre-clear signature is removed.
-> + Erase and Clear Disk - Random patterns are written to the disk and then zeros are written. This is a good choice for a disk to be discarded to ensure all traces of files are removed.
-> + Verify Signature - The disk signature is checked.
-> + Verify Disk - The disk signature is checked and the disk is verified to be zeroed.
-> + Post-read Verify - Perform a post-read verify to check the disk.
-> + Clear Signature - Remove the pre-clear signature from the disk.
->
-> The text <em style=
+> **警告：預清除程序可能覆寫整顆磁碟，開始前請再次確認磁碟序號與備份。**
 :end

@@ -52,6 +52,16 @@
 - SI／IEC 容量前綴必須以**空白分隔**：`prefix_SI=K M G T P E Z Y`、`prefix_IEC=Ki Mi Gi Ti Pi Ei Zi Yi`。
 - 個別技術常數可保留空白翻譯值以沿用英文；允許清單由驗證腳本管理。
 
+## 高風險操作的翻譯規則
+
+- **Format / Erase / Wipe：** 必須明確區分「格式化」、「清除」、「覆寫」，並清楚保留資料遺失警告。
+- **Btrfs Scrub（資料校驗）：** 驗證資料及中繼資料檢查碼；只有具備正確備援副本才可能自動修復，**不是**清除或格式化。
+- **Btrfs Check：** `--readonly` 是非修改式檢查；`--repair` 具有風險，應遵守 [Btrfs 官方警告](https://btrfs.readthedocs.io/en/latest/btrfs-check.html)，不可翻成一般的「按下即可修復」。
+- **ZFS Scrub：** 與主陣列 Parity Check 不同，不可一律翻譯成「同位元校驗檢查」。
+- **SSL/TLS、DNS：** 保留安全風險與憑證錯誤提示，不建議直接忽略憑證警告或全面停用 DNS 重新繫結保護。
+- **路徑格式：** Linux 檔案路徑使用正斜線（`/`），不是反斜線（`\`）。複製程式碼、路徑與命令時須保留原樣。
+- **appdata / system / domains：** 容器與虛擬機器的服務資料位置不可與一般共享資料搬移政策混為一談，Mover 也不能當作備份。
+
 ## 提交前檢查
 
 1. 依功能判斷語意，不要只進行簡繁轉換或全域字串取代。
