@@ -35,6 +35,14 @@ SOURCES = (
      "emhttp/plugins/dynamix/InternalBootWizard.page", ("translations.txt", "tools.txt")),
     ("Display Settings page", "webgui",
      "emhttp/plugins/dynamix/DisplaySettings.page", ("translations.txt", "settings.txt")),
+    ("Disk Settings page", "webgui",
+     "emhttp/plugins/dynamix/DiskSettings.page", ("translations.txt", "settings.txt")),
+    ("Notifications page", "webgui",
+     "emhttp/plugins/dynamix/Notifications.page", ("translations.txt", "settings.txt")),
+    ("Mover Settings page", "webgui",
+     "emhttp/plugins/dynamix/MoverSettings.page", ("translations.txt", "settings.txt")),
+    ("Syslog Settings page", "webgui",
+     "emhttp/plugins/dynamix/SyslogSettings.page", ("translations.txt", "settings.txt")),
     ("Unassigned Devices Main panel", "ud",
      "source/unassigned.devices/usr/local/emhttp/plugins/unassigned.devices/UnassignedDevices.page",
      ("translations.txt",)),
@@ -64,6 +72,10 @@ REQUIRED_GLOBAL = (
     "Add Root Share",
     "No Remote SMB",
     "NFS or ISO File Shares configured",
+    "Custom ARC size cannot exceed available system memory",
+    "Store notifications to boot drive",
+    "Mover Progress",
+    "Copy syslog to boot drive on shutdown",
 )
 
 
