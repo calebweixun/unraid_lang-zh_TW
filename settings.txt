@@ -1004,3 +1004,21 @@ Show Terminal Button in header=在頂端列顯示終端機按鈕
 Header logo style=頂端列標誌樣式
 Gradient=漸層
 Theme adaptive=依主題自動調整
+
+; Missing runtime labels from newer Disk, Notifications, Mover and Syslog Settings
+Invalid value=無效的數值
+Custom ARC size cannot exceed available system memory=自訂 ARC 大小不得超過系統可用記憶體
+ext4=ext4
+Unlimited Dynamic=無限制（動態）
+of the memory=的記憶體
+Custom value GB=自訂數值（GB）
+Custom value=自訂數值
+Enter GB=請輸入 GB 數值
+Maximum=最大值
+Store notifications to boot drive=將通知儲存到 USB 開機裝置
+No Cache device present only empty function will run=未偵測到快取裝置，僅會執行清空作業
+Empty now=立即清空
+Mover Progress=Mover 執行進度
+Local syslog protocol and port=本機系統日誌通訊協定與連接埠
+Mirror syslog to boot drive=將系統日誌鏡像到 USB 開機裝置
+Copy syslog to boot drive on shutdown=關機時將系統日誌複製到 USB 開機裝置
