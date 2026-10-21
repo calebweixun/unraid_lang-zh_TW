@@ -424,3 +424,11 @@ BTRFS filesystem usage=Btrfs 檔案系統使用量
 BTRFS scrub status=Btrfs 資料校驗狀態
 ZFS pool status=ZFS 儲存池狀態
 ZFS=ZFS
+
+; Unraid 7.3.3 observed UI compatibility aliases (exact case/punctuation)
+SLEEP=睡眠
+FAVORITES=我的最愛
+Sleep will immediately put the server in sleep mode.=執行「睡眠」將立即使伺服器進入睡眠模式。
+Make sure your server supports S3 sleep.=請確認伺服器支援 S3 睡眠模式。
+Check this wiki entry for more information.=詳情請參閱此 Wiki 說明。
+Sleep will immediately put the server in sleep mode. Make sure your server supports S3 sleep. Check this wiki entry for more information.=執行「睡眠」將立即使伺服器進入睡眠模式。請確認伺服器支援 S3 睡眠模式，詳情請參閱 Wiki 說明。
