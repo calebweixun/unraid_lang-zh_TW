@@ -438,3 +438,21 @@ Remote Shares=遠端共享
 ; Additional exact-match aliases retained from PR #6
 FAVORITES=我的最愛
 Sleep will immediately put the server in sleep mode. Make sure your server supports S3 sleep. Check this wiki entry for more information.=執行「睡眠」將立即使伺服器進入睡眠模式。請確認伺服器支援 S3 睡眠模式，詳情請參閱 Wiki 說明。
+
+; Verified runtime labels from Unraid WebGUI / Unassigned Devices source (2026-10)
+will take the array offline=將使陣列離線
+ONLINE=線上
+Internal Boot=內部開機
+No internal boot setup detected Launch %s to configure one=尚未偵測到內部開機設定。請開啟 %s 進行設定。
+Boot Partition=開機分割區
+
+; Additional lookups verified against current runtime sources
+will record all disk information and bring the array online=將記錄所有磁碟資訊並使陣列上線
+will record all disk information, bring the array online, and start Parity-Sync=將記錄所有磁碟資訊、使陣列上線，並開始同位元校驗同步
+will disable the missing disk and then bring the array online Install a replacement disk as soon as possible=將停用遺失的磁碟後使陣列上線。請儘快安裝替換磁碟
+Transfering To Array=傳送至陣列中
+Transfering From Array=從陣列傳送中
+
+; Newer 7.3.3 array operation wording
+will bring the array online and start Disk-Clear of new data disks=將使陣列上線，並開始清除新資料磁碟（Disk-Clear）
+will expand the file system of the data disk if possible; then bring the array online and start Data-Rebuild=將在可行情況下擴充資料磁碟的檔案系統，再使陣列上線並開始資料重建（Data-Rebuild）
