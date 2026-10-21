@@ -1675,3 +1675,13 @@ Click to spin up device=點選喚醒裝置
 ; Newer 7.3.3 array operation wording
 will bring the array online and start Disk-Clear of new data disks=將使陣列上線，並開始清除新資料磁碟（Disk-Clear）
 will expand the file system of the data disk if possible; then bring the array online and start Data-Rebuild=將在可行情況下擴充資料磁碟的檔案系統，再使陣列上線並開始資料重建（Data-Rebuild）
+
+; Runtime labels from InternalBootWizard and DisplaySettings pages
+Configure an internal boot device without opening the full onboarding wizard=不需開啟完整的初始設定精靈，即可設定內部開機裝置
+Array must be stopped to configure internal boot=必須先停止陣列才能設定內部開機裝置
+Available while the array is stopped=陣列停止時才可使用
+Open Wizard=開啟設定精靈
+Show Terminal Button in header=在頂端列顯示終端機按鈕
+Header logo style=頂端列標誌樣式
+Gradient=漸層
+Theme adaptive=依主題自動調整
