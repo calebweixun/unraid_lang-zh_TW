@@ -106,10 +106,25 @@ CRITICAL_UI_TRANSLATIONS = {
     "translations.txt": {
         "No errors reported": "沒有回報任何錯誤",
         "Device": "裝置",
+        "FAVORITES": "我的最愛",
+        "SLEEP": "睡眠",
+        "Data Partition": "資料分割區",
     },
     "main.txt": {
         "Array Devices": "陣列裝置",
         "Unassigned Devices": "未指派裝置",
+        "SLEEP": "睡眠",
+        "Sleep will immediately put the server in sleep mode.": "執行「睡眠」將立即使伺服器進入睡眠模式。",
+    },
+    "dashboard.txt": {
+        "Output voltage": "輸出電壓",
+        "Output Voltage": "輸出電壓",
+    },
+    "Unassigned Devices/unassigneddevices.txt": {
+        "Historical Unassigned Devices": "歷史未指派的裝置",
+        "Unassigned Disks": "未指派的磁碟",
+        "Remote Shares": "遠端共享",
+        "Data Partition": "資料分割區",
     },
     "settings.txt": {
         "Display world-wide-name in device ID":
@@ -204,6 +219,9 @@ def check_file(relative: str) -> tuple[list[str], int, int]:
         errors.append(f"{relative}: unterminated translation block {active_block}")
 
     if relative == "translations.txt":
+        # The prefix token spacing follows upstream en_US. A display like KMGTPEZYB
+        # may indicate a stale installed language package or a runtime formatter bug;
+        # this static check cannot prove the rendered 7.3.3 display is correct.
         for key, expected in {
             "prefix_SI": "K M G T P E Z Y",
             "prefix_IEC": "Ki Mi Gi Ti Pi Ei Zi Yi",
