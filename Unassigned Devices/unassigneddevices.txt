@@ -342,3 +342,16 @@ in standby=待機中
 Remove Device Configuration=移除裝置設定
 Historical Device Settings and Script=歷史裝置設定與指令碼
 online=線上
+
+; Additional lookups verified against current runtime sources
+Writes=寫入
+Do not put files or folders into the mntrootshare folder=請勿直接將檔案或資料夾放入 /mnt/rootshare 資料夾
+If using a disk password, be sure to enter the password for this disk in UD Settings so it can be mounted=如果使用磁碟密碼，請務必在 Unassigned Devices 設定中輸入此磁碟的密碼，才能正確掛載
+Use caution when using a remote share local mount in a Docker Container or VM for critical data=在 Docker 容器或虛擬機器中透過本機掛載點使用遠端共享儲存重要資料時，請特別小心
+Media mapped to apps like Plex should not be a problem=供 Plex 等應用程式使用的媒體檔案通常不會有問題
+If the remote share goes offline, you may have problems=如果遠端共享離線，使用該共享的應用程式可能發生問題
+You will need to enter credentials to list the shares=必須輸入登入憑證才能列出共享資料夾
+All Unassigned Devices configurations will be updated from flash drive=將從 USB 開機裝置更新所有 Unassigned Devices 設定
+Udev=udev
+Click to spin down device=點選使裝置進入待機
+Click to spin up device=點選喚醒裝置
