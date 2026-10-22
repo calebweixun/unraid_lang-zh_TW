@@ -34,3 +34,7 @@ Please match the requested format=請依照指定格式輸入
 Required=必填
 Select Proxy=選擇代理伺服器
 User=使用者
+
+:outgoing_proxy_password_plug:
+> 輸入這個對外代理伺服器使用的密碼。
+:end

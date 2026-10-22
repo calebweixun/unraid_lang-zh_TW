@@ -46,6 +46,44 @@ class TranslationChecks(unittest.TestCase):
             with redirect_stdout(StringIO()):
                 self.assertEqual(coverage.main(), 2)
 
+    def test_help_preserves_executable_php_variables(self):
+        source = ":vpn_help:\nPort <?=$netport['wg0']?>\n:end\n"
+        translated = ":vpn_help:\n連接埠 <?=$netport['wg0']?>\n:end\n"
+        self.assertEqual(self.check_fixture(source, translated), 0)
+        # Losing the variable leaves a valid PHP array that renders as 'Array'.
+        self.assertEqual(self.check_fixture(source, translated.replace("$netport", "")), 1)
+        self.assertEqual(self.check_fixture(source, translated.replace("$netport", "$netpool")), 1)
+        self.assertEqual(self.check_fixture(source, translated.replace("<?=$netport['wg0']?>", "")), 1)
+
+    def test_translation_cannot_introduce_php_into_plain_help(self):
+        source = ":vpn_help:\nUse your configured port.\n:end\n"
+        translated = ":vpn_help:\n使用連接埠 <?=['wgX']?>\n:end\n"
+        self.assertEqual(self.check_fixture(source, translated), 1)
+
+    def test_usb_help_survives_real_package_and_both_loader_paths(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            for relative in ("translations.txt", "USB Manager/usb_manager.txt",
+                             "USB Manager/usbmanagersettings.txt"):
+                target = root / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text((build.ROOT / relative).read_text(encoding="utf-8"),
+                                  encoding="utf-8")
+            out = root / "dist" / "zh_TW.zip"
+            with patch.object(build, "ROOT", root), patch.object(build, "OUT", out):
+                with redirect_stdout(StringIO()):
+                    build.main()
+            with ZipFile(out) as archive:
+                installed = {Path(name).name.lower(): archive.read(name).decode("utf-8")
+                             for name in archive.namelist()}
+            # USBDevices.page and its AJAX renderer call parse_plugin('usb_manager').
+            _, device_help = coverage.parse_text_entries(installed["usb_manager.txt"])
+            self.assertIn(":usbip_devices_switches_plug:", device_help)
+            # USBManagerSettings does not call parse_plugin; URI loading is required.
+            _, settings_help = coverage.parse_text_entries(installed["usbmanagersettings.txt"])
+            self.assertIn(":usbmgr_HostCheck_freq_help:", settings_help)
+            self.assertNotIn(":ud_settings_symlinks_plug:", device_help)
+
     def test_english_sentence_with_unicode_dash_is_detected(self):
         value = "New features, security patches, or bug fixes – keep your server up to date."
         issues = validation.check_localization_text("example.txt", 1, value)

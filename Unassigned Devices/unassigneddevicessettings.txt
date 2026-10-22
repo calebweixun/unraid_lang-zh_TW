@@ -1,8 +1,8 @@
 Add=新增
 Auto Mount USB Devices=自動掛載 USB 裝置
 Case-sensitive names=區分大小寫的名稱
-Change Disk UUID=更改磁碟 UUID
-Change UUID=更改 UUID
+Change Disk UUID=變更磁碟 UUID
+Change UUID=變更 UUID
 Command times=命令計時
 Common Script=通用指令碼
 Common Settings=通用設定
@@ -11,13 +11,13 @@ Disabled=已停用
 Disk spin down is managed by Unraid=磁碟休眠由 Unraid 管理
 Enable NFS export=開啟 NFS 匯出
 Enable SMB Security=啟用 SMB 安全性設定
-Enable Time Machine=開啟時間機器（Time Machine）
+Enable Time Machine=啟用 Time Machine
 Enter Disk Password=輸入磁碟密碼
 Enter the Remote Server name or IP address and the results from the Remote Server Test will show in the Result text area=輸入遠端伺服器名稱或 IP 位址，遠端伺服器測試的結果將顯示在結果文字區域中
 Enter Pool Mount Point=輸入儲存池掛載點
 Legacy Mount Point Compatibility=舊版掛載點相容性
 Mount SSDs with discard option=掛載 SSD 時啟用 discard（TRIM）
-NFS Security=NFS 安全
+NFS Security=NFS 安全性設定
 NFS Settings=NFS 設定
 NFS must be enabled in Settings->NFS to enable NFS Export=若要使用 NFS 匯出，必須在 “設定->NFS” 中啟用 NFS
 NFS Version to use when Mounting Remote Shares=掛載遠端共享時使用的 NFS 版本
@@ -28,7 +28,7 @@ Refresh and Update=重新整理和更新
 Remote Share Mount Wait Time=遠端共享掛載等待時間
 Rule=規則
 Select Disk=選擇磁碟
-See Help=檢視幫助
+See Help=檢視說明
 Set Encrypted Disk Password=設定加密磁碟密碼
 Set Password=設定密碼
 Set Pool Mount Point=設定儲存池掛載點
@@ -43,7 +43,7 @@ Testing=正在測試
 Test the Remote Server=測試遠端伺服器
 The Unassigned Devices Plus plugin must be installed to enable Destructive Mode=必須安裝 Unassigned Devices Plus 外掛，才能啟用破壞性操作模式。
 This is a tool to help troubleshoot Remote Servers ability to serve SMB and NFS shares=該工具可幫助排查 SMB 和 NFS 共享遠端伺服器的問題
-Time Machine volume size limit=時間機器（Time Machine）卷大小限制
+Time Machine volume size limit=Time Machine 磁碟區容量上限
 to SMB share config=到 SMB 共享設定
 Udev and Hotplug=udev 與熱插拔
 Unassigned Devices=未指派裝置
@@ -61,11 +61,11 @@ Working=工作中
 :end
 
 :ud_settings_common_script_plug:
-> 如果設定，此指令碼將先於裝置指令碼執行。動作（action）通過環境變數 **$ACTION** 設定。請確保以完整路徑引用命令。
+> 若有設定，通用指令碼會先於個別裝置指令碼執行。系統透過環境變數 **$ACTION** 傳入目前的動作；請在指令碼中使用命令的完整路徑。
 :end
 
 :ud_settings_destructive_plug:
-> 如果啟用，可使用 Unassigned Devices 擦除與格式化分割區。必須安裝“Unassigned Devices Plus”才能啟用此功能。
+> 啟用後，可透過 Unassigned Devices 清除或格式化分割區。這些操作可能刪除磁碟資料，請先確認備份與操作對象。必須安裝 Unassigned Devices Plus 外掛程式才能啟用。
 :end
 
 :ud_settings_mount_usb_devices_plug:
@@ -73,92 +73,81 @@ Working=工作中
 :end
 
 :ud_settings_discard_plug:
-> 對於支援 discard 操作的 SSD，帶“discard”選項掛載它們。如果你使用 SSD trim 設定定期執行 trim，可選**否**。
+> 對支援 discard 的 SSD，使用 `discard` 掛載選項。若已透過 SSD TRIM 排程定期執行 TRIM，可選擇「否」。
 :end
 
 :ud_settings_symlinks_plug:
-> 設為**是**以建立符號連結，將 /mnt/disks/ 指向 /mnt/remotes/。
+> 設為「是」可在 `/mnt/disks/` 建立指向 `/mnt/remotes/` 的相容符號連結。
 >
-> 此項設定用於向後相容對映了 /mnt/disks/ 掛載點的虛擬機器和 Docker 容器。
-> 建議將對映更改為 /mnt/remotes/ 掛載點。
->
-> 如果你不需要向後相容，保持此項為**否**。
+> 此選項用來相容仍使用舊掛載路徑的虛擬機器與 Docker 容器。建議將相關路徑對應改為 `/mnt/remotes/`；若不需要舊版相容性，請保持「否」。
 :end
 
 :ud_settings_remote_share_wait_plug:
-> 當陣列首先啟動時，掛載遠端共享前等待的秒數。
->
+> 設定陣列啟動後，在掛載遠端共享資料夾前等待的秒數。
 :end
 
 :ud_settings_specify_smb_vers_plug:
-> 設為**否**，Unassigned Devices 首先嚐試不指定版本掛載 SMB 遠端共享。
+> 設為「否」時，會先嘗試不指定 SMB 版本來掛載遠端共享資料夾。
 >
-> 設為**是**，Unassigned Devices 只掛載指定了版本的 SMB 遠端共享。
->
-> 某些遠端伺服器需要指定 SMB 版本。
+> 設為「是」時，只嘗試明確指定 SMB 版本的掛載方式。部分遠端伺服器需要指定版本才能掛載。
 :end
 
 :ud_settings_debug_level_plug:
-> 排除故障時，設定除錯日誌等級讓 Unassiged Devices 在特定區域增加額外的日誌記錄，以此除錯 Unassiged Devices 的特定區域。
+> 排除問題時，可選擇特定類別，增加 Unassigned Devices 的除錯日誌。
 >
-> 設為**無**以關閉除錯日誌記錄。
+> - **無**：停用除錯日誌。
+> - **udev 與熱插拔**：記錄 udev、磁碟偵測及熱插拔事件。
+> - **重新整理和更新**：協助追查介面更新或無回應的問題。
+> - **命令計時**：記錄命令執行時間，可能產生非常大量的訊息。
 >
-> **udev 與熱插拔** udev、磁碟發現與熱插拔除錯。
->
-> **重新整理和更新** 查詢導致 Unassiged Devices 停止響應的問題。
->
-> **命令時間** 命令執行時間。**警告**： 日誌記錄將非常繁雜。
->
-> **注意**：不要長時間開啟除錯日誌等級，否則可導致系統日誌內充斥大量訊息。
+> **請只在排除問題時短暫啟用，避免系統日誌被大量訊息占滿。**
 :end
 
 :ud_settings_specify_nfs_vers_plug:
-> 設為**自動**，在掛載所有 NFS 遠端共享時自動協商使用的 NFS 版本。
->
-> 如果**自動**項無效或只能掛載 NFSv3，你需要將此項設為 **NFSv4**，因為你的 Unraid 版本不會自動協商使用 NFSv4。
+> 設為「自動」時，掛載遠端 NFS 共享會自動協商版本。若自動協商失敗，或只連上 NFSv3，而您需要使用 NFSv4，可改選「NFSv4」。
 :end
 
 :ud_settings_smb_security_plug:
-> 設定 SMB 共享的使用者等級。
+> 設定 SMB 共享資料夾的存取方式：
 >
-> + 設為**關閉**以關閉 SMB 共享。
-> + 設為**公共**將以公共讀寫權限共享裝置、遠端 SMB/NFS 共享和 ISO 掛載。
-> + 設為**私有**為 SMB 共享啟用 SMB 安全。按使用者設定讀寫權限。
-> + 設為**私有且隱藏**為不可見的 SMB 共享啟用 SMB 安全。按使用者設定讀寫權限。
+> - **已停用**：不透過 SMB 提供共享。
+> - **公共**：允許公用讀寫，適用於裝置、遠端 SMB／NFS 共享及 ISO 掛載。
+> - **私有**：啟用使用者認證，個別設定各使用者的讀寫權限。
+> - **私有且隱藏**：與私有模式相同，但不在網路瀏覽清單中顯示共享名稱。
 >
-> Windows 伺服器簽名：
+> **Windows SMB 簽署與認證**
 >
-> 在使用 Windows 11 24H2 或更新版本時，如無法瀏覽 SMB 共享，你需要針對一項叫作“伺服器簽名”的新功能作出更改。伺服器簽名在 Unraid 中為啟用狀態，你需要更改一些設定才能存取公共共享。
-> 你可以<u><a href='https://techcommunity.microsoft.com/t5/storage-at-microsoft/accessing-a-third-party-nas-with-smb-in-windows-11-24h2-may-fail/ba-p/4154300', target='_blank'>在 Windows 停用此功能</a></u>，或者在啟用伺服器簽名的情況下使用 Unraid——最簡單的方法是在 Unraid 中建立一個與 Windows 賬戶同名的使用者並設定密碼，然後 Windows 將要求你提供憑據。
-> 如果你使用的是微軟賬戶，最好先在 Unraid 中建立一個帶密碼的使用者，然後在 Windows 的“控制面板->憑證管理器->Windows 憑證->新增 Windows 憑證”處新增正確的 Unraid 伺服器名稱和憑證。
+> Windows 11 24H2 或更新版本若無法瀏覽公共共享，可能與 SMB 簽署及訪客存取限制有關。可在 Unraid 建立與 Windows 帳號同名且有密碼的使用者，並使用該帳號認證。
+>
+> 若使用 Microsoft 帳號，可先在 Unraid 建立有密碼的使用者，再於 Windows「控制台 → 認證管理員 → Windows 認證 → 新增 Windows 認證」填入 Unraid 伺服器名稱及帳號密碼。
+>
+> 原文也提供 <u><a href='https://techcommunity.microsoft.com/t5/storage-at-microsoft/accessing-a-third-party-nas-with-smb-in-windows-11-24h2-may-fail/ba-p/4154300' target='_blank'>調整 Windows 簽署設定的說明</a></u>；請先確認影響，優先採用保留簽署並使用帳號認證的方式。
 :end
 
 :ud_settings_case_sensitive_plug:
-> 決定檔名是否區別大小寫。
+> 設定檔名是否區分大小寫。
 >
-> 預設值**自動**允許 Linux CIFS 和 NFS 等區別檔名大小寫的用戶端以封包為單位報告 Samba 伺服器它們希望以區別檔名大小寫的方式存取檔案系統（以支援 Unix 檔名區別大小寫的語義）。Windows 系統不區別檔名大小寫，因此設為自動對於 Windows 系統來說等效於設為否；不過，Windows 用戶端傳遞的檔名的大小寫會被保留。此選項可導致處理大型目錄時效能下降，因為 Samba 必須搜尋匹配傳遞的檔名。
+> **自動**：讓支援此功能的用戶端（例如 Linux CIFS）告知 Samba 是否需要區分大小寫。Windows 通常不區分大小寫，因此效果類似「否」，但仍保留建立檔案時使用的大小寫。大型目錄可能因搜尋與比對檔名而降低效能。
 >
-> **是**意味著建立檔案時，檔名使用用戶端傳遞的大小寫，並且只有使用同樣大小寫的檔名才能存取此檔案。相比之下，這不會影響大型目錄的存取速度，但在此項設定下，某些 Windows 應用程式可能無法正常運轉。比如，遠端檔名為“MyFile”，Windows 應用程式在開啟“MYFILE”時就會失敗，儘管在 Windows 的原生環境中，檔名大小寫是不區別的。
+> **是**：保留用戶端提供的大小寫，且存取時必須完全相符。可避免大型目錄的額外檔名搜尋，但部分 Windows 應用程式可能因此失敗。例如檔案名為 MyFile，程式卻嘗試開啟 MYFILE 時，便可能找不到檔案。
 >
-> **強制小寫**特殊在於，來自用戶端的所有檔名，不僅僅是新檔名，都將轉為小寫。換句話說，無論在 Windows 一側有著怎樣大小寫的檔名，此檔案都將在遠端端以小寫檔名儲存和存取。這保證了所有 Windows 應用程式都能正確尋找任何檔案，而不管檔名大小寫；但在列出資料夾時，檔名的大小寫不會保留。
+> **強制使用小寫字母**：將所有用戶端傳入的檔名（不限於新建檔案）轉為小寫，以小寫名稱儲存及存取。可讓 Windows 應用程式以不同大小寫尋找檔案，但目錄清單不會保留原本的大小寫。
 :end
 
 :ud_time_machine_plug:
-> 設為**是**對 SMB 共享開啟時間機器（Time Machine）。
+> 設為「是」可在 SMB 共享資料夾啟用 Time Machine 備份支援。
 :end
 
 :ud_time_machine_vol_size_plug:
-> 此項限制報告的卷大小，防止時間機器佔用磁碟實際的全部剩餘空間來備份。例如，設為“1024”將限制報告的磁碟空間為 1 GB。
+> 限制向 Time Machine 回報的磁碟區可用容量，避免備份占滿磁碟的剩餘空間。例如輸入 1024，會將回報容量限制為約 1 GB。
 :end
 
 :ud_settings_force_user_plug:
-> 有時 SMB 共享的權限沒有按預期處理，開啟此功能可幫助解決此類權限問題。
-> 此項設定應用於所有使用 Unassigned Devices 掛載的裝置。
-> 弊端是它覆蓋了 Linux 組權限。如果你不確定此功能是否必要，請保持關閉。
+> 若 SMB 權限未如預期運作，可嘗試此選項。它會套用至所有透過 Unassigned Devices 掛載的裝置，並覆寫原本的 Linux 群組權限處理方式。若不確定是否需要，請保持停用。
 :end
 
 :ud_settings_nfs_security_plug:
-> 設為**是**以 NFS 共享的方式匯出未指派裝置。共享以公共讀寫權限匯出，也可以遵循你設定的私有規則。存取操作由檔案和資料夾的權限控制。
+> 設為「是」可透過 NFS 匯出未指派裝置。可使用公共讀寫存取，或套用自訂的私有存取規則；實際存取仍受檔案與資料夾權限控制。
 :end
 
 :ud_settings_nfs_rules_plug:
@@ -175,50 +164,35 @@ Working=工作中
 :end
 
 :ud_settings_disk_pass_plug:
-> 選擇你要設定密碼的磁碟。此密碼設定只為該磁碟所用，不影響陣列密碼。對於 LUKS 加密的磁碟，留空以使用陣列密碼。
+> 選擇要設定加密密碼的磁碟。此密碼僅適用於選取的磁碟，不會變更陣列密碼。LUKS 加密磁碟若留空，會使用陣列密碼。
 :end
 
 :ud_settings_change_uuid_plug:
-> 選擇你要更改 UUID 的磁碟。當一塊 XFS 格式磁碟從陣列移除，還保留陣列磁碟的 UUID 時，此功能很有用。磁碟必須解除安裝才能更改 UUID。
+> 選擇要變更 UUID 的磁碟。例如從陣列移出的 XFS 磁碟仍沿用原本 UUID 時，可使用此功能。
 >
-> **注意**：不要更改包含在儲存池中的磁碟的 UUID。
+> 必須先**卸載**磁碟才能變更 UUID。**請勿變更仍屬於儲存池的磁碟 UUID。**
 :end
 
 :ud_settings_zfs_upgrade_plug:
-> 選擇想要升級到最新 ZFS 版本的磁碟。磁碟必須被掛載才能升級 ZFS。
+> 選擇要升級 ZFS 功能版本的磁碟。必須先掛載磁碟，才能執行升級。
+>
+> **此操作無法還原；升級後可能無法在舊版 Unraid 中掛載。**
 :end
 
 :ud_remote_server_test_plug:
-> 需要遠端伺服器啟用 SMB 和/或 NFS。此功能將檢查 SMB 和/或 NFS 埠聯通性。此外，還要求 Unraid 的“showmount -e &lt;server&gt;”指令能夠顯示可用 NFS 掛載。
-
-> 若要 SMB 顯示為線上狀態，遠端伺服器的 SMB 埠必須能夠聯通。
-
-> 若要 NFS 顯示為線上狀態，遠端伺服器的 NFS 埠必須能夠聯通，並且 Unraid 側“showmount -e”指令能夠顯示 NFS 共享。
-> 某些情況下，埠能夠聯通，但“showmount -e”不顯示 NFS 共享，此時 NFS 也無法使用。
-
-> 對於實際能夠連線的遠端伺服器，比如一臺 Synology 裝置，若 showmount 指令不返回任何 NFS 共享，你可能遇到了以下幾種情況之一： 
-
-> NFS 共享沒有匯出：
-
-> 伺服器可能沒有設定以 NFS 匯出任何目錄。請檢查 Synology 裝置的 NFS 設定，確保 NFS 共享的目錄已匯出。
-
-> 存取受限：
-
-> NFS 共享可能設定了 IP 存取限制。Synology 裝置允許為每個 NFS 共享指定允許存取的 IP 地址或網路。如果你的 IP 地址被限制，NFS 共享就不會在 showmount 指令輸出中列出。
-
-> 未啟用 NFS 服務：
-
-> Synology 裝置上的 NFS 服務可能沒有啟用。在 Synology DSM 的“控制面板->檔案服務->NFS”處檢查 NFS 服務設定，如果發現 NFS 服務關閉，請開啟它。
-
-> 防火牆或網路設定不當：
-
-> Synology 裝置的防火牆規則可能阻止了 showmount 指令的請求或必需的 RPC 通訊。確保防火牆設定允許 NFS 相關埠的流量。通常，NFS 服務使用埠 2049，RPC 使用埠 111。
-
-> Synology 匯出選項設定不當:
-
-> 對於 NFSv3 通訊協定的用戶端，Synology NFS 設定有時會要求在頂層啟用 NFS 服務並允許 NFSv3 通訊協定。檢查“控制面板->檔案服務->NFS”，確保設定得當。
-
-> 確保 NFS 服務啟用，設定了正確的權限，並且允許向你的用戶端 IP 匯出目錄後，showmount 指令應該能夠列出可用的匯出。
+> 測試遠端伺服器是否提供 SMB 或 NFS 共享，並檢查相關連接埠是否可連線。NFS 測試也會確認 Unraid 執行 `showmount -e <server>` 時是否能列出匯出項目。
+>
+> SMB 顯示為線上，表示其 SMB 連接埠可連線。NFS 顯示為線上，則需連接埠可連線，且 `showmount -e` 能列出共享；僅連接埠可連線、但沒有列出匯出項目時，此外掛可能仍無法使用該 NFS 共享。
+>
+> 例如 Synology 伺服器可以連線、但未列出匯出項目時，請依序確認：
+>
+> - **共享是否已匯出**：遠端伺服器需設定要透過 NFS 提供的資料夾。
+> - **用戶端存取限制**：確認允許 Unraid 的 IP 位址或網段存取。
+> - **NFS 服務是否啟用**：Synology DSM 可在「控制台 → 檔案服務 → NFS」檢查。
+> - **防火牆與 RPC 通訊**：確認允許必要連接埠；NFS 通常使用 2049，RPC 通常使用 111。
+> - **通訊協定版本**：使用 NFSv3 用戶端時，遠端伺服器也必須允許 NFSv3。
+>
+> 確認服務、匯出目錄及存取權限均正確後，再檢查 `showmount` 的結果。
 :end
 
 ; Unraid 7.3.3 runtime UI audit: exact lookup variants and missing labels
@@ -233,3 +207,12 @@ Remote Server Test=遠端伺服器測試
 Change the disk UUID=變更磁碟 UUID
 Upgrade ZFS on disk to the latest=將磁碟上的 ZFS 升級至最新版本
 Clear the last test results=清除上次測試結果
+
+; Settings detailed-help audit (Unraid 7.3.3)
+This operation cannot be reversed=此操作無法還原
+After upgrading, the disk may not be mountable in previous versions of Unraid=升級後，磁碟可能無法在舊版 Unraid 中掛載
+Enter the Remote Server name or IP address and the results from the Unassigned Devices Remote Server Test will show in the Result text area=輸入遠端伺服器的主機名稱或 IP 位址，未指派裝置的遠端伺服器測試結果會顯示在「結果」文字區域
+
+:ud_settings_zvols_plug:
+> 啟用後，會列出已掛載磁碟中的 ZFS 磁碟區（zvol）。您可以在個別裝置設定中，決定是否掛載這些磁碟區。
+:end

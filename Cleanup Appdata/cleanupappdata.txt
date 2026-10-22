@@ -21,3 +21,6 @@ Plugin Version=外掛版本
 ; Additional runtime lookup variants
 Note that this module looks at all of your previously installed docker applications to determine which appdata folders are abandoned If you have deleted the previously installed list either through Community Applications or manually, then it will not display those result IE If there is not a record for the folder within the previously installed apps, then you will not be prompted to delete the folder=此模組會依據先前安裝過的 Docker 應用程式，判斷哪些 appdata 資料夾已不再使用。若透過 Community Applications 或手動刪除了先前安裝記錄，相關資料夾就不會出現在結果中；沒有對應記錄的資料夾，也不會顯示刪除提示。
 In case of a severely misconfigured app previously installed, the entire contents of a share MAY be offered up to delete It is your responsibility to confirm all of the folders being offered up to delete If you inadvertently delete a share which you actually do want to keep due to your own mistakes in configuring an application, the deletion is not reversable and the author of the plugin will take no responsiblility=**警告：**若先前安裝的應用程式設定嚴重錯誤，整個共享資料夾的內容都可能被列為可刪除項目。您必須逐一確認列出的資料夾。若因應用程式設定錯誤而誤刪仍需保留的共享資料夾，刪除將無法復原，外掛程式作者不承擔責任。
+
+; Settings detailed-help audit (Unraid 7.3.3)
+No orphaned appdata folders found=未找到沒有對應應用程式的 appdata 資料夾

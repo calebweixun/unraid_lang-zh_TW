@@ -4,6 +4,8 @@
 
 ## 實機驗收與語言代碼限制
 
+更新上一版語言包後，已再逐一檢查「設定」的 **41 個入口**及主要進階／子分頁，修正操作說明、硬體警告與 VPN 動態變數。詳見 [設定頁逐頁稽核](docs/SETTINGS-AUDIT.zh-TW.md)；目前無法由語言包覆寫的通知代理、備份及外掛內容，另提供 [台灣繁體中文詳細說明](docs/SETTINGS-HELP.zh-TW.md)。本輪修正需再次匯入後複驗。
+
 已在 Unraid 7.3.3 瀏覽器中檢查 **58 個頁面路徑**，詳見 [實機介面稽核](docs/RUNTIME-AUDIT.zh-TW.md)。已修正日期對照表、實測錯譯與缺漏，並在封裝時補入主頁嵌入之 Unassigned Devices 的翻譯。
 
 **受測安裝介面只提供 `zh_CN` 中文，沒有 `zh_TW`。** `zh_TW.zip` 的檔名不會改變安裝時選取的語言代碼；新版頁首、更新、註冊及部分外掛使用獨立詞庫，仍可能顯示簡體中文。此限制需要 Unraid 與相關元件提供 zh_TW 支援，不能只靠修改 `.txt` 解決。
@@ -25,7 +27,7 @@
 
 ## Unraid 7.3.3：完整翻譯檔覆蓋與測試
 
-目前依照上游 [`unraid/lang-en_US`](https://github.com/unraid/lang-en_US) 的參照版本 `98e4e91e870663720f749c27035d69c31a680ce9`，補齊 **51 個翻譯文字檔**（另有 `LICENSE.txt`，總共 52 個文字檔），包含已支援多語系的第三方外掛。
+目前依照上游 [`unraid/lang-en_US`](https://github.com/unraid/lang-en_US) 的參照版本 `98e4e91e870663720f749c27035d69c31a680ce9`，補齊全部 **51 個參照語言檔**，另擴充 USB Manager 的 2 個語言檔，封裝共 **53 個翻譯文字檔**（不含 `LICENSE.txt`）。
 
 - 執行 `python3 scripts/validate_translations.py` 檢查容量前綴、特殊變數、繁體用詞與安全說明。
 - 執行 `python3 scripts/check_upstream_coverage.py /path/to/lang-en_US` 比對每個檔案的**原始英文鍵名**及所有說明區塊。

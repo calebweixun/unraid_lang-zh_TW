@@ -1,16 +1,16 @@
 Hide Deprecated Applications=隱藏已棄用的應用程式
-This setting hides deprecated applications from the list of available apps Deprecated apps will still however display within the installed and previous apps sections=此設定隱藏可用應用清單中已棄用的應用程式，但已棄用的應用仍將顯示在已安裝的應用和以前的應用中
+This setting hides deprecated applications from the list of available apps Deprecated apps will still however display within the installed and previous apps sections=從可安裝的應用程式清單隱藏已棄用項目；「已安裝」與「先前安裝」清單仍會顯示這些項目。
 Hide Incompatible Applications=隱藏不相容的應用程式
-This setting will hide applications that are listed as being incompatible with your version of Unraid=此設定將隱藏列出的與您的Unraid 版本不相容的應用程式
+This setting will hide applications that are listed as being incompatible with your version of Unraid=隱藏標示為不相容於目前 Unraid 版本的應用程式。
 This option enables another button on the cards and popups which will allow you to reinstall an installed application using its default template values This option can be confusing at times, and is only generally used if you wish to install and have an application running twice simultaneously=在應用程式卡片與彈出式視窗新增按鈕，讓您使用範本預設值重新安裝已安裝的應用程式。此選項可能造成混淆，通常僅在需要同時執行同一應用程式的兩個執行個體時使用。
 Allow CA to check for updates to applications=允許CA 檢查應用程式的更新
 This setting enables CA to check for updates to applications Note that Community Applications will always check for updates to itself=此設定使CA 能夠檢查應用程式的更新，請注意：社群應用程式將始終檢查自身的更新
 Allow CA to send any emergency notifications=允許CA 發送任何緊急通知
-This setting allows CA to periodically scan your system and alert you to the presence of=此設定支援CA 定期掃描系統並在存在此項目時向您發出警報
+This setting allows CA to periodically scan your system and alert you to the presence of=允許 Community Applications 定期掃描系統，發現下列問題時發出警報：
 1 Known malware and security vulnerabilities within applications=1 應用程式中的已知惡意軟體和安全漏洞
 2 Critical security vulnerabilities within Unraid OS=2 Unraid OS 中的嚴重安全漏洞
 3 Any installed applications which may seriously hinder the operation of your server=3 任何可能嚴重阻礙伺服器執行的已安裝應用程式
-Save CA debugging information=儲存CA 調試資訊
+Save CA debugging information=儲存 CA 除錯資訊
 Only enable this when advised to from the author of Community Applications=僅在社群應用程式的作者建議時啟用此功能
 Enable developer mode=啟用開發者模式
 This unlocks some extra features within CA generally only used by developers Not recommended to enable=這會解鎖CA 中的一些額外功能（通常僅由開發人員使用，不建議啟用）
@@ -30,3 +30,8 @@ This is a global value for all devices If it causes issues, then disable Mouse W
 Disable Featured Applications=停用精選應用程式
 Use CloudFlare CDN=使用 Cloudflare CDN
 DOWNLOAD LOG=下載日誌
+
+; Settings detailed-help audit (Unraid 7.3.3)
+This setting enables CA to check for updates to applications=允許 Community Applications 檢查應用程式更新。
+This setting will disable Featured applications appearing on the home screen=停用後，應用程式首頁將不再顯示精選應用程式。
+This setting will download the application feed from the CloudFlare CDN=透過 Cloudflare 內容傳遞網路（CDN）下載應用程式目錄資料。

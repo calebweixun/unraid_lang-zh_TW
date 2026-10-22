@@ -5,9 +5,16 @@ Usage: python3 scripts/check_upstream_coverage.py /path/to/lang-en_US
 The upstream git reference is pinned in .github/workflows/validate-translations.yml.
 """
 from pathlib import Path
+from collections import Counter
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def embedded_php(text: str) -> Counter[str]:
+    """PHP in help is executed by translate(); preserve the exact source code."""
+    return Counter(re.findall(r"<\?.*?\?>", text, flags=re.S))
 
 
 def translation_files(root: Path) -> dict[str, Path]:
@@ -79,6 +86,12 @@ def main() -> int:
             continue
         tw_keys, tw_blocks = parse(tw_files[rel])
         values, bodies = parse_entries(tw_files[rel])
+        source_values, source_bodies = parse_entries(en_path)
+        for local, source, kind in ((values, source_values, "key"),
+                                    (bodies, source_bodies, "help block")):
+            errors.extend(f"{rel}: embedded PHP changed in {kind} {name!r}"
+                          for name in local.keys() & source.keys()
+                          if embedded_php(local[name]) != embedded_php(source[name]))
         errors.extend(f"{rel}: empty translation for {key!r}"
                       for key in source_keys & tw_keys if not values[key].strip())
         errors.extend(f"{rel}: empty help block {tag}"
